@@ -112,6 +112,10 @@ function create_user($username) {
 
 		$page_response = request("GET", $request['headers']['location'][0]);
 
+		if($page_response['status'] != 200) {
+			throw new Exception("Error loading wallet page to parse keys.");
+		}
+
 		preg_match('/<strong>Admin key: <\/strong><em>(.*)<\/em><br \/>/', $page_response['raw_response'], $matches);
 
 		if(!isset($matches[1]) || empty($matches[1])) {
@@ -125,4 +129,6 @@ function create_user($username) {
 			'username' => $username,
 		];
 	}
+
+	throw new Exception("Error creating new user.");
 }
