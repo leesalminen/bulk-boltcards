@@ -6,6 +6,9 @@ require_once 'constants.php';
 // various helper functions to interface with LNBits
 require_once 'helpers.php';
 
+// import qr code lib
+include "./lib/full/qrlib.php"; 
+
 // the main function
 function main($card_uid) {
 
@@ -32,6 +35,7 @@ function main($card_uid) {
 
 		// this is the url a user can use to access their account
 		'lnbits_access_url' => null,
+		'lnbits_access_url_qr_svg' => null,
 
 		// this is a bech32 encoded LNURLp string. Users can use this to receive sats in their wallet.
 		'lnbits_lnurlp' => null,
@@ -62,6 +66,7 @@ function main($card_uid) {
 	$output['lnbits_username'] = $user['username'];
 	$output['lnbits_admin_key'] = $user['admin_key'];
 	$output['lnbits_access_url'] = DOMAIN_NAME . '/wallet?usr=' . $user['user_id'] . '&wal=' . $user['wallet_id'];
+	$output['lnbits_access_url_qr_svg'] = QRcode::svg($output['lnbits_access_url'], uniqid(), false, QR_ECLEVEL_L, 1000); 
 
 	$output['lnurlp_activated'] = enable_extension($user['user_id'], 'lnurlp');
 	$output['lnbits_lnurlp'] = create_lnurlp_link($user['admin_key']);

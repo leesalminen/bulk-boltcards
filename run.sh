@@ -1,1 +1,3 @@
-	php -f create.php 00000000000000 | base64 | (read data && sed -ie "s/var data_string = .*/var data_string = \"$data\"/" ./index.html) && open -a "Google Chrome.app" index.html && sleep 2 && sed -ie "s/var data_string = .*/var data_string = \"SCRIPT_WILL_REPLACE_ME\"/" ./index.html && rm index.htmle
+# php -f create.php $1 | base64 | (read data && sed -e "s/var data_string = .*/var data_string = \"$data\"/" ./template.html > ./temp.html) && open -a "Google Chrome.app" temp.html && sleep 2 && rm temp.html
+
+php -f create.php $1 | base64 | (read data && sed -e "s/var data_string = .*/var data_string = \"$data\"/" ./template.html) | base64 | (read data && open -a "Google Chrome.app" "data:text/html;base64,$data")

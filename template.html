@@ -16,5 +16,14 @@
 </head>
 <body>
 	<h1>Check your dev tools console, data should be there :)</h1>
+
+	<div id="exampleQr"></div>
+
+
+	<script>
+		document.getElementById('exampleQr').innerHTML = data.lnbits_access_url_qr_svg
+
+		window.print()
+	</script>
 </body>
 </html>
