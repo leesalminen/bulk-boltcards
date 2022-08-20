@@ -1,3 +1,3 @@
 <?php
 
-define("DOMAIN_NAME", "https://boltcardstest.bitcoinjungle.io");
+define("DOMAIN_NAME", "YOUR_LNBITS_DOMAIN_HERE");
