@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Bulk Bolt Cards</title>
+	<title>LNBits Access Kit</title>
 
 	<script>
 		var data_string = "SCRIPT_WILL_REPLACE_ME"
@@ -15,14 +15,25 @@
 	</script>
 </head>
 <body>
-	<h1>Check your dev tools console, data should be there :)</h1>
 
-	<div id="exampleQr"></div>
+	<h1>LNBits Access Kit</h1>
 
+	<div id="dataField"></div>
 
 	<script>
-		document.getElementById('exampleQr').innerHTML = data.lnbits_access_url_qr_svg
+		// this is just to demo the data available for use
+		var keys = Object.keys(data)
+		var dataField = document.getElementById('dataField');
+		keys.forEach(key => {
+			var value = data[key]
 
+			var el = document.createElement('p')
+			el.innerHTML = '<b>' + key + "</b> " + (typeof value != 'object' ? value : JSON.stringify(value))
+			dataField.appendChild(el)
+		})
+	</script>
+
+	<script>
 		window.print()
 	</script>
 </body>

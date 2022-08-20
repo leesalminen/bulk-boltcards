@@ -39,14 +39,17 @@ function main($card_uid) {
 
 		// this is a bech32 encoded LNURLp string. Users can use this to receive sats in their wallet.
 		'lnbits_lnurlp' => null,
+		'lnbits_lnurlp_qr_svg' => null,
 
 		// this is a bech32 encoded LNURLw string. Users can use this to send sats from their wallet.
 		'lnbits_lnurlw' => null,
+		'lnbits_lnurlw_qr_svg' => null,
 
 		// this is all the details about the boltcard we created in LNBits.
 		'lnbits_boltcard' => [
 			// you'll turn the auth_link into a qr code that the person configuring the card scans with the android app `bolt-nfc-android-app`
 			'auth_link' => null,
+			'auth_link_qr_svg' => null,
 
 			'otp' => null,
 			'k0' => null,
@@ -66,19 +69,22 @@ function main($card_uid) {
 	$output['lnbits_username'] = $user['username'];
 	$output['lnbits_admin_key'] = $user['admin_key'];
 	$output['lnbits_access_url'] = DOMAIN_NAME . '/wallet?usr=' . $user['user_id'] . '&wal=' . $user['wallet_id'];
-	$output['lnbits_access_url_qr_svg'] = QRcode::svg($output['lnbits_access_url'], uniqid(), false, QR_ECLEVEL_L, 1000); 
+	$output['lnbits_access_url_qr_svg'] = QRcode::svg($output['lnbits_access_url'], uniqid(), false, QR_ECLEVEL_L, 250); 
 
 	$output['lnurlp_activated'] = enable_extension($user['user_id'], 'lnurlp');
 	$output['lnbits_lnurlp'] = create_lnurlp_link($user['admin_key']);
+	$output['lnbits_lnurlp_qr_svg'] = QRcode::svg($output['lnbits_lnurlp'], uniqid(), false, QR_ECLEVEL_L, 250); 
 
 	$output['lnurlw_activated'] = enable_extension($user['user_id'], 'withdraw');
 	$lnurlw = create_lnurlw_link($user['admin_key']);
 	$output['lnbits_lnurlw'] = $lnurlw['lnurl'];
+	$output['lnbits_lnurlw_qr_svg'] = QRcode::svg($output['lnbits_lnurlw'], uniqid(), false, QR_ECLEVEL_L, 250); 
 
 	$output['boltcard_activated'] = enable_extension($user['user_id'], 'boltcards');
 	$boltcard = create_boltcard($card_uid, $user['wallet_id'], $lnurlw['id'], $user['admin_key']);
 	$output['lnbits_boltcard'] = $boltcard;
 	$output['lnbits_boltcard']['auth_link'] = DOMAIN_NAME . '/boltcards/api/v1/auth?a=' . $boltcard['otp'];
+	$output['lnbits_boltcard']['auth_link_qr_svg'] = QRcode::svg($output['lnbits_boltcard']['auth_link'], uniqid(), false, QR_ECLEVEL_L, 1000); 
 
 	return $output;
 }
