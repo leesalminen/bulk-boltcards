@@ -1,0 +1,1 @@
+	php -f create.php 00000000000000 | base64 | (read data && sed -ie "s/var data_string = .*/var data_string = \"$data\"/" ./index.html) && open -a "Google Chrome.app" "file:///Users/lee/apps/bulk_boltcards/index.html" && sleep 2 && sed -ie "s/var data_string = .*/var data_string = \"SCRIPT_WILL_REPLACE_ME\"/" ./index.html
