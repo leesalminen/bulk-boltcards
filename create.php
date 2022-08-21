@@ -63,7 +63,7 @@ function main($card_uid) {
 		'boltcard_activated' => false,
 	];
 
-	$user = create_user(bin2hex(random_bytes(8)));
+	$user = create_user($card_uid);
 	$output['lnbits_user_id'] = $user['user_id'];
 	$output['lnbits_wallet_id'] = $user['wallet_id'];
 	$output['lnbits_username'] = $user['username'];
