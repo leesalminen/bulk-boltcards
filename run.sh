@@ -8,7 +8,7 @@ then
 	exit
 fi
 
-json_base64=$(echo $json_data | base64)
+json_base64=$(printf "%s" "$json_data" | base64)
 html_data=$(sed "s|SCRIPT_WILL_REPLACE_ME|$json_base64|" ./template2.html | base64)
 
 if [[ $1 == "mac" ]]
