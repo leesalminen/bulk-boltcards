@@ -139,7 +139,7 @@ function main($card_uid) {
 
 	// TODO :: this is just a placeholder for now
 	$output['lnaddress_activated'] = false;
-	$output['lnbits_lnaddress'] = $user['username'] . '@' . DOMAIN_NAME;
+	$output['lnbits_lnaddress'] = $user['username'] . '@' . str_replace("https://", "", DOMAIN_NAME);
 	$output['lnbits_lnaddress_qr_svg'] = QRcode::svg($output['lnbits_lnaddress'], uniqid(), false, QR_ECLEVEL_L, 110);
 
 	return $output;
