@@ -40,7 +40,7 @@ function main($card_uid) {
 		'card_uid' => $card_uid,
 
 		// used for rendering
-		'timestamp' => date('c'),
+		'timestamp' => date('M j, Y'),
 
 		// you can set your own name in constants.php
 		'issuer' => ISSUER_NAME,
