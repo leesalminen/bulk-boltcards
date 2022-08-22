@@ -45,6 +45,11 @@ function main($card_uid) {
 		// you can set your own name in constants.php
 		'issuer' => ISSUER_NAME,
 
+		// you can set this to whatever you want in constants.php
+		'support_url' => SUPPORT_URL,
+		'support_url_qr_svg' => null,
+		'support_cost_per_sat' => SUPPORT_COST_PER_SAT,
+
 		// lnbits user account details
 		'lnbits_user_id' => null,
 		'lnbits_wallet_id' => null,
@@ -92,6 +97,8 @@ function main($card_uid) {
 		'boltcard_activated' => false,
 		'lndhub_activated' => false,
 	];
+
+	$output['support_url_qr_svg'] = QRcode::svg($output['support_url'], uniqid(), false, QR_ECLEVEL_L, 110); 
 
 	$user = create_user($card_uid);
 	$output['lnbits_user_id'] = $user['user_id'];
