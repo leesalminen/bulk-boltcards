@@ -37,7 +37,8 @@ function request($method, $url, $params = [], $headers = [], $body = []) {
 	// return the transfer as a string
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-	if($method == "POST" && count($body)) {
+	// we should set the body to json for put/post requests
+	if(in_array($method, ["PUT", "POST"]) && count($body)) {
 		$body = json_encode($body);
 		// set body
 		curl_setopt($ch, CURLOPT_POST, 1);
