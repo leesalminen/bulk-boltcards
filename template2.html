@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+
+    <title></title>
+
+    <style>
+body {
+  background: rgb(204,204,204); 
+  font-family: Ubuntu, "times new roman", times, roman, serif;
+
+}
+h1,h2  {
+    color: #6639B7;
+    margin:0px;
+     font-style: italic;
+}
+h3,h4 {
+    margin:0px;
+}
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
+page[size="A4"][layout="landscape"] {
+  width: 29.7cm;
+  height: 21cm;  
+}
+
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+<page size="A4" layout="landscape" style="background-image: url('img/front3_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
+
+
+    <div style="width:50%; float:left">
+        <div style="margin:124px 0px 0px 65px; float:left; width:500px;">
+            <h2 style="margin:0px">manage wallet from smartphone</h2>
+        </div>
+        <div style="width:490px; height:120px; float:left; border: 0px solid #999; margin:0px 0px 0px 65px; padding:5px; background-color: #FFF;  border-radius: 10px;">
+            <div style="width:330px; height:120px; float:left; ">
+                This QR code allows the user to import the LNBits Lightning Wallet on the app Bluewallet.
+                With that, the user have the full control to make Lightning Payments and create invoices.
+            </div>
+            <div style="width:140px; height:120px; float:left; margin-left:20px;  text-align: center;">
+                <span>{lnbits_lndhub_admin_url}</span><br> 
+                <small>LndHub Admin URL</small>
+            </div>
+        </div>
+
+
+        <div style="margin:10px 0px 0px 65px; float:left; width:500px;">
+            <h2 style="">ready-only wallet</h2>
+        </div>
+        <div style="width:490px; height:120px; float:left; border: 0px solid #999; margin:0px 0px 0px 65px; padding:5px; background-color: #FFF;  border-radius: 10px;">
+            <div style="width:330px; height:120px; float:left; ">
+                This QR code allows the user to import the LNBits Lightning Wallet in Read-Only mode. <br><br>
+                The user can create invoices with that, and see the transactions, but can’t move the funds.
+            </div>
+            <div style="width:140px; height:120px; float:left; margin-left:20px;  text-align: center;">
+                <span>{lnbits_lndhub_admin_url}</span><br> 
+                <small>LndHub Invoice URL</small>
+            </div>
+         </div>
+
+        <div style="margin:10px 0px 0px 65px; float:left; width:500px;">
+            <h2 style="margin:0px">how to import on bluewallet</h2>
+        </div>
+        <div style="width:500px; height:220px; float:left; border: 0px solid #999; margin:0px 0px 0px 65px; padding:5px; background-color: #FFF;  border-radius: 10px;">
+            <small>
+            After install and open Bluewallet, click on “<b>Add Wallet</b>”, “<b>Import Wallet</b>”, press on “<b>Read code or import file</b>”, scan the QR code of the “<b>LndHub Admin</b>” or "<b>LndHub Invoice</b>" and wait a few seconds to the wallet be imported.
+            </small>
+                <div style="clear:both"></div>
+                <div style="border: 0px solid #E1E1E1; width: 70px; float:left; text-align:center">
+                    <img src="https://praiabitcoin.org/paperwallet/img/blue_04.png" style="width: 100%; ">
+                </div>
+                <div style="border: 0px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
+                    <img src="https://praiabitcoin.org/paperwallet/img/blue_05.png" style="width: 100%; ">
+                </div>
+                <div style="border: 0px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
+                    <img src="https://praiabitcoin.org/paperwallet/img/blue_06.png" style="width: 100%; ">
+                </div>
+                <div style="border: 0px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
+                    <img src="https://praiabitcoin.org/paperwallet/img/blue_07.png" style="width: 100%; ">
+                </div>
+                    <div style="border: 0px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
+                <img src="https://praiabitcoin.org/paperwallet/img/blue_08.png" style="width: 100%; ">
+                </div>
+                <div style="border: 0px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
+                    <img src="https://praiabitcoin.org/paperwallet/img/blue_09.png" style="width: 100%; ">
+                </div>
+                <div style="clear:both"></div>
+
+        </div>
+
+    </div>
+    <div style="width:50%; float:left">
+        <div style="width:400px; height:275px; float:right; border: 0px solid #999; margin:420px 60px 0px 0px; padding:5px; border-radius: 10px; background-color: #FFF">
+            <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999;"><h3>card uid / lightning address</h3> </div>
+            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999;"><span>{lnaddress} </div>
+            <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999;"><h3>maximum allowed transactions</h3> </div>
+            <div style=" margin-top:00px; margin-left: 20px; border: 0px solid #999;"><span>{maximum} </div>
+            <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999; float:left; width:210px"><h3>issuer</h3> </div>
+            <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999;"><h3>date</h3> </div>
+            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999; float:left; width:210px"><span>{issuer} </div>
+            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999;"><span>{timestamp} </div>
+        </div>
+    </div>
+
+</page>
+
+
+<page size="A4" layout="landscape" style="background-image: url('img/back3_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
+    <div style="width:50%; float:left">
+        <div style="margin:124px 0px 0px 40px; float:left; width:550px;">
+            <h1>account access kit</h1>
+        </div>
+        <div style="width:500px; height:200px; float:left; border: 0px solid #999; margin:0px 0px 0px 40px; padding:5px; background-color: #FFF;  border-radius: 10px;">
+            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999; float:left; width:50%"><h4>username</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999;"><h4>wallet id</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999; float:left; width:50%"><span><small>{lnbits_user_id}</small></span></div>
+            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999;"><span><small>{lnbits_wallet_id}</small></span></div>
+            <div style=" margin-top:15px; margin-left: 5px; border: 0px solid #999;"><h4>access url</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999;"><span><small>{lnbits_access_url}</small></span></div>
+            <div style=" margin-top:15px; margin-left: 5px; border: 0px solid #999;"><h4>lndhub admin url</h4> </div>
+            <div style=" margin-top:00px; margin-left: 5px; border: 0px solid #999;"><span><small>{lnbits_lndhub_admin_url}</small></span></div>
+            <div style=" margin-top:15px; margin-left: 5px; border: 0px solid #999;"><h4>lndhub invoice url</h4> </div>
+            <div style=" margin-top:00px; margin-left: 5px; border: 0px solid #999;"><span><small>{lnbits_lndhub_invoice_url}</small></span></div>
+        </div>
+
+        <div style="margin:15px 0px 0px 40px; float:left; width:550px;">
+            <h2>manage wallet from browser</h2>
+        </div>
+        <div style="width:500px; height:140px; float:left; border: 0px solid #999; margin:0px 0px 0px 40px; padding:5px; background-color: #FFF;  border-radius: 10px;">
+            <div style="width:330px; height:110px; float:left; ">
+                This QR code allows the user to access the web interface of a LNBits Wallet and to use all its features. Make payments, manage invoices, activate and disactivate extensions, API access codes and everything you may need to control the features of your LNBits lightning wallet. 
+            </div>
+            <div style="width:140px; height:110px; float:left; margin-left:20px;  text-align: center;">
+                <span>{lndhub_admin_url}</span><br> 
+                <small>LndHub Invoice URL</small>
+            </div>
+        </div>
+
+        <div style="margin:5px 0px 0px 40px; float:left; width:550px;">
+            <h2>terms of use</h2>
+        </div>
+        <div style="width:500px; height:100px; float:left; border: 0px solid #999; margin:0px 0px 0px 40px; padding:5px; background-color: #FFF;  border-radius: 10px;">
+            <small><em>WE PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
+                OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+                MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS
+                TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. USE WITH CAUTION - LNbits wallet is still in BETA</em></small>
+        </div>
+    </div>
+    <div style="width:50%; float:left">
+        <div style="margin:124px 0px 0px 25px; float:left; width:500px;">
+            <h1>recharge your bolt card</h1>
+        </div>
+        <div style="width:490px; height:150px; float:left; border: 0px solid #999; margin:0px 0px 0px 25px; padding:5px; background-color: #FFF;  border-radius: 10px;">
+            <div style="width:200px; height:120px; float:left; ">
+                Recharge your lightning card by sending to the Lightning Address or LNURLp QR code at least 100 SATs up to 1M SATs per transaction.
+            </div>
+            <div style="width:120px; height:120px; float:left; margin-left:20px;  text-align: center;">
+                <span>{lnbits_lnaddress}</span><br> 
+                <small>Lightning Address</small>
+            </div>
+            <div style="width:120px; height:120px; float:left; margin-left:20px;  text-align: center;">
+                <span>{lnbits_lnurlp_qr_svg}</span><br> 
+                <small>LNURL_p</small>
+            </div>
+        </div>
+
+        <div style="margin:25px 0px 0px 25px; float:left; width:500px;">
+            <h2>withdraw url</h2>
+        </div>
+        <div style="width:490px; height:120px; float:left; border: 0px solid #999; margin:0px 0px 0px 25px; padding:5px; background-color: #FFF;  border-radius: 10px;">
+            <div style="width:330px; height:120px; float:left; ">
+            This QR code allows the user to import the LNBits Lightning Wallet in Read-Only mode. <br><br>
+            The user can create invoices with that, and see the transactions, but can’t move the funds.
+            </div>
+            <div style="width:140px; height:120px; float:left; margin-left:20px;  text-align: center;">
+                <span>{lnbits_lnurlw}</span><br> 
+                <small>LNURLw</small>
+            </div>
+        </div>
+
+        <div style="margin:25px 0px 0px 25px; float:left; width:500px;">
+            <h2>paid support</h2>
+        </div>
+        <div style="width:490px; height:130px; float:left; border: 0px solid #999; margin:0px 0px 0px 25px; padding:5px; background-color: #FFF;  border-radius: 10px;">
+            <div style="width:330px; height:110px; float:left; ">
+                Request support or any other types of inquiries by paying 10 sats per word. Please include your mobile number or an email address if you need a reply.  Scan the QR code to open the form, type your message and pay the invoice to send. Reply in 24h ~ 72h. 
+            </div>
+            <div style="width:140px; height:110px; float:left; margin-left:20px;  text-align: center;">
+                <span>{paid_support}</span><br> 
+                <small>Paid Support Form</small>
+            </div>
+        </div>
+    </div>
+</page>
+</body>
+</html>
