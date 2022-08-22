@@ -116,16 +116,23 @@ function create_user($username) {
 			throw new Exception("Error loading wallet page to parse keys.");
 		}
 
-		preg_match('/<strong>Admin key: <\/strong><em>(.*)<\/em><br \/>/', $page_response['raw_response'], $matches);
+		preg_match('/<strong>Admin key: <\/strong><em>(.*)<\/em><br \/>/', $page_response['raw_response'], $admin_matches);
 
-		if(!isset($matches[1]) || empty($matches[1])) {
+		if(!isset($admin_matches[1]) || empty($admin_matches[1])) {
 			throw new Exception("Unable to parse Admin API Keys");
+		}
+
+		preg_match('/<strong>Invoice\/read key: <\/strong><em>(.*)<\/em>/', $page_response['raw_response'], $invoice_matches);
+
+		if(!isset($invoice_matches[1]) || empty($invoice_matches[1])) {
+			throw new Exception("Unable to parse Invoice API Keys");
 		}
 
 		return [
 			'user_id' => $params['usr'],
 			'wallet_id' => $params['wal'],
-			'admin_key' => $matches[1],
+			'admin_key' => $admin_matches[1],
+			'invoice_key' => $invoice_matches[1],
 			'username' => $username,
 		];
 	}

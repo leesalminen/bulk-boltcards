@@ -7,40 +7,48 @@
 
     <title></title>
 
+    <script>
+        var data_string = "SCRIPT_WILL_REPLACE_ME"
+        
+        var base64_decoded = atob(data_string)
+        var data = JSON.parse(base64_decoded)
+
+        console.log(data)
+    </script>
+
     <style>
-body {
-  background: rgb(204,204,204); 
-  font-family: Ubuntu, "times new roman", times, roman, serif;
+        body {
+          background: rgb(204,204,204); 
+          font-family: Ubuntu, "times new roman", times, roman, serif;
 
-}
-h1,h2  {
-    color: #6639B7;
-    margin:0px;
-     font-style: italic;
-}
-h3,h4 {
-    margin:0px;
-}
-page {
-  background: white;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 0.5cm;
-  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-}
+        }
+        h1,h2  {
+            color: #6639B7;
+            margin:0px;
+             font-style: italic;
+        }
+        h3,h4 {
+            margin:0px;
+        }
+        page {
+          background: white;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 0.5cm;
+          box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+        }
 
-page[size="A4"][layout="landscape"] {
-  width: 29.7cm;
-  height: 21cm;  
-}
+        page[size="A4"][layout="landscape"] {
+          width: 29.7cm;
+          height: 21cm;  
+        }
 
-@media print {
-  body, page {
-    margin: 0;
-    box-shadow: 0;
-  }
-}
-
+        @media print {
+          body, page {
+            margin: 0;
+            box-shadow: 0;
+          }
+        }
     </style>
 </head>
 <body>
@@ -58,8 +66,8 @@ page[size="A4"][layout="landscape"] {
                 With that, the user have the full control to make Lightning Payments and create invoices.
             </div>
             <div style="width:140px; height:120px; float:left; margin-left:20px;  text-align: center;">
-                <span>{lnbits_lndhub_admin_url}</span><br> 
-                <small>LndHub Admin URL</small>
+                <span class="lnbits_lndhub_admin_url_qr_svg"></span><br> 
+                <!-- <small><span class="lnbits_lndhub_admin_url"></span></small> -->
             </div>
         </div>
 
@@ -73,8 +81,8 @@ page[size="A4"][layout="landscape"] {
                 The user can create invoices with that, and see the transactions, but can’t move the funds.
             </div>
             <div style="width:140px; height:120px; float:left; margin-left:20px;  text-align: center;">
-                <span>{lnbits_lndhub_admin_url}</span><br> 
-                <small>LndHub Invoice URL</small>
+                <span class="lnbits_lndhub_invoice_url_qr_svg"></span><br> 
+                <!-- <small><span class="lnbits_lndhub_invoice_url"></span></small> -->
             </div>
          </div>
 
@@ -112,13 +120,13 @@ page[size="A4"][layout="landscape"] {
     <div style="width:50%; float:left">
         <div style="width:400px; height:275px; float:right; border: 0px solid #999; margin:420px 60px 0px 0px; padding:5px; border-radius: 10px; background-color: #FFF">
             <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999;"><h3>card uid / lightning address</h3> </div>
-            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999;"><span>{lnaddress} </div>
+            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999;"><span>{lnaddress}</div>
             <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999;"><h3>maximum allowed transactions</h3> </div>
-            <div style=" margin-top:00px; margin-left: 20px; border: 0px solid #999;"><span>{maximum} </div>
+            <div style=" margin-top:00px; margin-left: 20px; border: 0px solid #999;"><span class="lnbits_lnurlw_max_uses"></span></div>
             <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999; float:left; width:210px"><h3>issuer</h3> </div>
+            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999; float:left; width:210px"><span class="issuer"></span></div>
             <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999;"><h3>date</h3> </div>
-            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999; float:left; width:210px"><span>{issuer} </div>
-            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999;"><span>{timestamp} </div>
+            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999;"><span class="timestamp"></span> </div>
         </div>
     </div>
 
@@ -133,14 +141,14 @@ page[size="A4"][layout="landscape"] {
         <div style="width:500px; height:200px; float:left; border: 0px solid #999; margin:0px 0px 0px 40px; padding:5px; background-color: #FFF;  border-radius: 10px;">
             <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999; float:left; width:50%"><h4>username</h4> </div>
             <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999;"><h4>wallet id</h4> </div>
-            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999; float:left; width:50%"><span><small>{lnbits_user_id}</small></span></div>
-            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999;"><span><small>{lnbits_wallet_id}</small></span></div>
+            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999; float:left; width:50%"><span><small><span class="lnbits_user_id"></span></small></span></div>
+            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999;"><span><small><span class="lnbits_wallet_id"></span></small></span></div>
             <div style=" margin-top:15px; margin-left: 5px; border: 0px solid #999;"><h4>access url</h4> </div>
-            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999;"><span><small>{lnbits_access_url}</small></span></div>
+            <div style=" margin-top:0px; margin-left: 5px; border: 0px solid #999;"><small><span class="lnbits_access_url"></span></small></div>
             <div style=" margin-top:15px; margin-left: 5px; border: 0px solid #999;"><h4>lndhub admin url</h4> </div>
-            <div style=" margin-top:00px; margin-left: 5px; border: 0px solid #999;"><span><small>{lnbits_lndhub_admin_url}</small></span></div>
+            <div style=" margin-top:00px; margin-left: 5px; border: 0px solid #999;"><span><small><span class="lnbits_lndhub_admin_url"></span></small></span></div>
             <div style=" margin-top:15px; margin-left: 5px; border: 0px solid #999;"><h4>lndhub invoice url</h4> </div>
-            <div style=" margin-top:00px; margin-left: 5px; border: 0px solid #999;"><span><small>{lnbits_lndhub_invoice_url}</small></span></div>
+            <div style=" margin-top:00px; margin-left: 5px; border: 0px solid #999;"><span><small><span class="lnbits_lndhub_invoice_url"></span></small></span></div>
         </div>
 
         <div style="margin:15px 0px 0px 40px; float:left; width:550px;">
@@ -151,7 +159,7 @@ page[size="A4"][layout="landscape"] {
                 This QR code allows the user to access the web interface of a LNBits Wallet and to use all its features. Make payments, manage invoices, activate and disactivate extensions, API access codes and everything you may need to control the features of your LNBits lightning wallet. 
             </div>
             <div style="width:140px; height:110px; float:left; margin-left:20px;  text-align: center;">
-                <span>{lndhub_admin_url}</span><br> 
+                <span class="lnbits_lndhub_invoice_url_qr_svg"></span><br> 
                 <small>LndHub Invoice URL</small>
             </div>
         </div>
@@ -179,8 +187,8 @@ page[size="A4"][layout="landscape"] {
                 <small>Lightning Address</small>
             </div>
             <div style="width:120px; height:120px; float:left; margin-left:20px;  text-align: center;">
-                <span>{lnbits_lnurlp_qr_svg}</span><br> 
-                <small>LNURL_p</small>
+                <span class="lnbits_lnurlp_qr_svg"></span><br> 
+                <!-- <small><span class="lnbits_lnurlp"></span></small> -->
             </div>
         </div>
 
@@ -193,8 +201,8 @@ page[size="A4"][layout="landscape"] {
             The user can create invoices with that, and see the transactions, but can’t move the funds.
             </div>
             <div style="width:140px; height:120px; float:left; margin-left:20px;  text-align: center;">
-                <span>{lnbits_lnurlw}</span><br> 
-                <small>LNURLw</small>
+                <span class="lnbits_lnurlw_qr_svg"></span><br> 
+                <!-- <small><span class="lnbits_lnurlw"></span></small> -->
             </div>
         </div>
 
@@ -212,5 +220,33 @@ page[size="A4"][layout="landscape"] {
         </div>
     </div>
 </page>
+
+
+<script>
+    function processData(obj,parentKey) {
+        var keys = Object.keys(obj)
+
+        keys.forEach(key => {
+            var val = obj[key]
+
+            if(typeof val != 'object') {
+                var newKey = parentKey ? parentKey + "_" + key : key
+                var els = document.querySelectorAll('.' + newKey)
+
+                console.log(key, newKey, obj[key])
+
+                if(els.length) {
+                    els.forEach(el => {
+                        el.innerHTML = obj[key]
+                    })
+                }
+            } else {
+                processData(val, key)
+            }
+        })
+    }
+
+    processData(data)
+</script>
 </body>
 </html>
