@@ -101,41 +101,48 @@ function enable_extension($user_id, $extension) {
 }
 
 function create_user($username) {
-	$request = request('GET', '/wallet', ['nme' => $username], ['Accept: text/html']);
+	$request = request(
+		'GET', 
+		'/wallet', 
+		[
+			'nme' => $username
+		], 
+		['Accept: text/html']
+	);
 
-	if($request['status'] == 307) {
-		$full_url = DOMAIN_NAME . $request['headers']['location'][0];
-		$url_components = parse_url($full_url);
-		$params = [];
-
-		parse_str($url_components['query'], $params);
-
-		$page_response = request("GET", $request['headers']['location'][0]);
-
-		if($page_response['status'] != 200) {
-			throw new Exception("Error loading wallet page to parse keys.");
-		}
-
-		preg_match('/<strong>Admin key: <\/strong><em>(.*)<\/em><br \/>/', $page_response['raw_response'], $admin_matches);
-
-		if(!isset($admin_matches[1]) || empty($admin_matches[1])) {
-			throw new Exception("Unable to parse Admin API Keys");
-		}
-
-		preg_match('/<strong>Invoice\/read key: <\/strong><em>(.*)<\/em>/', $page_response['raw_response'], $invoice_matches);
-
-		if(!isset($invoice_matches[1]) || empty($invoice_matches[1])) {
-			throw new Exception("Unable to parse Invoice API Keys");
-		}
-
-		return [
-			'user_id' => $params['usr'],
-			'wallet_id' => $params['wal'],
-			'admin_key' => $admin_matches[1],
-			'invoice_key' => $invoice_matches[1],
-			'username' => $username,
-		];
+	if($request['status'] != 307) {
+		throw new Exception("Error creating user.");
 	}
 
-	throw new Exception("Error creating new user.");
+	$full_url = DOMAIN_NAME . $request['headers']['location'][0];
+	$url_components = parse_url($full_url);
+	$params = [];
+
+	parse_str($url_components['query'], $params);
+
+	$page_response = request("GET", $request['headers']['location'][0]);
+
+	if($page_response['status'] != 200) {
+		throw new Exception("Error loading wallet page to parse keys.");
+	}
+
+	preg_match('/<strong>Admin key: <\/strong><em>(.*)<\/em><br \/>/', $page_response['raw_response'], $admin_matches);
+
+	if(!isset($admin_matches[1]) || empty($admin_matches[1])) {
+		throw new Exception("Unable to parse Admin API Keys");
+	}
+
+	preg_match('/<strong>Invoice\/read key: <\/strong><em>(.*)<\/em>/', $page_response['raw_response'], $invoice_matches);
+
+	if(!isset($invoice_matches[1]) || empty($invoice_matches[1])) {
+		throw new Exception("Unable to parse Invoice API Keys");
+	}
+
+	return [
+		'user_id' => $params['usr'],
+		'wallet_id' => $params['wal'],
+		'admin_key' => $admin_matches[1],
+		'invoice_key' => $invoice_matches[1],
+		'username' => $username,
+	];
 }
