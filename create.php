@@ -11,28 +11,38 @@ include "./lib/full/qrlib.php";
 
 // the main function
 function main($card_uid) {
-
+	// clean up the user input
 	$card_uid = strtoupper(trim($card_uid));
 
+	// card UIDs must be even length, or hex2bin() will complain
 	if(strlen($card_uid) % 2 !== 0) {
 		throw new Exception("Card UID invalid length"); 
 	}
 
-
+	// convert the hex input
 	$card_uid_bin = hex2bin($card_uid);
 
+	// bad conversion, user input sucks
 	if(!$card_uid_bin) {
 		throw new Exception("Card UID is not valid");
 	}
 
+	// card UIDs are always 7 bytes
 	if(strlen($card_uid_bin) != 7) {
 		throw new Exception("Card UID invalid length");
 	}
 
+	// this is the output of the script.
+	// everything here will be passed into the template.html 
+	// you can then use these variables in JavaScript to inject into the template.
 	$output = [
 		// just returning the card UID we output at the beginning
 		'card_uid' => $card_uid,
+
+		// used for rendering
 		'timestamp' => date('c'),
+
+		// you can set your own name in constants.php
 		'issuer' => ISSUER_NAME,
 
 		// lnbits user account details
@@ -67,6 +77,7 @@ function main($card_uid) {
 			'k2' => null,
 		],
 
+		// these are the details needed to connect your LNBits Wallet to BlueWallet on mobile
 		'lnbits_lndhub' => [
 			'invoice_url' => null,
 			'invoice_url_qr_svg' => null,
