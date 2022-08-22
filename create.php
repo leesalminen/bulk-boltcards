@@ -124,5 +124,5 @@ try {
 	echo json_encode($card_uid);
 
 } catch (Exception $e) {
-	echo $e->getMessage() . "\n";
+	echo "ERROR: " . $e->getMessage() . "\n";
 }
