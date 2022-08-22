@@ -13,6 +13,12 @@ include "./lib/full/qrlib.php";
 function main($card_uid) {
 
 	$card_uid = strtoupper(trim($card_uid));
+
+	if(strlen($card_uid) % 2 !== 0) {
+		throw new Exception("Card UID invalid length"); 
+	}
+
+
 	$card_uid_bin = hex2bin($card_uid);
 
 	if(!$card_uid_bin) {
