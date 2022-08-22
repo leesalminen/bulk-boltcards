@@ -9,11 +9,10 @@
 
     <script>
         var data_string = "SCRIPT_WILL_REPLACE_ME"
-        
-        var base64_decoded = atob(data_string)
-        var data = JSON.parse(base64_decoded)
 
-        console.log(data)
+        var data = JSON.parse(atob(data_string))
+
+        console.log("DATA RECEIVED!", data)
     </script>
 
     <style>
