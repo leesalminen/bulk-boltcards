@@ -13,10 +13,10 @@ fi
 # convert the json output from PHP to base64
 json_base64=$(printf "%s" "$json_data" | base64)
 
-# inject the json_base64 into the HTML template
+# inject the json_base64 into the HTML template then base64 encode all the HTML
 html_data=$(sed "s|SCRIPT_WILL_REPLACE_ME|$json_base64|" ./template2.html | base64)
 
-#open up this template HTML as a base64 encoded string
+# pass the base64 encoded HTML into the chrome address bar for local rendering.
 if [[ $1 == "mac" ]]
 then
 	open -a "Google Chrome.app" "data:text/html;base64,$html_data" --args --incognito
