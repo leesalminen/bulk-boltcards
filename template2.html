@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<page size="A4" layout="landscape" style="background-image: url('img/front3_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
+<page size="A4" layout="landscape" style="background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/front3_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
 
 
     <div style="width:50%; float:left">
@@ -133,7 +133,7 @@
 </page>
 
 
-<page size="A4" layout="landscape" style="background-image: url('img/back3_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
+<page size="A4" layout="landscape" style="background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/back3_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
     <div style="width:50%; float:left">
         <div style="margin:124px 0px 0px 40px; float:left; width:550px;">
             <h1>account access kit</h1>
@@ -232,8 +232,6 @@
             if(typeof val != 'object') {
                 var newKey = parentKey ? parentKey + "_" + key : key
                 var els = document.querySelectorAll('.' + newKey)
-
-                console.log(key, newKey, obj[key])
 
                 if(els.length) {
                     els.forEach(el => {
