@@ -127,7 +127,7 @@
     <div style="width:50%; float:left">
         <div style="width:400px; height:275px; float:right; border: 0px solid #999; margin:420px 60px 0px 0px; padding:5px; border-radius: 10px; background-color: #FFF">
             <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999;"><h3>card uid / lightning address</h3> </div>
-            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999;"><span>{lnaddress}</div>
+            <div style=" margin-top:0px; margin-left: 20px; border: 0px solid #999;"><span class="lnbits_lnaddress"></div>
             <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999;"><h3>maximum allowed transactions</h3> </div>
             <div style=" margin-top:00px; margin-left: 20px; border: 0px solid #999;"><span class="lnbits_lnurlw_max_uses"></span></div>
             <div style=" margin-top:35px; margin-left: 20px; border: 0px solid #999; float:left; width:210px"><h3>issuer</h3> </div>
@@ -192,14 +192,16 @@
                 Recharge your lightning card by sending to the Lightning Address or LNURLp QR code at least 100 SATs up to 1M SATs per transaction.
             </div>
             <div style="width:120px; height:120px; float:left; margin-left:20px;  text-align: center;">
-                <span>{lnbits_lnaddress}</span>
+                <div class="lnbits_lnaddress_qr_svg"></div>
                 <div style="margin-top:-18px">
                     <small>Lightning Address</small>
                 </div>
             </div>
             <div style="width:120px; height:120px; float:left; margin-left:20px;  text-align: center;">
                 <div class="lnbits_lnurlp_qr_svg"></div>
-                <small>LNBits LNURLp URL</small>
+                <div style="margin-top:-18px">
+                    <small>LNBits LNURLp URL</small>
+                </div>
             </div>
         </div>
 

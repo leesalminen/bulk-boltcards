@@ -91,11 +91,17 @@ function main($card_uid) {
 			'admin_url_qr_svg' => null,
 		],
 
+		'lnbits_lnaddress' => null,
+		'lnbits_lnaddress_qr_svg' => null,
+
 		// this just validates that everything worked as intended. true means good. false means no bueno
 		'lnurlp_activated' => false,
 		'lnurlw_activated' => false,
 		'boltcard_activated' => false,
 		'lndhub_activated' => false,
+
+		// TODO :: implement this extension once PR is approved that fixes things
+		'lnaddress_activated' => false,
 	];
 
 	$output['support_url_qr_svg'] = QRcode::svg($output['support_url'], uniqid(), false, QR_ECLEVEL_L, 110); 
@@ -131,6 +137,10 @@ function main($card_uid) {
 	$output['lnbits_lndhub']['admin_url'] = "lndhub://admin:" . $user['admin_key'] . "@" . DOMAIN_NAME . "/lndhub/ext/";
 	$output['lnbits_lndhub']['admin_url_qr_svg'] = QRcode::svg($output['lnbits_lndhub']['admin_url'], uniqid(), false, QR_ECLEVEL_L, 110); 
 
+	// TODO :: this is just a placeholder for now
+	$output['lnaddress_activated'] = false;
+	$output['lnbits_lnaddress'] = $user['username'] . '@' . DOMAIN_NAME;
+	$output['lnbits_lnaddress_qr_svg'] = QRcode::svg($output['lnbits_lnaddress'], uniqid(), false, QR_ECLEVEL_L, 110);
 
 	return $output;
 }
