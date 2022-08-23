@@ -35,7 +35,7 @@
             margin:5px 0px 5px 0px;
              font-style: italic;
              text-shadow: 1px 1px 3px #CCC;
-             font-size: 22px;
+             font-size: 20px;
 
         }
         h3,h4 {
@@ -43,7 +43,7 @@
 
         }
         small {
-            font-size:8px; 
+            font-size:7px; 
             word-break: break-all;
         } 
         page {
@@ -57,6 +57,11 @@
         page[size="A4"][layout="landscape"] {
           width: 29.7cm;
           height: 21cm;  
+          border-left: 17px solid white;
+          border-right: 10px solid white; 
+          border-top: 10px solid white; 
+          border-bottom: 10px solid white;  
+          box-sizing: border-box; 
         }
 
         #box {
@@ -84,72 +89,64 @@
 
 
     <div style="width:50%; float:left">
-        <div style="margin:110px 0px 0px 65px; float:left; width:500px;">
-            <h2>manage wallet from smartphone</h2>
+
+
+       <div style="margin:130px 0px 0px 35px; float:left; width:500px;">
+            <h1>recharge your bolt card</h1>
         </div>
-        <div id="box" style="width:490px; height:100px; float:left;  margin:0px 0px 0px 65px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential3.png'); background-repeat: no-repeat; background-size: contain;">
-            <div style="width:330px; height:100px; float:left; ">
-                This QR code allows the user to import the LNBits Lightning Wallet on the app Bluewallet.<br><br>
-                Scan it using bluewallet to have the full control of your wallet.
-                <b>NEVER SHARE!</b>
+        <div id="box" style="width:480px; height:140px; float:left; margin:0px 0px 0px 35px; ">
+            <div style="width:220px; height:120px; float:left; ">
+                Recharge your lightning card by sending to the Lightning Address or LNURLp QR code at least 100 SATs up to 1M SATs per transaction.
             </div>
-            <div style="width:140px; height:100px; float:left; margin-left:20px;  text-align: center;">
-                <div class="lnbits_lndhub_admin_url_qr_svg"></div>
+            <div style="width:120px; height:140px; float:left; margin-left:10px;  text-align: center;">
+                <div class="lnbits_lnaddress_qr_svg"></div>
                 <div style="margin-top:-18px">
-                <small>LNDHub Admin URL</small>
+                    <small>Lightning Address</small>
+                </div>
+            </div>
+            <div style="width:120px; height:140px; float:left; margin-left:10px;  text-align: center;">
+                <div class="lnbits_lnurlp_qr_svg"></div>
+                <div style="margin-top:-18px">
+                    <small>LNBits LNURLp URL</small>
                 </div>
             </div>
         </div>
 
 
-        <div style="margin:10px 0px 0px 65px; float:left; width:500px;">
-            <h2 style="">ready-only wallet</h2>
+        <div style="margin:10px 0px 0px 35px; float:left; width:470px;">
+            <h2>lightning point of sale</h2>
         </div>
-        <div id="box" style="width:490px; height:100px; float:left; margin:0px 0px 0px 65px;">
-            <div style="width:330px; height:100px; float:left; ">
-                This QR code allows the user to import the LNBits Lightning Wallet in Read-Only mode. <br><br>
-                The user can create invoices and see the transactions, but can’t move the funds.
-            </div>
-            <div style="width:140px; height:100px; float:left; margin-left:20px;  text-align: center;">
-                <div class="lnbits_lndhub_invoice_url_qr_svg"></div>
-                <div style="margin-top:-18px">
-                 <small>LNDHub Invoice URL</small>
-                </div>
-            </div>
-         </div>
-
-        <div style="margin:10px 0px 0px 65px; float:left; width:500px;">
-            <h2>how to import on bluewallet</h2>
-        </div>
-        <div id="box" style="width:500px; height:220px; float:left; margin:0px 0px 0px 65px; padding:5px; background-color: #FFF;  border-radius: 10px;">
-            After install Bluewallet, click on “<b>Add Wallet</b>”, “<b>Import Wallet</b>”, press on “<b>Read code or import file</b>”, scan the QR code of the “<b>LndHub Admin</b>” or "<b>LndHub Invoice</b>" to import the wallet.
+        <div id="box" style="width:470px; height:140px; float:left; margin:0px 0px 0px 35px; ">
+            <div style="width:330px; height:150px; float:left; ">
+            You can generate invoices and receive payments by scaning this QR code and opening the TPoS interface. Then input the amout to generate the lightning invoice.<br><br>
+            The funds received will be available in your bolt card instantantly. You can share this link with others. 
             
-            <div style="margin-top:10px"></div>
-                <div style="border: 1px solid #E1E1E1; width: 70px; float:left; text-align:center">
-                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_04.png" style="width: 100%; ">
+            </div>
+            <div style="width:120px; height:140px; float:left; margin-left:20px;  text-align: center;">
+                <div class="lnbits_tpos_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                    <small>LNBits TPoS URL</small>
                 </div>
-                <div style="border: 1px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
-                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_05.png" style="width: 100%; ">
-                </div>
-                <div style="border: 1px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
-                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_06.png" style="width: 100%; ">
-                </div>
-                <div style="border: 1px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
-                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_07.png" style="width: 100%; ">
-                </div>
-                    <div style="border: 1px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
-                <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_08.png" style="width: 100%; ">
-                </div>
-                <div style="border: 0px solid #E1E1E1; width: 70px; float:left; text-align:center; margin-left:12px">
-                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_09.png" style="width: 100%; ">
-                </div>
-                <div style="clear:both"></div>
-
+            </div>
         </div>
 
+        <div style="margin:10px 0px 0px 40px; float:left; width:470px;">
+            <h2>paid support</h2>
+        </div>
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 35px;">
+            <div style="width:330px; height:100px; float:left; ">
+            Request support or any other types of inquiries by paying <span class="support_cost_per_sat"></span> sats per word. Please include your mobile number or an email address if you need a reply.  Scan the QR code to open the form, type your message and pay the invoice to send.<br>Reply in 24h ~ 72h. 
+            </div>
+            <div style="width:120px; height:100px; float:left; margin-left:20px;  text-align: center;">
+                <div class="support_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                <small>Paid Support Form</small>
+                </div>
+            </div>
+        </div>
     </div>
     <div style="width:50%; float:left">
-        <div id="box" style="width:400px; height:275px; float:right; margin:420px 60px 0px 0px; padding:5px; border-radius: 10px; background-color: #FFF">
+        <div id="box" style="width:400px; height:260px; float:right; margin:420px 70px 0px 0px;">
             <div style=" margin-top:35px; margin-left: 20px;"><h3>card uid / lightning address</h3> </div>
             <div style=" margin-top:0px; margin-left: 20px;"><span class="lnbits_lnaddress"></div>
             <div style=" margin-top:35px; margin-left: 20px;"><h3>maximum allowed transactions</h3> </div>
@@ -166,10 +163,10 @@
 
 <page size="A4" layout="landscape" style="background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/back3_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
     <div style="width:50%; float:left">
-        <div style="margin:130px 0px 0px 40px; float:left; width:550px;">
+        <div style="margin:120px 0px 0px 40px; float:left; width:470px;">
             <h1>account access kit</h1>
         </div>
-        <div id="box" style="width:500px; height:200px; float:left; margin:0px 0px 0px 40px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential.png'); background-repeat: no-repeat; background-size: contain;">
+        <div id="box" style="width:470px; height:200px; float:left; margin:0px 0px 0px 35px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential.png'); background-repeat: no-repeat; background-size: contain;">
             <div style=" margin-top:0px; margin-left: 5px; float:left; width:50%"><h4>username</h4> </div>
             <div style=" margin-top:0px; margin-left: 5px;"><h4>wallet id</h4> </div>
             <div style=" margin-top:0px; margin-left: 5px; float:left; width:50%"><span><small><span class="lnbits_user_id"></span></small></span></div>
@@ -182,15 +179,15 @@
             <div style=" margin-top:00px; margin-left: 5px;"><span><small><span class="lnbits_lndhub_invoice_url"></span></small></span></div>
         </div>
 
-        <div style="margin:10px 0px 0px 40px; float:left; width:550px;">
+        <div style="margin:15px 0px 0px 35px; float:left; width:470px;">
             <h2>manage wallet from browser</h2>
         </div>
-        <div id="box" style="width:500px; height:100px; float:left; margin:0px 0px 0px 40px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential2.png'); background-repeat: no-repeat; background-size: contain; ">
-            <div style="width:340px; height:100px; float:left; ">
-                This QR code allows the user to access the web interface of a LNBits Wallet. <br><br>Make payments, create invoices, activate and disactivate extensions, API access codes and everything you may need.
-                <b> NEVER SHARE!</b>
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 35px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential2.png'); background-repeat: no-repeat; background-size: contain; ">
+            <div style="width:320px; height:100px; float:left; ">
+                This QR code allows the user to access the web interface of a LNBits Wallet. NEVER SHARE!<br><br>Make payments, create invoices, activate and disactivate extensions, API access codes and everything you may need.
+                
             </div>
-            <div style="width:130px; height:100px; float:left; margin-left:20px;  text-align: center;">
+            <div style="width:120px; height:100px; float:left; margin-left:20px;  text-align: center;">
                 <div class="lnbits_access_url_qr_svg"></div>
                 <div style="margin-top:-18px">
                 <small>LNBits Access URL</small>
@@ -198,16 +195,16 @@
             </div>
         </div>
 
-        <div style="margin:10px 0px 0px 40px; float:left; width:500px;">
+        <div style="margin:15px 0px 0px 35px; float:left; width:470px;">
             <h2>withdraw url</h2>
         </div>
-        <div id="box" style="width:500px; height:100px; float:left; margin:0px 0px 0px 40px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential3.png'); background-repeat: no-repeat; background-size: contain;">
-            <div style="width:340px; height:100px; float:left; ">
-            This QR code allows the user to withdraw all funds available in the wallet. <br><br>
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 35px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential3.png'); background-repeat: no-repeat; background-size: contain;">
+            <div style="width:320px; height:100px; float:left; ">
+            This QR code allows the user to withdraw all funds available in the wallet. NEVER SHARE!<br><br>
             Just scan it with your prefered lightning wallet to import and wait the confirmation.
-            <b>NEVER SHARE!</b>
+
             </div>
-            <div style="width:140px; height:100px; float:left; margin-left:20px;  text-align: center;">
+            <div style="width:120px; height:100px; float:left; margin-left:20px;  text-align: center;">
                 <div class="lnbits_lnurlw_qr_svg"></div>
                 <div style="margin-top:-18px">
                     <small>LNBits LNURLw URL</small>
@@ -218,65 +215,74 @@
     </div>
     <div style="width:50%; float:left">
 
-            <div style="margin:130px 0px 0px 25px; float:left; width:550px;">
-            <h2>lightning point of sale</h2>
+     <div style="margin:120px 0px 0px 20px; float:left; width:465px;">
+            <h2>manage wallet from smartphone</h2>
         </div>
-        <div id="box" style="width:490px; height:150px; float:left; margin:0px 0px 0px 25px; ">
-            <div style="width:330px; height:150px; float:left; ">
-            You can generate invoices and receive payments by scaning this QR code and opening the TPoS interface. Then input the amout to generate the lightning invoice.
-            The funds received will be available in your bolt card instantantly. You can share this link with others. 
+        <div id="box" style="width:470px; height:100px; float:left;  margin:0px 0px 0px 20px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential3.png'); background-repeat: no-repeat; background-size: contain;">
+            <div style="width:320px; height:100px; float:left; ">
+                This QR code allows the user to import the account on Bluewallet.<br><br>
+                Scan it using bBluewallet to have the full control of your wallet.
+                <b>NEVER SHARE!</b>
+            </div>
+            <div style="width:120px; height:100px; float:left; margin-left:20px;  text-align: center;">
+                <div class="lnbits_lndhub_admin_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                <small>LNDHub Admin URL</small>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="margin:15px 0px 0px 20px; float:left; width:470px;">
+            <h2 style="">ready-only wallet</h2>
+        </div>
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 20px;">
+            <div style="width:320px; height:100px; float:left; ">
+                This QR code allows the user to import the Wallet in Read-Only mode on Bluewallet. <br><br>
+                The user can create invoices and see the transactions, but can’t move the funds.
+            </div>
+            <div style="width:120px; height:100px; float:left; margin-left:20px;  text-align: center;">
+                <div class="lnbits_lndhub_invoice_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                 <small>LNDHub Invoice URL</small>
+                </div>
+            </div>
+         </div>
+
+        <div style="margin:15px 0px 0px 20px; float:left; width:470px;">
+            <h2>how to import on bluewallet</h2>
+        </div>
+        <div id="box" style="width:470px; height:200px; float:left; margin:0px 0px 0px 20px; ">
+            After install Bluewallet, click on “<b>Add Wallet</b>”, “<b>Import Wallet</b>”, press on “<b>Read code or import file</b>”, scan the QR code of the “<b>LndHub Admin</b>” or "<b>LndHub Invoice</b>" to import the wallet.
             
-            </div>
-            <div style="width:140px; height:150px; float:left; margin-left:20px;  text-align: center;">
-                <div class="lnbits_tpos_url_qr_svg"></div>
-                <div style="margin-top:-18px">
-                    <small>LNBits TPoS URL</small>
+            <div style="margin-top:5px"></div>
+                <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_04.png" style="width: 100%; ">
                 </div>
-            </div>
-        </div>
+                <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_05.png" style="width: 100%; ">
+                </div>
+                <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_06.png" style="width: 100%; ">
+                </div>
+                <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_07.png" style="width: 100%; ">
+                </div>
+                    <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_08.png" style="width: 100%; ">
+                </div>
+                <div style="border: 0px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_09.png" style="width: 100%; ">
+                </div>
+                <div style="clear:both"></div>
 
-
-        <div style="margin:10px 0px 0px 25px; float:left; width:500px;">
-            <h1>recharge your bolt card</h1>
-        </div>
-        <div id="box" style="width:490px; height:150px; float:left; margin:0px 0px 0px 25px; ">
-            <div style="width:200px; height:120px; float:left; ">
-                Recharge your lightning card by sending to the Lightning Address or LNURLp QR code at least 100 SATs up to 1M SATs per transaction.
-            </div>
-            <div style="width:120px; height:120px; float:left; margin-left:20px;  text-align: center;">
-                <div class="lnbits_lnaddress_qr_svg"></div>
-                <div style="margin-top:-18px">
-                    <small>Lightning Address</small>
-                </div>
-            </div>
-            <div style="width:120px; height:120px; float:left; margin-left:20px;  text-align: center;">
-                <div class="lnbits_lnurlp_qr_svg"></div>
-                <div style="margin-top:-18px">
-                    <small>LNBits LNURLp URL</small>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin:10px 0px 0px 25px; float:left; width:500px;">
-            <h2>paid support</h2>
-        </div>
-        <div id="box" style="width:490px; height:100px; float:left; margin:0px 0px 0px 25px;">
-            <div style="width:330px; height:100px; float:left; ">
-            Request support or any other types of inquiries by paying <span class="support_cost_per_sat"></span> sats per word. Please include your mobile number or an email address if you need a reply.  Scan the QR code to open the form, type your message and pay the invoice to send.<br>Reply in 24h ~ 72h. 
-            </div>
-            <div style="width:130px; height:100px; float:left; margin-left:20px;  text-align: center;">
-                <div class="support_url_qr_svg"></div>
-                <div style="margin-top:-18px">
-                <small>Paid Support Form</small>
-                </div>
-            </div>
         </div>
 
 
         
     </div>
                 <div style="clear:both"></div>
-   <div style="margin-top:20px; width:1180px">
+   <div style="margin-top:5px; width:1180px">
    <div style="padding-top:25px; width:160px; margin-left:24px; float:left; height:80px; color: #FFF; text-shadow: 2px 2px 4px #333;"><b>TERMS OF USE</b></div>
    <div style="padding-top:15px; width:900px; color: #FFF; float:left; font-size:10px; height:80px; text-shadow: 2px 2px 4px #333;">
    <b>WE PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
