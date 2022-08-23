@@ -11,3 +11,6 @@ define("ISSUER_NAME", "Praia Bitcoin");
 // pass in the URL to your support ticket screen
 define("SUPPORT_URL", "https://lnbits.bitcoinjungle.app/lnticket/C83efGg3P9Xp5fSL3vApmt");
 define("SUPPORT_COST_PER_SAT", 10);
+
+// this is used for TPoS, you can set it to whatever shitcoin you'd like
+define("FIAT_CURRENCY", "USD");

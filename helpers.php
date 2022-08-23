@@ -37,6 +37,32 @@ function create_boltcard($card_uid, $wallet_id, $withdraw_id, $api_key) {
 	];
 }
 
+function create_tpos($wallet_id, $api_key, $fiat_currency) {
+	$request = request(
+		"POST",
+		"/tpos/api/v1/tposs",
+		[],
+		['X-Api-Key: ' . $api_key],
+		[
+			'wallet' => $wallet_id,
+			'name' => 'My Point of Sale',
+			'currency' => $fiat_currency,
+			'tip_wallet' => $wallet_id,
+			'tip_options' => json_encode([
+				10,
+				15,
+				20,
+			]),
+		]
+	);
+
+	if($request['status'] != 201) {
+		throw new Exception("Error creating TPoS");
+	}
+
+	return $request['response']['id'];
+}
+
 function create_lnurlw_link($api_key) {
 
 	$request = request(

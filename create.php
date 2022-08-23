@@ -7,7 +7,7 @@ require_once 'constants.php';
 require_once 'helpers.php';
 
 // import qr code lib
-include "./lib/full/qrlib.php"; 
+require_once "./lib/full/qrlib.php"; 
 
 // the main function
 function main($card_uid) {
@@ -94,11 +94,15 @@ function main($card_uid) {
 		'lnbits_lnaddress' => null,
 		'lnbits_lnaddress_qr_svg' => null,
 
+		'lnbits_tpos_url' => null,
+		'lnbits_tpos_url_qr_svg' => null,
+
 		// this just validates that everything worked as intended. true means good. false means no bueno
 		'lnurlp_activated' => false,
 		'lnurlw_activated' => false,
 		'boltcard_activated' => false,
 		'lndhub_activated' => false,
+		'tpos_activated' => false,
 
 		// TODO :: implement this extension once PR is approved that fixes things
 		'lnaddress_activated' => false,
@@ -136,6 +140,11 @@ function main($card_uid) {
 	$output['lnbits_lndhub']['invoice_url_qr_svg'] = QRcode::svg($output['lnbits_lndhub']['invoice_url'], uniqid(), false, QR_ECLEVEL_L, 110); 
 	$output['lnbits_lndhub']['admin_url'] = "lndhub://admin:" . $user['admin_key'] . "@" . DOMAIN_NAME . "/lndhub/ext/";
 	$output['lnbits_lndhub']['admin_url_qr_svg'] = QRcode::svg($output['lnbits_lndhub']['admin_url'], uniqid(), false, QR_ECLEVEL_L, 110); 
+
+	$output['tpos_activated'] = enable_extension($user['user_id'], 'tpos');
+	$tpos_id = create_tpos($user['wallet_id'], $user['admin_key'], FIAT_CURRENCY);
+	$output['lnbits_tpos_url'] = DOMAIN_NAME . '/tpos/' . $tpos_id;
+	$output['lnbits_tpos_url_qr_svg'] = QRcode::svg($output['lnbits_tpos_url'], uniqid(), false, QR_ECLEVEL_L, 110);
 
 	// TODO :: this is just a placeholder for now
 	$output['lnaddress_activated'] = false;
