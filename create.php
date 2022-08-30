@@ -21,44 +21,44 @@ use \FurqanSiddiqui\BIP39\BIP39;
 
 // the main function
 function main($card_uid) {
-	// clean up the user input
-	$card_uid = strtoupper(trim($card_uid));
+  // clean up the user input
+  $card_uid = strtoupper(trim($card_uid));
 
-	// card UIDs must be even length, or hex2bin() will complain
-	if(strlen($card_uid) % 2 !== 0) {
-		throw new Exception("Card UID invalid length"); 
-	}
+  // card UIDs must be even length, or hex2bin() will complain
+  if(strlen($card_uid) % 2 !== 0) {
+  	throw new Exception("Card UID invalid length"); 
+  }
 
-	// convert the hex input
-	$card_uid_bin = hex2bin($card_uid);
+  // convert the hex input
+  $card_uid_bin = hex2bin($card_uid);
 
-	// bad conversion, user input sucks
-	if(!$card_uid_bin) {
-		throw new Exception("Card UID is not valid");
-	}
+  // bad conversion, user input sucks
+  if(!$card_uid_bin) {
+  	throw new Exception("Card UID is not valid");
+  }
 
-	// card UIDs are always 7 bytes
-	if(strlen($card_uid_bin) != 7) {
-		throw new Exception("Card UID invalid length");
-	}
+  // card UIDs are always 7 bytes
+  if(strlen($card_uid_bin) != 7) {
+  	throw new Exception("Card UID invalid length");
+  }
 
   // set the wordlist language for onchain generation
   switch (LANGUAGE) {
     case 'en':
-      $wordlist_language = Wordlist::English();
-      break;
+    $wordlist_language = Wordlist::English();
+    break;
 
     case 'es':
-      $wordlist_language = Wordlist::Spanish();
-      break;
+    $wordlist_language = Wordlist::Spanish();
+    break;
 
     case 'pr':
-      $wordlist_language = Wordlist::Portuguese();
-      break;
+    $wordlist_language = Wordlist::Portuguese();
+    break;
 
     default:
-      throw new Exception("Invalid language selection");
-      break;
+    throw new Exception("Invalid language selection");
+    break;
   }
 
   // generate the on-chain mnemonic phrase
@@ -138,7 +138,7 @@ function main($card_uid) {
       'k0' => null,
       'k1' => null,
       'k2' => null,
-   ],
+    ],
 
     // these are the details needed to connect your LNBits Wallet to BlueWallet on mobile
     'lnbits_lndhub' => [
