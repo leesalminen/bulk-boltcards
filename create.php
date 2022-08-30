@@ -67,8 +67,13 @@ function main($card_uid) {
     	->wordlist($wordlist_language)
     	->mnemonic();
 
-    // take that mnemonic phrase and derive a zpub, & bech32 encoded address from path m/0'/0'/0'
-    $onchain_info = json_decode(shell_exec('./lib/hd-wallet-derive/hd-wallet-derive.php --mnemonic="' . implode(" ", $mnemonic->words) . '" -g --key-type=z --numderive=1 --preset=bitcoincore --cols=all --format=json --addr-type=bech32'));
+  // take that mnemonic phrase and derive a zpub, & bech32 encoded address from path m/0'/0'/0'
+  $onchain_info = json_decode(shell_exec(
+    './lib/hd-wallet-derive/hd-wallet-derive.php --mnemonic="' . 
+    implode(" ", $mnemonic->words) . 
+    '" -g --key-type=z --numderive=1 --preset=bitcoincore' .
+    ' --cols=all --format=json --addr-type=bech32'
+  ));
 
 	// this is the output of the script.
 	// everything here will be passed into the template.html 
