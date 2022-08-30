@@ -1,0 +1,11 @@
+{
+    "name": "dan-da/tester-php",
+    "bin": ["tester.php"],
+
+    "require": {
+        "dan-da/strictmode-php": "^1.0"
+    },
+
+    "require-dev": {
+    }
+}
