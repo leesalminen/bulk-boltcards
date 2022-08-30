@@ -175,11 +175,11 @@ function main($card_uid) {
 		'lnaddress_activated' => false,
 	];
 
-	$output['support_url_qr_svg'] = QRcode::svg($output['support_url'], uniqid(), false, QR_ECLEVEL_L, 110);
+	$output['support_url_qr_svg'] = create_qr($output['support_url']);
   
-  $output['onchain']['bip39_qr_svg'] = QRcode::svg(implode(' ', $output['onchain']['mnemonic']), uniqid(), false, QR_ECLEVEL_L, 110);
-  $output['onchain']['zpub_qr_svg'] = QRcode::svg($output['onchain']['zpub'], uniqid(), false, QR_ECLEVEL_L, 110);
-  $output['onchain']['address_qr_svg'] = QRcode::svg($output['onchain']['address'], uniqid(), false, QR_ECLEVEL_L, 110);
+  $output['onchain']['bip39_qr_svg'] = create_qr(implode(' ', $output['onchain']['mnemonic']));
+  $output['onchain']['zpub_qr_svg'] = create_qr($output['onchain']['zpub']);
+  $output['onchain']['address_qr_svg'] = create_qr($output['onchain']['address']);
 
 	$user = create_user($card_uid);
 	$output['lnbits_user_id'] = $user['user_id'];
@@ -188,34 +188,34 @@ function main($card_uid) {
 	$output['lnbits_admin_key'] = $user['admin_key'];
 	$output['lnbits_invoice_key'] = $user['invoice_key'];
 	$output['lnbits_access_url'] = DOMAIN_NAME . '/wallet?usr=' . $user['user_id'] . '&wal=' . $user['wallet_id'];
-	$output['lnbits_access_url_qr_svg'] = QRcode::svg($output['lnbits_access_url'], uniqid(), false, QR_ECLEVEL_L, 110); 
+	$output['lnbits_access_url_qr_svg'] = create_qr($output['lnbits_access_url']); 
 
 	$output['lnurlp_activated'] = enable_extension($user['user_id'], 'lnurlp');
 	$output['lnbits_lnurlp'] = create_lnurlp_link($user['admin_key']);
-	$output['lnbits_lnurlp_qr_svg'] = QRcode::svg($output['lnbits_lnurlp'], uniqid(), false, QR_ECLEVEL_L, 110); 
+	$output['lnbits_lnurlp_qr_svg'] = create_qr($output['lnbits_lnurlp']); 
 
 	$output['lnurlw_activated'] = enable_extension($user['user_id'], 'withdraw');
 	$lnurlw = create_lnurlw_link($user['admin_key']);
 	$output['lnbits_lnurlw'] = $lnurlw['lnurl'];
-	$output['lnbits_lnurlw_qr_svg'] = QRcode::svg($output['lnbits_lnurlw'], uniqid(), false, QR_ECLEVEL_L, 110); 
+	$output['lnbits_lnurlw_qr_svg'] = create_qr($output['lnbits_lnurlw']); 
 	$output['lnbits_lnurlw_max_uses'] = $lnurlw['uses'];
 
 	$output['boltcard_activated'] = enable_extension($user['user_id'], 'boltcards');
 	$boltcard = create_boltcard($card_uid, $user['wallet_id'], $user['admin_key']);
 	$output['lnbits_boltcard'] = $boltcard;
 	$output['lnbits_boltcard']['auth_link'] = DOMAIN_NAME . '/boltcards/api/v1/auth?a=' . $boltcard['otp'];
-	$output['lnbits_boltcard']['auth_link_qr_svg'] = QRcode::svg($output['lnbits_boltcard']['auth_link'], uniqid(), false, QR_ECLEVEL_L, 110); 
+	$output['lnbits_boltcard']['auth_link_qr_svg'] = create_qr($output['lnbits_boltcard']['auth_link']); 
 
 	$output['lndhub_activated'] = enable_extension($user['user_id'], 'lndhub');
 	$output['lnbits_lndhub']['invoice_url'] = "lndhub://invoice:" . $user['invoice_key'] . "@" . DOMAIN_NAME . "/lndhub/ext/";
-	$output['lnbits_lndhub']['invoice_url_qr_svg'] = QRcode::svg($output['lnbits_lndhub']['invoice_url'], uniqid(), false, QR_ECLEVEL_L, 110); 
+	$output['lnbits_lndhub']['invoice_url_qr_svg'] = create_qr($output['lnbits_lndhub']['invoice_url']); 
 	$output['lnbits_lndhub']['admin_url'] = "lndhub://admin:" . $user['admin_key'] . "@" . DOMAIN_NAME . "/lndhub/ext/";
-	$output['lnbits_lndhub']['admin_url_qr_svg'] = QRcode::svg($output['lnbits_lndhub']['admin_url'], uniqid(), false, QR_ECLEVEL_L, 110); 
+	$output['lnbits_lndhub']['admin_url_qr_svg'] = create_qr($output['lnbits_lndhub']['admin_url']); 
 
 	$output['tpos_activated'] = enable_extension($user['user_id'], 'tpos');
 	$tpos_id = create_tpos($user['wallet_id'], $user['admin_key'], FIAT_CURRENCY);
 	$output['lnbits_tpos_url'] = DOMAIN_NAME . '/tpos/' . $tpos_id;
-	$output['lnbits_tpos_url_qr_svg'] = QRcode::svg($output['lnbits_tpos_url'], uniqid(), false, QR_ECLEVEL_L, 110);
+	$output['lnbits_tpos_url_qr_svg'] = create_qr($output['lnbits_tpos_url']);
 
 	$output['watchonly_activated'] = enable_extension($user['user_id'], 'watchonly');
 	$watchonly_id = create_watchonly($output['onchain']['zpub'], $user['admin_key']);
@@ -223,12 +223,12 @@ function main($card_uid) {
 	$output['tipjar_activated'] = enable_extension($user['user_id'], 'tipjar');
 	$tipjar_id = create_tipjar($user['wallet_id'], $watchonly_id, $user['admin_key']);
 	$output['lnbits_tipjar_url'] = DOMAIN_NAME . '/tipjar/' . $tipjar_id;
-	$output['lnbits_tipjar_url_qr_svg'] = QRcode::svg($output['lnbits_tipjar_url'], uniqid(), false, QR_ECLEVEL_L, 110);
+	$output['lnbits_tipjar_url_qr_svg'] = create_qr($output['lnbits_tipjar_url']);
 
 	// TODO :: this is just a placeholder for now
 	$output['lnaddress_activated'] = false;
 	$output['lnbits_lnaddress'] = $user['username'] . '@' . str_replace("https://", "", DOMAIN_NAME);
-	$output['lnbits_lnaddress_qr_svg'] = QRcode::svg($output['lnbits_lnaddress'], uniqid(), false, QR_ECLEVEL_L, 110);
+	$output['lnbits_lnaddress_qr_svg'] = create_qr($output['lnbits_lnaddress']);
 
 	return $output;
 }

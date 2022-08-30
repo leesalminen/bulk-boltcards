@@ -223,3 +223,7 @@ function create_user($username) {
 		'username' => $username,
 	];
 }
+
+function create_qr($string, $size = 110) {
+	return QRcode::svg($string, uniqid(), false, QR_ECLEVEL_L, $size);
+}
