@@ -96,10 +96,16 @@ function main($card_uid) {
 
 		// all the details about the onchain wallet we generated
 		'onchain' => [
+      'path' => $onchain_info->path,
+
 			'mnemonic' => $mnemonic->words,
-			'path' => $onchain_info->path,
+      'bip39_qr_svg' => null,
+
 			'address' => $onchain_info->address,
+      'address_qr_svg' => null,
+
 			'zpub' => $onchain_info->xpub,
+      'zpub_qr_svg' => null,
 		],
 
 		// lnbits user account details
@@ -169,7 +175,11 @@ function main($card_uid) {
 		'lnaddress_activated' => false,
 	];
 
-	$output['support_url_qr_svg'] = QRcode::svg($output['support_url'], uniqid(), false, QR_ECLEVEL_L, 110); 
+	$output['support_url_qr_svg'] = QRcode::svg($output['support_url'], uniqid(), false, QR_ECLEVEL_L, 110);
+  
+  $output['onchain']['bip39_qr_svg'] = QRcode::svg(implode(' ', $output['onchain']['mnemonic']), uniqid(), false, QR_ECLEVEL_L, 110);
+  $output['onchain']['zpub_qr_svg'] = QRcode::svg($output['onchain']['zpub'], uniqid(), false, QR_ECLEVEL_L, 110);
+  $output['onchain']['address_qr_svg'] = QRcode::svg($output['onchain']['address'], uniqid(), false, QR_ECLEVEL_L, 110);
 
 	$user = create_user($card_uid);
 	$output['lnbits_user_id'] = $user['user_id'];
