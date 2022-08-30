@@ -1,0 +1,29 @@
+{
+    "name": "dan-da/hd-wallet-derive",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/pointless-sudo/bitwasp-bitcoin-php.git"
+        }
+    ],
+    "require": {
+        "bitwasp/bitcoin": "dev-master",
+        "ext-json": "*",
+        "php": ">=5.5",
+        "dan-da/texttable-php": "1.0.3",
+        "dan-da/strictmode-php": "1.0.1",
+        "dan-da/coinparams": "0.2.9",
+        "olegabr/keccak": "1.0.4"
+    },
+
+    "require-dev": {
+        "dan-da/tester-php": "1.0.4"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "HDWalletDerive\\": "src"
+        }
+    }
+}
