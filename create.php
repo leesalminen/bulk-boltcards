@@ -42,9 +42,9 @@ function main($card_uid) {
 		throw new Exception("Card UID invalid length");
 	}
 
-	// set the wordlist language for onchain generation
-	switch (LANGUAGE) {
-	  case 'en':
+  // set the wordlist language for onchain generation
+  switch (LANGUAGE) {
+    case 'en':
       $wordlist_language = Wordlist::English();
       break;
 
@@ -58,10 +58,10 @@ function main($card_uid) {
 
     default:
       throw new Exception("Invalid language selection");
-    break;
+      break;
   }
 
-	// generate the on-chain mnemonic phrase
+  // generate the on-chain mnemonic phrase
   $mnemonic = (new BIP39(24))
   ->generateSecureEntropy() 
   ->wordlist($wordlist_language)
@@ -79,22 +79,22 @@ function main($card_uid) {
   // everything here will be passed into the template.html 
   // you can then use these variables in JavaScript to inject into the template.
   $output = [
-		// just returning the card UID we output at the beginning
+    // just returning the card UID we output at the beginning
     'card_uid' => $card_uid,
 
-		// used for rendering
+    // used for rendering
     'timestamp' => date('M j, Y'),
 
-		// you can set your own name in constants.php
+    // you can set your own name in constants.php
     'issuer' => ISSUER_NAME,
     'language' => LANGUAGE,
 
-		// you can set this to whatever you want in constants.php
+    // you can set this to whatever you want in constants.php
     'support_url' => SUPPORT_URL,
     'support_url_qr_svg' => null,
     'support_cost_per_sat' => SUPPORT_COST_PER_SAT,
 
-  		// all the details about the onchain wallet we generated
+    // all the details about the onchain wallet we generated
     'onchain' => [
       'path' => $onchain_info->path,
 
@@ -108,71 +108,71 @@ function main($card_uid) {
       'zpub_qr_svg' => null,
     ],
 
-  	// lnbits user account details
+    // lnbits user account details
     'lnbits_user_id' => null,
     'lnbits_wallet_id' => null,
     'lnbits_username' => null,
     'lnbits_invoice_key' => null,
     'lnbits_admin_key' => null,
 
-  	// this is the url a user can use to access their account
+    // this is the url a user can use to access their account
     'lnbits_access_url' => null,
     'lnbits_access_url_qr_svg' => null,
 
-  	// this is a bech32 encoded LNURLp string. Users can use this to receive sats in their wallet.
+    // this is a bech32 encoded LNURLp string. Users can use this to receive sats in their wallet.
     'lnbits_lnurlp' => null,
     'lnbits_lnurlp_qr_svg' => null,
 
-  	// this is a bech32 encoded LNURLw string. Users can use this to send sats from their wallet.
+    // this is a bech32 encoded LNURLw string. Users can use this to send sats from their wallet.
     'lnbits_lnurlw' => null,
     'lnbits_lnurlw_qr_svg' => null,
     'lnbits_lnurlw_max_uses' => null,
 
-  	// this is all the details about the boltcard we created in LNBits.
+    // this is all the details about the boltcard we created in LNBits.
     'lnbits_boltcard' => [
-  		// you'll turn the auth_link into a qr code that the person configuring the card scans with the android app `bolt-nfc-android-app`
-     'auth_link' => null,
-     'auth_link_qr_svg' => null,
+      // you'll turn the auth_link into a qr code that the person configuring the card scans with the android app `bolt-nfc-android-app`
+      'auth_link' => null,
+      'auth_link_qr_svg' => null,
 
-     'otp' => null,
-     'k0' => null,
-     'k1' => null,
-     'k2' => null,
+      'otp' => null,
+      'k0' => null,
+      'k1' => null,
+      'k2' => null,
    ],
 
-  	// these are the details needed to connect your LNBits Wallet to BlueWallet on mobile
-   'lnbits_lndhub' => [
-     'invoice_url' => null,
-     'invoice_url_qr_svg' => null,
+    // these are the details needed to connect your LNBits Wallet to BlueWallet on mobile
+    'lnbits_lndhub' => [
+      'invoice_url' => null,
+      'invoice_url_qr_svg' => null,
 
-     'admin_url' => null,
-     'admin_url_qr_svg' => null,
-   ],
+      'admin_url' => null,
+      'admin_url_qr_svg' => null,
+    ],
 
-  	// this is your Lightning Address, that is just a pretty way of writing a LNURL
-  	// TODO :: they gotta fix the extension
-   'lnbits_lnaddress' => null,
-   'lnbits_lnaddress_qr_svg' => null,
+    // this is your Lightning Address, that is just a pretty way of writing a LNURL
+    // TODO :: they gotta fix the extension
+    'lnbits_lnaddress' => null,
+    'lnbits_lnaddress_qr_svg' => null,
 
-  	// This is your point of sale for your wallet
-   'lnbits_tpos_url' => null,
-   'lnbits_tpos_url_qr_svg' => null,
+    // This is your point of sale for your wallet
+    'lnbits_tpos_url' => null,
+    'lnbits_tpos_url_qr_svg' => null,
 
-  	// This is your tip link for your wallet
-   'lnbits_tipjar_url' => null,
-   'lnbits_tipjar_url_qr_svg' => null,
+    // This is your tip link for your wallet
+    'lnbits_tipjar_url' => null,
+    'lnbits_tipjar_url_qr_svg' => null,
 
-  	// this just validates that everything worked as intended. true means good. false means no bueno
-   'lnurlp_activated' => false,
-   'lnurlw_activated' => false,
-   'boltcard_activated' => false,
-   'lndhub_activated' => false,
-   'tpos_activated' => false,
-   'watchonly_activated' => false,
-   'tipjar_activated' => false,
+    // this just validates that everything worked as intended. true means good. false means no bueno
+    'lnurlp_activated' => false,
+    'lnurlw_activated' => false,
+    'boltcard_activated' => false,
+    'lndhub_activated' => false,
+    'tpos_activated' => false,
+    'watchonly_activated' => false,
+    'tipjar_activated' => false,
 
-  	// TODO :: implement this extension once PR is approved that fixes things
-   'lnaddress_activated' => false,
+    // TODO :: implement this extension once PR is approved that fixes things
+    'lnaddress_activated' => false,
   ];
 
   $output['support_url_qr_svg'] = create_qr($output['support_url']);
