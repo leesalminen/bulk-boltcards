@@ -14,3 +14,6 @@ define("SUPPORT_COST_PER_SAT", 10);
 
 // this is used for TPoS, you can set it to whatever shitcoin you'd like
 define("FIAT_CURRENCY", "USD");
+
+// available languages: en, es, pr
+define("LANGUAGE", "pr");

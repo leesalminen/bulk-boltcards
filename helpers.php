@@ -12,30 +12,40 @@ function create_tipjar($wallet_id, $watchonly_id, $api_key) {
 			'wallet' => $wallet_id,
 			'chain' => true,
 			'onchain' => $watchonly_id,
+			'name' => 'My Tip Jar',
 		]
 	);
 
 	if($request['status'] != 200) {
-		throw new Exception("Error creating watch only wallet");
+		throw new Exception("Error creating tipjar");
 	}
 
 	return $request['response']['id'];
 }
 
-function create_watchonly($xpub, $api_key) {
+function create_watchonly($zpub, $api_key) {
+	$config_request = request(
+		"GET",
+		"/watchonly/api/v1/config",
+		[],
+		['X-Api-Key: ' . $api_key],
+	);
+
 	$request = request(
 		"POST",
 		"/watchonly/api/v1/wallet",
 		[],
 		['X-Api-Key: ' . $api_key],
 		[
-			'masterpub' => $xpub,
+			'masterpub' => $zpub,
 			'network' => 'Mainnet',
 			'title' => 'My On-Chain Wallet',
+			'is_unique' => false,
 		]
 	);
 
 	if($request['status'] != 200) {
+		var_dump($request);
 		throw new Exception("Error creating watch only wallet");
 	}
 

@@ -7,7 +7,18 @@ require_once 'constants.php';
 require_once 'helpers.php';
 
 // import qr code lib
-require_once "./lib/full/qrlib.php"; 
+require_once "./lib/qrcode/qrlib.php"; 
+
+// import bip39 mnemonic generator
+require_once "./lib/bip39-mnemonic/Exception/BIP39_Exception.php";
+require_once "./lib/bip39-mnemonic/Exception/MnemonicException.php";
+require_once "./lib/bip39-mnemonic/Exception/WordListException.php";
+require_once "./lib/bip39-mnemonic/WordList.php";
+require_once "./lib/bip39-mnemonic/Mnemonic.php";
+require_once "./lib/bip39-mnemonic/BIP39.php";
+use \FurqanSiddiqui\BIP39\Wordlist;
+
+use \FurqanSiddiqui\BIP39\BIP39;
 
 // the main function
 function main($card_uid) {
@@ -32,6 +43,33 @@ function main($card_uid) {
 		throw new Exception("Card UID invalid length");
 	}
 
+	// set the wordlist language for onchain
+	switch (LANGUAGE) {
+		case 'en':
+			$wordlist_language = Wordlist::English();
+			break;
+
+		case 'es':
+			$wordlist_language = Wordlist::Spanish();
+			break;
+
+		case 'pr':
+			$wordlist_language = Wordlist::Portuguese();
+			break;
+		
+		default:
+			throw new Exception("Invalid language selection");
+			break;
+	}
+
+	// generate the on-chain stuff
+	$mnemonic = (new BIP39(24))
+    	->generateSecureEntropy() 
+    	->wordlist($wordlist_language)
+    	->mnemonic();
+
+    $onchain_info = json_decode(shell_exec('./lib/hd-wallet-derive/hd-wallet-derive.php --mnemonic="' . implode(" ", $mnemonic->words) . '" -g --key-type=z --numderive=1 --preset=bitcoincore --cols=all --format=json --addr-type=bech32'));
+
 	// this is the output of the script.
 	// everything here will be passed into the template.html 
 	// you can then use these variables in JavaScript to inject into the template.
@@ -44,11 +82,19 @@ function main($card_uid) {
 
 		// you can set your own name in constants.php
 		'issuer' => ISSUER_NAME,
+		'language' => LANGUAGE,
 
 		// you can set this to whatever you want in constants.php
 		'support_url' => SUPPORT_URL,
 		'support_url_qr_svg' => null,
 		'support_cost_per_sat' => SUPPORT_COST_PER_SAT,
+
+		'onchain' => [
+			'mnemonic' => $mnemonic->words,
+			'path' => $onchain_info->path,
+			'address' => $onchain_info->address,
+			'zpub' => $onchain_info->xpub,
+		],
 
 		// lnbits user account details
 		'lnbits_user_id' => null,
@@ -151,11 +197,8 @@ function main($card_uid) {
 	$output['lnbits_tpos_url'] = DOMAIN_NAME . '/tpos/' . $tpos_id;
 	$output['lnbits_tpos_url_qr_svg'] = QRcode::svg($output['lnbits_tpos_url'], uniqid(), false, QR_ECLEVEL_L, 110);
 
-	// TODO :: onchain stuff
-	$zpub = '';
-
 	$output['watchonly_activated'] = enable_extension($user['user_id'], 'watchonly');
-	$watchonly_id = create_watchonly($zpub, $user['admin_key']);
+	$watchonly_id = create_watchonly($output['onchain']['zpub'], $user['admin_key']);
 
 	$output['tipjar_activated'] = enable_extension($user['user_id'], 'tipjar');
 	$tipjar_id = create_tipjar($user['wallet_id'], $watchonly_id, $user['admin_key']);
