@@ -236,15 +236,14 @@ function main($card_uid) {
 
 // OK, let's run everything!
 try {
-	if(empty($argv) || empty($argv[1])) {
-		throw new Exception("Must provide a card UID.");
-	}
+  if(empty($argv) || empty($argv[1])) {
+  	throw new Exception("Must provide a card UID.");
+  }
 
-	// Card UID should live in position 1
-	$card_uid = main($argv[1]);
+  // Card UID should live in position 1
+  $card_uid = main($argv[1]);
 
-	echo json_encode($card_uid);
-
+  echo json_encode($card_uid);
 } catch (Exception $e) {
-	echo "ERROR: " . $e->getMessage() . "\n";
+  echo "ERROR: " . $e->getMessage() . "\n";
 }
