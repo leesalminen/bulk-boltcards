@@ -2,7 +2,47 @@
 
 require_once 'requests.php';
 
-function create_boltcard($card_uid, $wallet_id, $withdraw_id, $api_key) {
+function create_tipjar($wallet_id, $watchonly_id, $api_key) {
+	$request = request(
+		"POST",
+		"/tipjar/api/v1/tipjars",
+		[],
+		['X-Api-Key: ' . $api_key],
+		[
+			'wallet' => $wallet_id,
+			'chain' => true,
+			'onchain' => $watchonly_id,
+		]
+	);
+
+	if($request['status'] != 200) {
+		throw new Exception("Error creating watch only wallet");
+	}
+
+	return $request['response']['id'];
+}
+
+function create_watchonly($xpub, $api_key) {
+	$request = request(
+		"POST",
+		"/watchonly/api/v1/wallet",
+		[],
+		['X-Api-Key: ' . $api_key],
+		[
+			'masterpub' => $xpub,
+			'network' => 'Mainnet',
+			'title' => 'My On-Chain Wallet',
+		]
+	);
+
+	if($request['status'] != 200) {
+		throw new Exception("Error creating watch only wallet");
+	}
+
+	return $request['response']['id'];
+}
+
+function create_boltcard($card_uid, $wallet_id, $api_key) {
 
 	$k0 = bin2hex(random_bytes(16));
 	$k1 = bin2hex(random_bytes(16));
@@ -15,13 +55,14 @@ function create_boltcard($card_uid, $wallet_id, $withdraw_id, $api_key) {
 		['X-Api-Key: ' . $api_key],
 		[
 		  'wallet' => $wallet_id,
-		  'withdraw' => $withdraw_id,
 		  'card_name' => 'My First Card',
 		  'uid' => $card_uid,
 		  'k0' => $k0,
 		  'k1' => $k1,
 		  'k2' => $k2,
 		  'counter' => 0,
+		  'tx_limit' => "100000",
+		  'daily_limit' => "1000000",
 		]
 	);
 

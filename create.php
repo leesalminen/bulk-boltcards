@@ -97,12 +97,17 @@ function main($card_uid) {
 		'lnbits_tpos_url' => null,
 		'lnbits_tpos_url_qr_svg' => null,
 
+		'lnbits_tipjar_url' => null,
+		'lnbits_tipjar_url_qr_svg' => null,
+
 		// this just validates that everything worked as intended. true means good. false means no bueno
 		'lnurlp_activated' => false,
 		'lnurlw_activated' => false,
 		'boltcard_activated' => false,
 		'lndhub_activated' => false,
 		'tpos_activated' => false,
+		'watchonly_activated' => false,
+		'tipjar_activated' => false,
 
 		// TODO :: implement this extension once PR is approved that fixes things
 		'lnaddress_activated' => false,
@@ -130,7 +135,7 @@ function main($card_uid) {
 	$output['lnbits_lnurlw_max_uses'] = $lnurlw['uses'];
 
 	$output['boltcard_activated'] = enable_extension($user['user_id'], 'boltcards');
-	$boltcard = create_boltcard($card_uid, $user['wallet_id'], $lnurlw['id'], $user['admin_key']);
+	$boltcard = create_boltcard($card_uid, $user['wallet_id'], $user['admin_key']);
 	$output['lnbits_boltcard'] = $boltcard;
 	$output['lnbits_boltcard']['auth_link'] = DOMAIN_NAME . '/boltcards/api/v1/auth?a=' . $boltcard['otp'];
 	$output['lnbits_boltcard']['auth_link_qr_svg'] = QRcode::svg($output['lnbits_boltcard']['auth_link'], uniqid(), false, QR_ECLEVEL_L, 110); 
@@ -145,6 +150,17 @@ function main($card_uid) {
 	$tpos_id = create_tpos($user['wallet_id'], $user['admin_key'], FIAT_CURRENCY);
 	$output['lnbits_tpos_url'] = DOMAIN_NAME . '/tpos/' . $tpos_id;
 	$output['lnbits_tpos_url_qr_svg'] = QRcode::svg($output['lnbits_tpos_url'], uniqid(), false, QR_ECLEVEL_L, 110);
+
+	// TODO :: onchain stuff
+	$zpub = '';
+
+	$output['watchonly_activated'] = enable_extension($user['user_id'], 'watchonly');
+	$watchonly_id = create_watchonly($zpub, $user['admin_key']);
+
+	$output['tipjar_activated'] = enable_extension($user['user_id'], 'tipjar');
+	$tipjar_id = create_tipjar($user['wallet_id'], $watchonly_id, $user['admin_key']);
+	$output['lnbits_tipjar_url'] = DOMAIN_NAME . '/tipjar/' . $tipjar_id;
+	$output['lnbits_tipjar_url_qr_svg'] = QRcode::svg($output['lnbits_tipjar_url'], uniqid(), false, QR_ECLEVEL_L, 110);
 
 	// TODO :: this is just a placeholder for now
 	$output['lnaddress_activated'] = false;
