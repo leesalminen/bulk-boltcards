@@ -17,7 +17,6 @@ require_once "./lib/bip39-mnemonic/WordList.php";
 require_once "./lib/bip39-mnemonic/Mnemonic.php";
 require_once "./lib/bip39-mnemonic/BIP39.php";
 use \FurqanSiddiqui\BIP39\Wordlist;
-
 use \FurqanSiddiqui\BIP39\BIP39;
 
 // the main function
@@ -43,7 +42,7 @@ function main($card_uid) {
 		throw new Exception("Card UID invalid length");
 	}
 
-	// set the wordlist language for onchain
+	// set the wordlist language for onchain generation
 	switch (LANGUAGE) {
 		case 'en':
 			$wordlist_language = Wordlist::English();
@@ -62,12 +61,13 @@ function main($card_uid) {
 			break;
 	}
 
-	// generate the on-chain stuff
+	// generate the on-chain mnemonic phrase
 	$mnemonic = (new BIP39(24))
     	->generateSecureEntropy() 
     	->wordlist($wordlist_language)
     	->mnemonic();
 
+    // take that mnemonic phrase and derive a zpub, & bech32 encoded address from path m/0'/0'/0'
     $onchain_info = json_decode(shell_exec('./lib/hd-wallet-derive/hd-wallet-derive.php --mnemonic="' . implode(" ", $mnemonic->words) . '" -g --key-type=z --numderive=1 --preset=bitcoincore --cols=all --format=json --addr-type=bech32'));
 
 	// this is the output of the script.
@@ -89,6 +89,7 @@ function main($card_uid) {
 		'support_url_qr_svg' => null,
 		'support_cost_per_sat' => SUPPORT_COST_PER_SAT,
 
+		// all the details about the onchain wallet we generated
 		'onchain' => [
 			'mnemonic' => $mnemonic->words,
 			'path' => $onchain_info->path,
@@ -137,12 +138,16 @@ function main($card_uid) {
 			'admin_url_qr_svg' => null,
 		],
 
+		// this is your Lightning Address, that is just a pretty way of writing a LNURL
+		// TODO :: they gotta fix the extension
 		'lnbits_lnaddress' => null,
 		'lnbits_lnaddress_qr_svg' => null,
 
+		// This is your point of sale for your wallet
 		'lnbits_tpos_url' => null,
 		'lnbits_tpos_url_qr_svg' => null,
 
+		// This is your tip link for your wallet
 		'lnbits_tipjar_url' => null,
 		'lnbits_tipjar_url_qr_svg' => null,
 
