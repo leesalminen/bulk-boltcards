@@ -52,7 +52,7 @@ function main($card_uid) {
     $wordlist_language = Wordlist::Spanish();
     break;
 
-    case 'pr':
+    case 'pt':
     $wordlist_language = Wordlist::Portuguese();
     break;
 
@@ -88,6 +88,11 @@ function main($card_uid) {
     // you can set your own name in constants.php
     'issuer' => ISSUER_NAME,
     'language' => LANGUAGE,
+    'server_ip_address' => SERVER_IP_ADDRESS,
+    'server_location' => SERVER_LOCATION,
+    'server_tor_address' => SERVER_TOR_ADDRESS,
+    'server_public_key' => SERVER_PUBLIC_KEY,
+    'server_qr_svg' => null,
 
     // you can set this to whatever you want in constants.php
     'support_url' => SUPPORT_URL,
@@ -174,6 +179,8 @@ function main($card_uid) {
     // TODO :: implement this extension once PR is approved that fixes things
     'lnaddress_activated' => false,
   ];
+
+  $output['server_qr_svg'] = create_qr($output['server_public_key'] . '@' . $output['server_ip_address'] . ':9735');
 
   $output['support_url_qr_svg'] = create_qr($output['support_url']);
 
