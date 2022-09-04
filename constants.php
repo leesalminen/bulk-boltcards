@@ -26,3 +26,8 @@ define("SERVER_LOCATION", "Jericoacoara - CE / Brasil");
 define("SERVER_TOR_ADDRESS", "dwbmglz2hwlx3y7udvzb7cbx5kahl33wxotdsd6uk3quq2y2avq66lqd.onion:9735");
 define("SERVER_PUBLIC_KEY", "0336350b10294b9d8759944709db961cb9ef8e4c7d3a80d057684ae5b0d841c101");
 define("TELEGRAM_BOT_URL", "https://t.me/naobancojeri");
+
+// this is used to generate the QR codes of front page
+define("LOCAL_MAP", "https://goo.gl/maps/5QHh2kv1H3f9fHEw9");
+define("BOLT_GENERATOR_CODE", "https://github.com/praiabitcoin/bulkcards");
+define("IMPLEMENTATION_GUIDE", "https://github.com/praiabitcoin/naobanco");
