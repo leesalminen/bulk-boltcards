@@ -13,7 +13,7 @@ define("SUPPORT_URL", "https://lnbits.bitcoinjungle.app/lnticket/C83efGg3P9Xp5fS
 define("SUPPORT_COST_PER_SAT", 10);
 
 // this is used for TPoS, you can set it to whatever shitcoin you'd like
-define("FIAT_CURRENCY", "USD");
+define("FIAT_CURRENCY", "BRL");
 
 // available languages: en, es, pt
 define("LANGUAGE", "pt");
@@ -23,7 +23,6 @@ define("SERVER_IP_ADDRESS", "127.0.0.1");
 
 // this is shown in the output template
 define("SERVER_LOCATION", "Jericoacoara - CE / Brasil");
-
 define("SERVER_TOR_ADDRESS", "dwbmglz2hwlx3y7udvzb7cbx5kahl33wxotdsd6uk3quq2y2avq66lqd.onion:9735");
-
 define("SERVER_PUBLIC_KEY", "0336350b10294b9d8759944709db961cb9ef8e4c7d3a80d057684ae5b0d841c101");
+define("TELEGRAM_BOT_URL", "https://t.me/naobancojeri");
