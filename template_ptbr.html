@@ -291,13 +291,19 @@
 <page size="A4" layout="landscape" style="background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/front5_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
     <div style="width:50%; float:left">
 
-        <div id="box" style="width:470px; height:134px; float:left; margin:40px 0px 0px 35px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential.png'); background-repeat: no-repeat; background-size: contain;">
+        <div id="box" style="width:470px; height:174px; float:left; margin:40px 0px 0px 35px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential.png'); background-repeat: no-repeat; background-size: contain;">
         <h1>dados de acesso à carteira lightning</h1>    
-        <div style=" margin-top:15px; margin-left: 5px; float:left; width:50%"><h4>id secreto</h4> </div>
-
+            <div style=" margin-top:15px; margin-left: 5px; float:left; width:50%"><h4>id secreto</h4> </div>
             <div style=" margin-top:15px; margin-left: 5px;"><h4>id da carteira</h4> </div>
             <div style=" margin-top:0px; margin-left: 5px; float:left; width:50%"><span><small><span class="lnbits_user_id"></span></small></span></div>
             <div style=" margin-top:0px; margin-left: 5px;"><span><small><span class="lnbits_wallet_id"></span></small></span></div>
+
+            <div style=" margin-top:15px; margin-left: 5px; float:left; width:50%"><h4>lnbits admin key</h4> </div>
+            <div style=" margin-top:15px; margin-left: 5px;"><h4>lnbits invoice key</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px; float:left; width:50%"><span><small><span class="lnbits_admin_key"></span></small></span></div>
+            <div style=" margin-top:0px; margin-left: 5px;"><span><small><span class="lnbits_invoice_key"></span></small></span></div>
+
+
             <div style=" margin-top:15px; margin-left: 5px;"><h4>access url</h4> </div>
             <div style=" margin-top:0px; margin-left: 5px;"><small><span class="lnbits_access_url"></span></small></div>
             
@@ -305,7 +311,7 @@
         <div style="margin:10px 0px 0px 35px; float:left; width:470px;">
             <h1>carteira de recuperação - bitcoin onchain</h1>
         </div>
-        <div id="box" style="width:470px; height:300px; float:left; margin:0px 0px 0px 35px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential.png'); background-repeat: no-repeat; background-size: contain;">
+        <div id="box" style="width:470px; height:280px; float:left; margin:0px 0px 0px 35px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential.png'); background-repeat: no-repeat; background-size: contain;">
         <div style=" margin-top:15px; margin-left: 5px;"><h4>endereço de bitcoin</h4> </div>
             <div style=" margin-top:0px; margin-left: 5px;"><small><span class="onchain_address"></span></small></div>
         <div style=" margin-top:15px; margin-left: 5px;"><h4>chave pública extendida</h4> </div>
@@ -344,11 +350,11 @@
         <div style="margin:10px 0px 0px 35px; float:left; width:470px;">
             <h1>instruções de recuperação de fundos</h1>
         </div>
-        <div id="box" style="width:470px; height:120px; float:left; margin:0px 0px 0px 35px; background-repeat: no-repeat; background-size: contain;">
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 35px; background-repeat: no-repeat; background-size: contain;">
             <div style="width:450px; height:100px; float:left; ">
             Caso perca o acesso à sua carteira lightning, solicite a restauração do saldo da carteira por 5.000 SATs. 
             Abra um chamado no suporte pago, explique porque precisa restaurar e informe o UID do seu cartão. Enviaremos os fundos apenas para o endereço associado ao cartão. 
-            Não há como recuperar as palavras semente, por isso, tome nota e guarde-o num local seguro com o <b>UID do cartão</b>. NUNCA COMPARTILHE COM NINGUÉM!
+            Não há como recuperar as palavras semente, por isso, tome nota e guarde-o num local seguro com o <b>UID do cartão</b>.
         
         
         <!--If you lose access to your wallet, you can request to restore the funds associated with your bolt card, paying a fee of 5000 SATs. 
@@ -368,13 +374,13 @@
     </div>
     <div style="width:50%; float:left">
 
-        <div style="margin:35px 0px 0px 20px; float:left; width:470px;">
+        <div style="margin:30px 0px 0px 20px; float:left; width:470px;">
         <h1>gerenciar carteira do navegador 
         <!--manage wallet from browser--></h1>
         </div>
         <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 20px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential2.png'); background-repeat: no-repeat; background-size: contain; ">
             <div style="width:320px; height:100px; float:left; ">
-            Este código QR permite ao usuário acessar a interface web de uma carteira LNBits. NUNCA COMPARTILHE!<br><br>
+            Este código QR permite ao usuário acessar a interface web de uma carteira LNBits.<br><br>
             Faça pagamentos, crie faturas, ative e desative extensões, acesso à API e tudo o que precisar.
             <!-- This QR code allows the user to access the web interface of a LNBits Wallet. NEVER SHARE!<br><br>Make payments, create invoices, activate and disactivate extensions, API access codes and everything you may need.-->
                 
@@ -421,15 +427,31 @@
             gerenciar carteira pelo telegram 
             <!--manage wallet from browser--></h1>
         </div>
-        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 20px; background-repeat: no-repeat; background-size: contain; ">
-            <div style="width:330px; height:100px; float:left; ">
-            Este código QR permite ao usuário acessar o Robô do Telegram!<br><br>
-            Envie /cadastrar e siga as instruções para importar sua carteira como administrador ou modo leitura e divirta-se.
+        <div id="box" style="width:470px; height:130px; float:left; margin:0px 0px 0px 20px; background-repeat: no-repeat; background-size: contain; ">
+            <div style="width:440px; height:50px; ">
+            Abra o Robô do Telegram e siga as intruções para importar a carteira como admnistrador ou modo leitura!<br><br>
             </div>
-            <div style="width:120px; height:130px; float:left; margin:30px 0px 0px 10px; text-align: center;">
+            <div style="width:140px; height:130px; float:left; margin:30px 0px 0px 5px; text-align: center;">
             <div class="telegram_bot_url_qr_svg"></div>
-                <div style="margin-top:-18px">
-                <small>Bot do Telegram</small>
+                <div style="margin-top:-18px; line-height:0.6;">
+                <small>Robô do  Telegram<br>
+                https://t.me/naobancojeri
+                </small>
+                </div>
+            </div>
+            <div style="width:150px; height:130px; float:left; margin:30px 0px 0px 5px; text-align: center;">
+            <div class="lnbits_admin_key_qr_svg"></div>
+                <div style="margin-top:-18px; line-height:0.6;">
+                <small>Admin Key<br>
+                Controle Total</small>
+                </div>
+            </div>
+
+            <div style="width:150px; height:130px; float:left; margin:30px 0px 0px 5px; text-align: center;">
+            <div class="lnbits_invoice_key_qr_svg"></div>
+                <div style="margin-top:-18px; line-height:0.6;">
+                <small>Invoice Key<br>
+                Modo Leitura</small>
                 </div>
             </div>
             
@@ -437,9 +459,9 @@
         <div style="margin:10px 0px 0px 20px; float:left; width:470px;">
             <h1>endereço de saque</h1>
         </div>
-        <div id="box" style="width:470px; height:120px; float:left; margin:0px 0px 0px 20px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential3.png'); background-repeat: no-repeat; background-size: contain;">
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 20px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential3.png'); background-repeat: no-repeat; background-size: contain;">
             <div style="width:320px; height:100px; float:left; ">
-            Este QR code permite ao usuário retirar todos os fundos disponíveis na carteira lightning. NUNCA COMPARTILHE!<br>
+            Este QR code permite ao usuário retirar todos os fundos disponíveis na carteira lightning. <br>
             <br>
             Escaneie com sua carteira lightning preferida para importar os fundos e aguarde a confirmação.
             <!--This QR code allows the user to withdraw all funds available in the wallet. NEVER SHARE!<br><br>
