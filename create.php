@@ -100,18 +100,18 @@ function main($card_uid) {
     'support_cost_per_sat' => SUPPORT_COST_PER_SAT,
 
     // all the details about the onchain wallet we generated
-    'onchain' => [
-      'path' => $onchain_info->path,
+    //'onchain' => [
+    //  'path' => $onchain_info->path,
 
-      'mnemonic' => $mnemonic->words,
-      'bip39_qr_svg' => null,
-
-      'address' => $onchain_info->address,
-      'address_qr_svg' => null,
-
-      'zpub' => $onchain_info->xpub,
-      'zpub_qr_svg' => null,
-    ],
+//      'mnemonic' => $mnemonic->words,
+//      'bip39_qr_svg' => null,
+//
+//      'address' => $onchain_info->address,
+//      'address_qr_svg' => null,
+//
+//      'zpub' => $onchain_info->xpub,
+//      'zpub_qr_svg' => null,
+//    ],
 
     // lnbits user account details
     'lnbits_user_id' => null,
