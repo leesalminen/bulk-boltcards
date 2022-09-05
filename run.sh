@@ -27,10 +27,12 @@ cmd+="' ./template_ptbr.html | base64"
 # run the sed find/replace + base64 encode
 html_data=$(eval $cmd)
 
+chrome_string="data:text/html;base64,$html_data"
+
 # pass the base64 encoded HTML into the chrome address bar for local rendering.
 if [[ $1 == "mac" ]]
 then
-	open -a "Google Chrome.app" "data:text/html;base64,$html_data" --args --incognito
+	open -a "Google Chrome.app" $chrome_string --args --incognito
 else
-	chromium-browser "data:text/html;base64,$html_data" --incognito
+	chromium-browser $chrome_string --incognito
 fi
