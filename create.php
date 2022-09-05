@@ -100,25 +100,27 @@ function main($card_uid) {
     'support_cost_per_sat' => SUPPORT_COST_PER_SAT,
 
     // all the details about the onchain wallet we generated
-    //'onchain' => [
-    //  'path' => $onchain_info->path,
+    'onchain' => [
+     'path' => $onchain_info->path,
 
-//      'mnemonic' => $mnemonic->words,
-//      'bip39_qr_svg' => null,
-//
-//      'address' => $onchain_info->address,
-//      'address_qr_svg' => null,
-//
-//      'zpub' => $onchain_info->xpub,
-//      'zpub_qr_svg' => null,
-//    ],
+     'mnemonic' => $mnemonic->words,
+     'bip39_qr_svg' => null,
+
+     'address' => $onchain_info->address,
+     'address_qr_svg' => null,
+
+     'zpub' => $onchain_info->xpub,
+     'zpub_qr_svg' => null,
+   ],
 
     // lnbits user account details
     'lnbits_user_id' => null,
     'lnbits_wallet_id' => null,
     'lnbits_username' => null,
     'lnbits_invoice_key' => null,
+    'lnbits_invoice_key_qr_svg' => null,
     'lnbits_admin_key' => null,
+    'lnbits_admin_key_qr_svg' => null,
 
     // this is the url a user can use to access their account
     'lnbits_access_url' => null,
@@ -193,7 +195,9 @@ function main($card_uid) {
   $output['lnbits_wallet_id'] = $user['wallet_id'];
   $output['lnbits_username'] = $user['username'];
   $output['lnbits_admin_key'] = $user['admin_key'];
+  $output['lnbits_admin_key_qr_svg'] = create_qr($output['lnbits_admin_key']);
   $output['lnbits_invoice_key'] = $user['invoice_key'];
+  $output['lnbits_invoice_key_qr_svg'] = create_qr($output['lnbits_invoice_key']);
   $output['lnbits_access_url'] = DOMAIN_NAME . '/wallet?usr=' . $user['user_id'] . '&wal=' . $user['wallet_id'];
   $output['lnbits_access_url_qr_svg'] = create_qr($output['lnbits_access_url']); 
 
