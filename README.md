@@ -15,4 +15,4 @@ Then, run `./run.sh {mac|linux} {card_uid}`. Ex: `./run.sh mac 00000000000000`.
 
 The script will run and return an error message in the terminal, or will open Chrome/Chromium with the template & injected data.
 
-Print to A4 size paper.
+Print to A4 size paper on Landscape if no margins if supported by your printer. 
