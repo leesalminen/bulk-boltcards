@@ -13,15 +13,18 @@ fi
 # convert the json output from PHP to base64
 json_base64=$(printf "%s" "$json_data" | base64)
 
+# build out the sed s/find/replace string
 str='s|SCRIPT_WILL_REPLACE_ME|'
 str+=$json_base64
 str+='|'
 
+# build out the sed command
+# inject the json_base64 into the HTML template then base64 encode all the HTML
 cmd="sed '"
 cmd+=$str
 cmd+="' ./template_ptbr.html | base64"
 
-# inject the json_base64 into the HTML template then base64 encode all the HTML
+# run the sed find/replace + base64 encode
 html_data=$(eval $cmd)
 
 # pass the base64 encoded HTML into the chrome address bar for local rendering.
