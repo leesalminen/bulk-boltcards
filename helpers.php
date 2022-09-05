@@ -77,7 +77,7 @@ function create_boltcard($card_uid, $wallet_id, $api_key) {
 	);
 
 	if($request['status'] != 201) {
-		throw new Exception("Error creating boltcard");
+		throw new Exception("Error creating boltcard. THE card_uid MUST BE GLOBALLY UNIQUE IN LNBITS.");
 	}
 
 	return [
