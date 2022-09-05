@@ -2,7 +2,15 @@
 
 ## To run
 
-First, clone this repository.
+First, install pre-requisites:
+
+Debian 10
+
+```
+sudo apt install curl php php-gmp php-mbstring php-gd php-curl libcurl4-openssl-dev git
+```
+
+Then, clone this repository.
 
 ```
 git clone https://github.com/leesalminen/bulk-boltcards.git
