@@ -93,6 +93,10 @@ function main($card_uid) {
     'server_tor_address' => SERVER_TOR_ADDRESS,
     'server_public_key' => SERVER_PUBLIC_KEY,
     'server_qr_svg' => null,
+    
+    'telegram_bot_url' => TELEGRAM_BOT_URL,
+    'telegram_bot_url_qr_svg' => null,
+
 
     // you can set this to whatever you want in constants.php
     'support_url' => SUPPORT_URL,
@@ -186,6 +190,8 @@ function main($card_uid) {
 
   $output['support_url_qr_svg'] = create_qr($output['support_url']);
 
+  $output['telegram_bot_url_qr_svg'] = create_qr($output['telegram_bot_url']);
+  
   //$output['onchain']['bip39_qr_svg'] = create_qr(implode(' ', $output['onchain']['mnemonic']));
   //$output['onchain']['zpub_qr_svg'] = create_qr($output['onchain']['zpub']);
   //$output['onchain']['address_qr_svg'] = create_qr($output['onchain']['address']);
