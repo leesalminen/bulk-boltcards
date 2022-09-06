@@ -32,5 +32,5 @@ if [[ $1 == "mac" ]]
 then
 	open -a "Google Chrome.app" "data:text/html;base64,$html_data" --args --incognito
 else
-	chromium-browser "data:text/html;base64,$html_data" --incognito
+	google-chrome "data:text/html;base64,$html_data" --incognito
 fi
