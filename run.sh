@@ -24,13 +24,16 @@ cmd="sed '"
 cmd+=$str
 cmd+="' ./template_ptbr.html | base64"
 
-# inject the json_base64 into the HTML template then base64 encode all the HTML
+# run the sed find/replace + base64 encode
 html_data=$(eval $cmd)
+
+chrome_string="data:text/html;base64,$html_data"
 
 # pass the base64 encoded HTML into the chrome address bar for local rendering.
 if [[ $1 == "mac" ]]
 then
-	open -a "Google Chrome.app" "data:text/html;base64,$html_data" --args --incognito
+	open -a "Google Chrome.app" $chrome_string --args --incognito
 else
-	google-chrome "data:text/html;base64,$html_data" --incognito
+	echo $chrome_string > a1.html
+	google-chrome a1.html
 fi
