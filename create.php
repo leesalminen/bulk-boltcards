@@ -71,8 +71,8 @@ function main($card_uid) {
   $onchain_info = json_decode(shell_exec(
     './lib/hd-wallet-derive/hd-wallet-derive.php --mnemonic="' . 
     implode(" ", $mnemonic->words) . 
-    '" -g --key-type=z --numderive=1 --preset=bitcoincore' .
-    ' --cols=all --format=json --addr-type=bech32'
+    '" -g --numderive=1 --preset=electrum' .
+    ' --cols=all --format=json --includeroot'
   ));
 
   // this is the output of the script.
@@ -101,17 +101,17 @@ function main($card_uid) {
 
     // all the details about the onchain wallet we generated
     'onchain' => [
-     'path' => $onchain_info->path,
+      'path' => $onchain_info[1]->path,
 
-     'mnemonic' => $mnemonic->words,
-     'bip39_qr_svg' => null,
+      'mnemonic' => $mnemonic->words,
+      'bip39_qr_svg' => null,
 
-     'address' => $onchain_info->address,
-     'address_qr_svg' => null,
-
-     'zpub' => $onchain_info->xpub,
-     'zpub_qr_svg' => null,
-   ],
+      'address' => $onchain_info[1]->address,
+      'address_qr_svg' => null,
+  
+      'zpub' => $onchain_info[0]->xpub,
+      'zpub_qr_svg' => null,
+    ],
 
     // lnbits user account details
     'lnbits_user_id' => null,
