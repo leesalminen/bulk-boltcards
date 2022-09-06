@@ -104,18 +104,18 @@ function main($card_uid) {
     'support_cost_per_sat' => SUPPORT_COST_PER_SAT,
 
     // all the details about the onchain wallet we generated
-//    'onchain' => [
-//      'path' => $onchain_info[1]->path,
-//
-//      'mnemonic' => $mnemonic->words,
-//      'bip39_qr_svg' => null,
-//
-//      'address' => $onchain_info[1]->address,
-//      'address_qr_svg' => null,
-//  
-//      'zpub' => $onchain_info[0]->xpub,
-//      'zpub_qr_svg' => null,
-//    ],
+    'onchain' => [
+      'path' => $onchain_info[1]->path,
+
+      'mnemonic' => $mnemonic->words,
+      'bip39_qr_svg' => null,
+
+      'address' => $onchain_info[1]->address,
+      'address_qr_svg' => null,
+  
+      'zpub' => $onchain_info[0]->xpub,
+      'zpub_qr_svg' => null,
+    ],
 
     // lnbits user account details
     'lnbits_user_id' => null,
@@ -192,9 +192,9 @@ function main($card_uid) {
 
   $output['telegram_bot_url_qr_svg'] = create_qr($output['telegram_bot_url']);
   
-  //$output['onchain']['bip39_qr_svg'] = create_qr(implode(' ', $output['onchain']['mnemonic']));
-  //$output['onchain']['zpub_qr_svg'] = create_qr($output['onchain']['zpub']);
-  //$output['onchain']['address_qr_svg'] = create_qr($output['onchain']['address']);
+  $output['onchain']['bip39_qr_svg'] = create_qr(implode(' ', $output['onchain']['mnemonic']));
+  $output['onchain']['zpub_qr_svg'] = create_qr($output['onchain']['zpub']);
+  $output['onchain']['address_qr_svg'] = create_qr($output['onchain']['address']);
 
   $user = create_user($card_uid);
   $output['lnbits_user_id'] = $user['user_id'];
@@ -234,8 +234,8 @@ function main($card_uid) {
   $output['lnbits_tpos_url'] = DOMAIN_NAME . '/tpos/' . $tpos_id;
   $output['lnbits_tpos_url_qr_svg'] = create_qr($output['lnbits_tpos_url']);
 
-  //$output['watchonly_activated'] = enable_extension($user['user_id'], 'watchonly');
-  //$watchonly_id = create_watchonly($output['onchain']['zpub'], $user['admin_key']);
+  $output['watchonly_activated'] = enable_extension($user['user_id'], 'watchonly');
+  $watchonly_id = create_watchonly($output['onchain']['zpub'], $user['admin_key']);
 
   $output['tipjar_activated'] = enable_extension($user['user_id'], 'tipjar');
   $tipjar_id = create_tipjar($user['wallet_id'], $watchonly_id, $user['admin_key']);
