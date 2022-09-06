@@ -71,7 +71,7 @@ function main($card_uid) {
   $onchain_info = json_decode(shell_exec(
     './lib/hd-wallet-derive/hd-wallet-derive.php --mnemonic="' . 
     implode(" ", $mnemonic->words) . 
-    '" -g --numderive=1 --preset=electrum' .
+    '" -g --numderive=1 --key-type=z --preset=electrum' .
     ' --cols=all --format=json --includeroot'
   ));
 
@@ -235,7 +235,7 @@ function main($card_uid) {
   $output['lnbits_tpos_url_qr_svg'] = create_qr($output['lnbits_tpos_url']);
 
   $output['watchonly_activated'] = enable_extension($user['user_id'], 'watchonly');
-  $watchonly_id = create_watchonly($output['onchain']['zpub'], $user['admin_key']);
+  //$watchonly_id = create_watchonly($output['onchain']['zpub'], $user['admin_key']);
 
   $output['tipjar_activated'] = enable_extension($user['user_id'], 'tipjar');
   $tipjar_id = create_tipjar($user['wallet_id'], $watchonly_id, $user['admin_key']);
