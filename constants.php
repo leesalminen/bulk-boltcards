@@ -1,7 +1,7 @@
 <?php
 
 // this should be the URL to your LNBits installation. Don't add a trailing /
-define("DOMAIN_NAME", "https://legend.lnbits.com");
+define("DOMAIN_NAME", "https://lnbits.bitcoinjungle.app");
 
 // this will show up in the template for users, can be anything you want
 define("ISSUER_NAME", "Praia Bitcoin");
