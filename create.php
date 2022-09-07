@@ -74,6 +74,12 @@ function main($card_uid) {
     '" -g --numderive=1 --key-type=z --preset=electrum' .
     ' --cols=all --format=json --includeroot'
   ));
+  $onchain_info2 = json_decode(shell_exec(
+    './lib/hd-wallet-derive/hd-wallet-derive.php --mnemonic="' .
+    implode(" ", $mnemonic->words) .
+    '" -g --numderive=1 --key-type=z --path="m/84\'/0\'/x\'"' .
+    ' --cols=all --format=json --includeroot'
+  ));
 
   // this is the output of the script.
   // everything here will be passed into the template.html 
@@ -116,13 +122,14 @@ function main($card_uid) {
       'path' => $onchain_info[1]->path,
 
       'mnemonic' => $mnemonic->words,
+      'words' => implode(" ", $mnemonic->words),		  
       'bip39' => $mnemonic->words,
       'bip39_qr_svg' => null,
 
       'address' => $onchain_info[1]->address,
       'address_qr_svg' => null,
   
-      'zpub' => $onchain_info[0]->xpub,
+      'zpub' => $onchain_info2[1]->xpub,
       'zpub_qr_svg' => null,
     ],
 
@@ -250,7 +257,7 @@ function main($card_uid) {
   $output['lnbits_tpos_url_qr_svg'] = create_qr($output['lnbits_tpos_url']);
 
   $output['watchonly_activated'] = enable_extension($user['user_id'], 'watchonly');
-  //$watchonly_id = create_watchonly($output['onchain']['zpub'], $user['admin_key']);
+  $watchonly_id = create_watchonly($output['onchain']['zpub'], $user['admin_key']);
 
   $output['tipjar_activated'] = enable_extension($user['user_id'], 'tipjar');
   $tipjar_id = create_tipjar($user['wallet_id'], $watchonly_id, $user['admin_key']);
