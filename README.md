@@ -11,12 +11,12 @@ sudo apt install curl php php-gmp php-mbstring php-gd php-curl libcurl4-openssl-
 ```
 
 Ubuntu
+If you need to downgrade from php 8.1 to 7.4 follow this [tutorial](https://thecodebeast.com/downgrade-php-8-0-to-7-4-ubuntu-digital-ocean/) and install this extra dependencies later
+
 
 ```
 sudo apt install curl php php-gmp php-mbstring php-gd php-curl libcurl4-openssl-dev git
 ```
-
-If you need to downgrade from php 8.1 to 7.4 follow this [tutorial](https://thecodebeast.com/downgrade-php-8-0-to-7-4-ubuntu-digital-ocean/) and install this extra dependencies later
 
 ```
 sudo apt-get install php7.4-gmp 
