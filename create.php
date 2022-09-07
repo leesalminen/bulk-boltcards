@@ -97,7 +97,7 @@ function main($card_uid) {
     'telegram_bot_url' => TELEGRAM_BOT_URL,
     'telegram_bot_url_qr_svg' => null,
 
-    'local_map_url' => LOCAL_MAP_URL,
+    'local_map' => LOCAL_MAP,
     'local_map_qr_svg' => null,
 
     'bolt_generator_code' => BOLT_GENERATOR_CODE,
@@ -201,7 +201,7 @@ function main($card_uid) {
 
   $output['telegram_bot_url_qr_svg'] = create_qr($output['telegram_bot_url']);
     
-  $output['local_map_url_qr_svg'] = create_qr($output['local_map_url']);
+  $output['local_map_qr_svg'] = create_qr($output['local_map']);
   $output['bolt_generator_code_qr_svg'] = create_qr($output['bolt_generator_code']);
   $output['implementation_guide_qr_svg'] = create_qr($output['implementation_guide']);
   
