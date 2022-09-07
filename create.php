@@ -97,6 +97,14 @@ function main($card_uid) {
     'telegram_bot_url' => TELEGRAM_BOT_URL,
     'telegram_bot_url_qr_svg' => null,
 
+    'local_map_url' => LOCAL_MAP_URL,
+    'local_map_qr_svg' => null,
+
+    'bolt_generator_code' => BOLT_GENERATOR_CODE,
+    'bolt_generator_code_qr_svg' => null,
+
+    'implementation_guide' => IMPLEMENTATION_GUIDE,
+    'implementation_guide_qr_svg' => null,
 
     // you can set this to whatever you want in constants.php
     'support_url' => SUPPORT_URL,
@@ -192,6 +200,11 @@ function main($card_uid) {
   $output['support_url_qr_svg'] = create_qr($output['support_url']);
 
   $output['telegram_bot_url_qr_svg'] = create_qr($output['telegram_bot_url']);
+    
+  $output['local_map_url_qr_svg'] = create_qr($output['local_map_url']);
+  $output['bolt_generator_code_qr_svg'] = create_qr($output['bolt_generator_code']);
+  $output['implementation_guide_qr_svg'] = create_qr($output['implementation_guide']);
+  
   
   $output['onchain']['bip39'] = $mnemonic;
   $output['onchain']['bip39_qr_svg'] = create_qr(implode(' ', $output['onchain']['mnemonic']));
