@@ -1,5 +1,12 @@
 #/bin/bash
 
+out=$3
+
+if [ -z "$out" ]
+then
+  out="/dev/stdout"
+fi  
+
 #first run the PHP script with the card UID as the input parameter and capture the response
 json_data=$(php -f create.php $2)
 
@@ -33,11 +40,20 @@ chrome_string="data:text/html;base64,$html_data"
 if [[ $1 == "mac" ]]
 then
 	open -a "Google Chrome.app" $chrome_string --args --incognito
-else
+elif [[ $1 == "linux" ]]
+then
     f=$(mktemp --suffix .html)
-
-	echo "$html_data" > "$f"
-	#echo "$json_data" > "$f.json"
-	google-chrome "$f"
-	shred -u "$f"
+    echo "$html_data" > "$f"
+    #echo "$json_data" > "$f.json"
+    google-chrome "$f" --no-sandbox
+    shred -u "$f"
+elif [[ $1 == "pdf" ]]
+then
+    f=$(mktemp --suffix .html)
+    echo "$html_data" > "$f"
+    google-chrome --headless --disable-gpu --no-margins --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf=out.pdf "$f" --no-sandbox
+    shred -u "$f" 
+elif [[ $1 == "html" ]]
+then
+   echo "$html_data" > "$out"
 fi
