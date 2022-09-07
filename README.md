@@ -7,7 +7,7 @@ First, install pre-requisites:
 Debian 10
 
 ```
-sudo apt install curl php php-gmp php-mbstring php-gd php-curl libcurl4-openssl-dev git
+sudo apt install chromium curl php php-gmp php-mbstring php-gd php-curl libcurl4-openssl-dev git
 ```
 
 Ubuntu
@@ -38,8 +38,8 @@ chmod 755 run.sh
 
 Second, open `constants.php` and set your LNBits domain name in `DOMAIN_NAME`. You can customize the other available settings here, too. Each field is documented inline.
 
-Then, run `./run.sh {mac|linux} {card_uid}`. Ex: `./run.sh linux 12345678900070`.
+Then, run `./run.sh {mac|linux} {card_uid}`. Ex: `./run.sh linux 12345678900070`. The script will run and return an error message in the terminal, or will open Chrome/Chromium with the template & injected data. Using this method, the generated data including all keys is ephemeral. As soon as you close the browser tab, that data is gone and cannot be recovered.
 
-The script will run and return an error message in the terminal, or will open Chrome/Chromium with the template & injected data.
+Another option is to run `./run.sh {pdf|html} {card_uid}`. Ex: `./run.sh pdf 12345678900070 > wallet.pdf`. The script will run and return an error message in the terminal, or will send pdf or html to stdout which you can then use to save to a file on disk. Using this method, the generated data including all keys is saved to disk. This could pose a security risk if you aren't careful with your files. You should consider deleting these files from disk after printing them.
 
 Print to A4 size paper on Landscape if no margins if supported by your printer. 

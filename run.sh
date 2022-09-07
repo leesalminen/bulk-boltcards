@@ -46,19 +46,19 @@ chrome_string="data:text/html;base64,$html_data"
 # pass the base64 encoded HTML into the chrome address bar for local rendering.
 if [[ $1 == "mac" ]]
 then
-	open -a "Google Chrome.app" $chrome_string --args --incognito
+	open -a "Google Chrome.app" "data:text/html;base64,$(echo $html_data | base64)" --args --incognito
 elif [[ $1 == "linux" ]]
 then
     f=$(mktemp --suffix .html)
     echo "$html_data" > "$f"
     #echo "$json_data" > "$f.json"
-    google-chrome "$f" --no-sandbox
+    chromium "$f" --no-sandbox
     shred -u "$f"
 elif [[ $1 == "pdf" ]]
 then
     f=$(mktemp --suffix .html)
     echo "$html_data" > "$f"
-    google-chrome --headless --disable-gpu --no-margins --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf="$f.pdf" "$f" --no-sandbox
+    chromium --headless --disable-gpu --no-margins --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf="$f.pdf" "$f" --no-sandbox
     shred -u "$f" 
     cat  "$f.pdf"
     shred -u  "$f.pdf"

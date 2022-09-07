@@ -45,7 +45,6 @@ function create_watchonly($zpub, $api_key) {
 	);
 
 	if($request['status'] != 200) {
-		var_dump($request);
 		throw new Exception("Error creating watch only wallet");
 	}
 
