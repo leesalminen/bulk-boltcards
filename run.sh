@@ -34,6 +34,10 @@ if [[ $1 == "mac" ]]
 then
 	open -a "Google Chrome.app" $chrome_string --args --incognito
 else
-	echo "$html_data" > a1.html
-	google-chrome a1.html
+    f=$(mktemp --suffix .html)
+
+	echo "$html_data" > "$f"
+	#echo "$json_data" > "$f.json"
+	google-chrome "$f"
+	shred -u "$f"
 fi

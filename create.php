@@ -71,7 +71,7 @@ function main($card_uid) {
   $onchain_info = json_decode(shell_exec(
     './lib/hd-wallet-derive/hd-wallet-derive.php --mnemonic="' . 
     implode(" ", $mnemonic->words) . 
-    '" -g --numderive=1 --key-type=z --preset=electrum' .
+    '" -g --numderive=1 --key-type=z ' .
     ' --cols=all --format=json --includeroot'
   ));
   $onchain_info2 = json_decode(shell_exec(
