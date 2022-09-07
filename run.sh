@@ -7,8 +7,15 @@ then
   out="/dev/stdout"
 fi  
 
+id=$2
+
+if [ -z "$id" ]
+then
+   id=$(dd if=/dev/random bs=1 count=7 status=none|xxd -ps)
+fi
+
 #first run the PHP script with the card UID as the input parameter and capture the response
-json_data=$(php -f create.php $2)
+json_data=$(php -f create.php $id)
 
 # if there was an error in the PHP script generating everything, the respnse will start with ERROR
 if [[ $json_data == ERROR* ]]
