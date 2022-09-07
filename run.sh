@@ -39,7 +39,7 @@ chrome_string="data:text/html;base64,$html_data"
 # pass the base64 encoded HTML into the chrome address bar for local rendering.
 if [[ $1 == "mac" ]]
 then
-	open -a "Google Chrome.app" $chrome_string --args --incognito
+	open -a "Google Chrome.app" "data:text/html;base64,$(echo $html_data | base64)" --args --incognito
 elif [[ $1 == "linux" ]]
 then
     f=$(mktemp --suffix .html)
