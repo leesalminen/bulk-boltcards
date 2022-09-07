@@ -76,31 +76,29 @@
           border-bottom: 10px solid white;  
           box-sizing: border-box; 
         }
-
         #box {
             margin-top:10px;
               box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 5px 0 rgba(0, 0, 0, 0.09);
               padding:10px; 
               background: rgba(255, 255, 255);
               border-radius: 10px;
-          
-             
-
         }
 
         @media print {
-          body, page[size="A4"][layout="landscape"] {
+
+            body, page[size="A4"][layout="landscape"] {
             margin: 0px !important;
             box-shadow: 0px !important;
             margin-bottom: 0;
             page-break-before: avoid;
           }
-
-          page {
+        @page {
           background: white;
-          margin-bottom: 0.0cm;
+          margin: 0; size: A4;
           box-shadow: 0 0 0.0cm rgba(0,0,0,0.5);
+          
         }
+         body { margin: 1.6cm; }
         }
     </style>
 </head>
@@ -124,13 +122,9 @@
                 <div style="clear:both"></div>
                 <div class="implementation_guide_qr_svg" style="margin-top:10px"></div>
                 <div style="margin-top:-18px">
-                <small>Código da Implementação</small>
+                <small>Apoie o Praia Bitcoin</small>
                 </div>
-                <div style="clear:both"></div>
-                <div class="bolt_generator_qr_svg" style="margin-top:10px"></div>
-                <div style="margin-top:-18px">
-                <small>Código do Gerador do Cartão</small>
-                </div>
+                
             </div>
         </div>
         <div style="margin:10px 0px 0px 35px; float:left; width:470px;">
