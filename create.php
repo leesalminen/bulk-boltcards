@@ -108,6 +108,7 @@ function main($card_uid) {
       'path' => $onchain_info[1]->path,
 
       'mnemonic' => $mnemonic->words,
+      'bip39' => $mnemonic->words,
       'bip39_qr_svg' => null,
 
       'address' => $onchain_info[1]->address,
