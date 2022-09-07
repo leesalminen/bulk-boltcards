@@ -51,8 +51,10 @@ elif [[ $1 == "pdf" ]]
 then
     f=$(mktemp --suffix .html)
     echo "$html_data" > "$f"
-    google-chrome --headless --disable-gpu --no-margins --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf=out.pdf "$f" --no-sandbox
+    google-chrome --headless --disable-gpu --no-margins --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf="$f.pdf" "$f" --no-sandbox
     shred -u "$f" 
+    cat  "$f.pdf"
+    shred -u  "$f.pdf"
 elif [[ $1 == "html" ]]
 then
    echo "$html_data" > "$out"
