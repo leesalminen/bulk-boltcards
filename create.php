@@ -192,6 +192,7 @@ function main($card_uid) {
 
   $output['telegram_bot_url_qr_svg'] = create_qr($output['telegram_bot_url']);
   
+  $output['onchain']['bip39'] = $mnemonic;
   $output['onchain']['bip39_qr_svg'] = create_qr(implode(' ', $output['onchain']['mnemonic']));
   $output['onchain']['zpub_qr_svg'] = create_qr($output['onchain']['zpub']);
   $output['onchain']['address_qr_svg'] = create_qr($output['onchain']['address']);
