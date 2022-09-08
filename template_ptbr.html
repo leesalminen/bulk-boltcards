@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+
+    <title></title>
+
+    <script>
+        var data_string = "SCRIPT_WILL_REPLACE_ME"
+
+        var data = JSON.parse(atob(data_string))
+
+        console.log("DATA RECEIVED!", data)
+
+    </script>
+
+    <style>
+
+    html {
+    -webkit-print-color-adjust: exact;
+    -webkit-filter: opacity(1);
+    }
+
+    @font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Ubuntu'), url('ubuntu.woff') format('woff');
+    
+    }    
+        body {
+          background: rgb(204,204,204); 
+          font-family: Ubuntu, "times new roman", times, roman, serif;
+          font-size:15px;
+          line-height: 1.1;
+          
+
+        }
+        h1,h2  {
+            color: #333 ;
+            margin:5px 0px 5px 0px;
+             font-style: italic;
+             text-shadow: 1px 1px 3px #CCC;
+             font-size: 20px;
+
+        }
+        h3,h4 {
+            margin:0px;
+
+        }
+        small {
+            font-size:7px; 
+            word-break: break-all;
+        } 
+        p{ 
+            margin-top:10px;
+            margin-bottom:10px;
+
+        }
+        page {
+          background: white;
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 0.1cm;
+          /*box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);*/
+        }
+
+        page[size="A4"][layout="landscape"] {
+          width: 29.7cm;
+          height: 21cm;  
+          border-left: 17px solid white;
+          border-right: 10px solid white; 
+          border-top: 10px solid white; 
+          border-bottom: 10px solid white;  
+          box-sizing: border-box; 
+        }
+        #box {
+            margin-top:10px;
+              box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 2px 5px 0 rgba(0, 0, 0, 0.09);
+              padding:10px; 
+              background: rgba(255, 255, 255);
+              border-radius: 10px;
+        }
+
+        @media print {
+
+            body, page[size="A4"][layout="landscape"] {
+            margin: 0px !important;
+            box-shadow: 0px !important;
+            margin-bottom: 0;
+            page-break-before: avoid;
+          }
+        @page {
+          background: white;
+          margin: 0; size: A4;
+          box-shadow: 0 0 0.0cm rgba(0,0,0,0.5);
+          
+        }
+         body { margin: 1.6cm; }
+        }
+    </style>
+</head>
+<body>
+<page size="A4" layout="landscape" style="background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/front5_bg.jpg'); background-repeat: no-repeat; background-size: contain; ">
+    <div style="width:50%; float:left">
+        <div id="box" style="width:470px; height:510px; float:left; margin:40px 0px 0px 35px; background: rgba(255, 255, 255); ">
+            <h1>como funciona o cartão?</h1>    
+            <p>O Bitcoin Bolt Card é um Cartão de Débito por aproximação para facilitar transações de frações de Bitcoin (SATs) através da Lightning. </p>
+            <p>A partir de um servidor local instalado na comunidade com ferramentas de código aberto interligadas a Rede do Bitcoin e Lightning, os portadores do cartão enviam e recebem pagamentos em Bitcoin com muita praticidade, privacidade e tarifas reduzidas.</p>
+            <p>Dentro deste kit de boas vindas você encontra diversas informações confidenciais para você interagir com sua carteira lightning e manejar seus fundos em Bitcoin.</p>
+            <div style="width:330px; height:140px; float:left; margin:0px 0px 0px 10px;  text-align: center;">    
+                <img src="https://raw.githubusercontent.com/PraiaBitcoin/bulk-boltcards/main/img/implementation.jpg" width="330px"></p>
+            </div>
+    
+            <div style="width:100px; height:140px; float:left; margin:5px 0px 0px 10px;  text-align: center; ">    
+                <div class="local_map_qr_svg" style="margin-top:30px"></div>
+                <div style="margin-top:-18px">
+                <small>Onde usar em Jericoacoara</small>
+                </div>
+                <div style="clear:both"></div>
+                <div class="implementation_guide_qr_svg" style="margin-top:10px"></div>
+                <div style="margin-top:-18px">
+                <small>Apoie o Praia Bitcoin</small>
+                </div>
+                
+            </div>
+        </div>
+        <div style="margin:10px 0px 0px 35px; float:left; width:470px;">
+           <h1>agradecimentos especiais</h1>
+        </div>
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 40px; background: rgba(255, 255, 255); ">
+            <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/supporters.png" style="width:100%">
+        </div>
+    </div>
+    <div style="width:50%; float:left">
+       <div style="width:470px;  margin:45px 0px 0px 25px; text-align:center ">
+            <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia.png" width="400">    
+       </div>
+       <div id="box" style="width:470px; height:220px; float:left; margin:17px 0px 0px 20px;">
+                <div style=" margin-top:50px; margin-left: 50px;"><h3>card uid / lightning address</h3> </div>
+                <div style=" margin-top:0px; margin-left: 50px;"><span class="lnbits_lnaddress"></div>
+                <div style=" margin-top:35px; margin-left: 50px; float:left; width:210px"><h3>issuer</h3> </div>
+                <div style=" margin-top:0px; margin-left: 50px; float:left; width:210px"><span class="issuer"></span></div>
+                <div style=" margin-top:35px; margin-left: 50px;"><h3>date</h3> </div>
+                <div style=" margin-top:0px; margin-left: 50px;"><span class="timestamp"></span> </div>
+            </div>
+        <div id="box" style="width:470px; height:70px; float:left; margin:17px 0px 0px 20px;  ">
+            <p>Faça pagamentos e recebimentos em Bitcoin pela Lightning Network com o Bitcoin Bolt Card. Realize transações financeiras por aproximação de forma rápida e barata com total privacidade.</p>
+        </div>
+    </div>
+</page>
+
+<page size="A4" layout="landscape" style="background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/front5_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
+    <div style="width:50%; float:left">
+        <div id="box" style="width:480px; height:470px; float:left; margin:45px 0px 0px 40px; ">
+            <div style="width:470px; height:480px; float:left;  ">
+                <h1>manifesto</h1>           
+                <p>Desde o seu lançamento em 2009, o Bitcoin prometia realizar a inclusão dos desbancarizados e, ao mesmo tempo, conceder aos indivíduos autonomia financeira perante governos e bancos. Até recentemente, essa promessa parecia inalcançável. Mas agora, está acontecendo... em Jericoacoara!</p>
+                <p>O Não Banco é o primeiro provedor de Serviços Lightning no Brasil, criado para atender a economia circular de Jericoacoara utilizando o BTC por meio da Lightning como dinheiro em uma estrutura de confiança minimizada com foco na privacidade do usuário.</p>
+                <p>Nosso objetivo é fazer chegar recursos onde se mais precisa e assim, criar um futuro muito mais próspero, utilizando o Bitcoin como ferramenta de transformação social. </p>
+                <p>Pela revisão das políticas monetárias atuais e pelo fim de uma economia baseada na dívida, utilizamos somente Bitcoin, um sistema monetário mais rápido, barato, inteligente e pacífico. </p>
+                <p>Desenvolvido para atender os alunos e professores da Escola Municipal de Jericoacoara, queremos devolver o poder aos individuos e ajudar as pessoas utilizarem o BTC sem necessidade de portar um smartphone. </p>
+                <p>Bem vindo a entrada da toca do coelho.</p>
+                <p>Aqui dentro, somos todos Satoshi!</p>
+            </div>
+        </div>
+        <div style="margin:10px 0px 0px 35px; float:left; width:470px;">
+            <h1>aprenda sobre bitcoin</h1>
+        </div>
+        <div id="box" style="width:480px; height:140px; float:left; margin:0px 0px 0px 35px; ">
+            <div style="width:110px; height:140px; float:left; margin:5px 0px 0px 10px;  text-align: center;">
+                <div class="">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_btc.png" width="100">
+                </div>               
+                <div style="margin-top:0px">
+                    <small>Bitcoin para Leigos<br>
+                    Porque o Bitcoin Importa</small>
+                </div>
+            </div>
+            <div style="width:110px; height:140px; float:left; margin:5px 0px 0px 10px;  text-align: center;">
+                <div class=""><img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_lnd.png" width="100"></div>
+                <div style="margin-top:0px">
+                    <small style="line-space:1px">LIGHTNING NETWORK!<br> O que é e como funciona?                    
+                    </small>
+                </div>
+            </div>
+
+            <div style="width:110px; height:140px; float:left; margin:5px 0px 0px 10px;  text-align: center;">
+                <div class=""><img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_bluewallet.png" width="100"></div>
+                <div style="margin-top:0px">
+                    <small>Aprenda usar a Bluewallet</small> 
+                </div>
+            </div>
+
+            <div style="width:110px; height:140px; float:left; margin:5px 0px 0px 10px;  text-align: center;">
+                <div class=""><img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_praia.png" width="100"></div>
+                <div style="margin-top:0px">
+                    <small>Apoie o Praia Bitcoin</small>
+                </div>
+            </div>
+
+        </div>
+
+       
+
+    </div>
+    <div style="width:50%; float:left">
+
+    <div style="margin:40px 0px 0px 20px; float:left; width:500px;">
+            <h1>receber frações de bitcoin pela lightning</h1>
+        </div>
+        <div id="box" style="width:470px; height:185px; float:left; margin:0px 0px 0px 20px; ">
+            <div style="width:210px; height:120px; float:left; ">
+                Envie frações de BTC (SATs) para o "<b>Endereço Lightning</b>" ou "<b>LNURLp URL</b>".<br><br>
+                Escaneie o QR Code ao lado em uma carteira compatível para que seja criada uma nova fatura pelo remetente.
+                <br><br>Faça envios de até 1.000.000 SATs (0,01 BTC) por transação. 
+            </div>
+            <div style="width:120px; height:140px; float:left; margin:30px 0px 0px 10px; text-align: center;">
+                <div class="lnbits_lnaddress_qr_svg"></div>
+                <div style="margin-top:-18px">
+                    <small>Endereço Lightning</small>
+                </div>
+            </div>
+            <div style="width:120px; height:140px; float:left; margin:30px 0px 0px 10px;  text-align: center;">
+                <div class="lnbits_lnurlp_qr_svg"></div>
+                <div style="margin-top:-18px">
+                    <small>LNURLp URL</small>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="margin:10px 0px 0px 20px; float:left; width:470px;">
+            <h1>receber pagamentos pelo ponto de venda lightning</h1>
+        </div>
+        <div id="box" style="width:470px; height:165px; float:left; margin:0px 0px 0px 20px; ">
+            <div style="width:320px; height:120px; float:left; ">
+                Ideal para pequenos estabelecimentos receberem pela lightning, sem abrir a carteira.<br><br>
+                Escaneie este QR code com a câmera do seu celular para abrir o ponto de venda.<br><br>
+                Após abrir a página, digite o valor em Reais que será automaticamente convertido para SATs. Gere a fatura e mostre para quem irá realizar o pagamento. 
+            </div>
+            <div style="width:120px; height:140px; float:left; margin:30px 0px 0px 10px; text-align: center;">
+            <div class="lnbits_tpos_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                    <small>LNBits TPoS URL</small>
+                </div>
+            </div>
+        </div>
+        <div style="margin:10px 0px 0px 20px; float:left; width:470px;">
+            <h1>receber doações pela lightning com mensagens</h1>
+        </div>
+        <div id="box" style="width:470px; height:165px; float:left; margin:0px 0px 0px 20px; ">
+             <div style="width:320px; height:120px; float:left; ">
+                Escaneie este QR code com a câmera do celular para abrir o formulário de mensagem.
+                Com ele você poderá receber mensagens que apenas são enviadas para sua carteira após o pagamento em bitcoin.<br><br>
+                Pagamentos Onchain, são enviados para sua carteira de recuperação.
+            </div>
+  
+            <div style="width:120px; height:140px; float:left; margin:30px 0px 0px 10px;  text-align: center;">
+                <div class="lnbits_tipjar_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                    <small>LNBits TIPJar URL</small>
+                </div>
+            </div>
+
+        </div>
+        
+        
+
+    </div>
+
+</page>
+
+
+
+
+
+
+
+
+
+
+<page size="A4" layout="landscape" style="background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/front5_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
+    <div style="width:50%; float:left">
+
+        <div id="box" style="width:470px; height:174px; float:left; margin:40px 0px 0px 35px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential.png'); background-repeat: no-repeat; background-size: contain;">
+        <h1>dados de acesso à carteira lightning</h1>    
+            <div style=" margin-top:15px; margin-left: 5px; float:left; width:50%"><h4>id secreto</h4> </div>
+            <div style=" margin-top:15px; margin-left: 5px;"><h4>id da carteira</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px; float:left; width:50%"><span><small><span class="lnbits_user_id"></span></small></span></div>
+            <div style=" margin-top:0px; margin-left: 5px;"><span><small><span class="lnbits_wallet_id"></span></small></span></div>
+
+            <div style=" margin-top:15px; margin-left: 5px; float:left; width:50%"><h4>lnbits admin key</h4> </div>
+            <div style=" margin-top:15px; margin-left: 5px;"><h4>lnbits invoice key</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px; float:left; width:50%"><span><small><span class="lnbits_admin_key"></span></small></span></div>
+            <div style=" margin-top:0px; margin-left: 5px;"><span><small><span class="lnbits_invoice_key"></span></small></span></div>
+
+
+            <div style=" margin-top:15px; margin-left: 5px;"><h4>access url</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px;"><small><span class="lnbits_access_url"></span></small></div>
+            
+        </div>
+        <div style="margin:10px 0px 0px 35px; float:left; width:470px;">
+            <h1>carteira de recuperação - bitcoin onchain</h1>
+        </div>
+        <div id="box" style="width:470px; height:280px; float:left; margin:0px 0px 0px 35px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential.png'); background-repeat: no-repeat; background-size: contain;">
+        <div style=" margin-top:15px; margin-left: 5px;"><h4>endereço de bitcoin</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px;"><small><span class="onchain_address"></span></small></div>
+        <div style=" margin-top:15px; margin-left: 5px;"><h4>chave pública extendida</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px;"><small><span class="onchain_zpub"></span></small></div>
+        <div style=" margin-top:15px; margin-left: 5px;"><h4>palavras semente</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px;"><small><span class="words"></span></small></div>
+        <div style="clear:both"></div>
+           <div style="width:140px; height:120px; float:left; margin:15px 0px 0px 10px; text-align: center;">
+            <div class="onchain_bip39_qr_svg"></div>
+                <div style="margin-top:-18px">
+                <small>Palavras Semente</small>
+                </div>
+            </div>
+            <div style="width:140px; height:120px; float:left; margin:15px 0px 0px 10px;  text-align: center;">
+                <div class="onchain_zpub_qr_svg"></div>
+                <div style="margin-top:-18px">
+                 <small>ZPUB</small>
+                </div>
+            </div>
+            <div style="width:140px; height:120px; float:left; margin:15px 0px 0px 10px;  text-align: center;">
+                <div class="onchain_address_qr_svg"></div>
+                <div style="margin-top:-18px">
+                 <small>Bitcoin Address</small>
+                </div>
+            </div>
+
+ 
+            
+           
+             <div style="clear:both"></div>
+                       
+            <!-- There is no way to recover the words, 
+            so, please take note and store in a safe place with your <b>card UID</b>. NEVER SHARE WITH ANYONE!-->
+
+            </div>
+        <div style="margin:10px 0px 0px 35px; float:left; width:470px;">
+            <h1>instruções de recuperação de fundos</h1>
+        </div>
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 35px; background-repeat: no-repeat; background-size: contain;">
+            <div style="width:450px; height:100px; float:left; ">
+            Caso perca o acesso à sua carteira lightning, solicite a restauração do saldo da carteira por 5.000 SATs. 
+            Abra um chamado no suporte pago, explique porque precisa restaurar e informe o UID do seu cartão. Enviaremos os fundos apenas para o endereço associado ao cartão. 
+            Não há como recuperar as palavras semente, por isso, tome nota e guarde-o num local seguro com o <b>UID do cartão</b>.
+        
+        
+        <!--If you lose access to your wallet, you can request to restore the funds associated with your bolt card, paying a fee of 5000 SATs. 
+            Open a ticket at the paid support, explain why you need to restore and inform your <b>card UID</b>. The funds will be send only to the address associated with your mnemonic phrases listed bellow.-->
+            
+
+
+            </div>
+            
+        </div>
+
+
+        
+        
+        
+
+    </div>
+    <div style="width:50%; float:left">
+
+        <div style="margin:30px 0px 0px 20px; float:left; width:470px;">
+        <h1>gerenciar carteira do navegador 
+        <!--manage wallet from browser--></h1>
+        </div>
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 20px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential2.png'); background-repeat: no-repeat; background-size: contain; ">
+            <div style="width:320px; height:100px; float:left; ">
+            Este código QR permite ao usuário acessar a interface web de uma carteira LNBits.<br><br>
+            Faça pagamentos, crie faturas, ative e desative extensões, acesso à API e tudo o que precisar.
+            <!-- This QR code allows the user to access the web interface of a LNBits Wallet. NEVER SHARE!<br><br>Make payments, create invoices, activate and disactivate extensions, API access codes and everything you may need.-->
+                
+            </div>
+            <div style="width:120px; height:100px; float:left; margin:-10px 0px 0px 20px;  text-align: center;">
+                <div class="lnbits_access_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                <small>LNBits Access URL</small>
+                </div>
+            </div>
+        </div>
+
+        
+     <div style="margin:10px 0px 0px 20px; float:left; width:465px;">
+            <h1>importar carteira lightning do smartphone
+            <!--manage wallet from smartphone--></h1>
+        </div>
+        <div id="box" style="width:470px; height:145px; float:left;  margin:0px 0px 0px 20px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential3.png'); background-repeat: no-repeat; background-size: contain;">
+            <div style="width:210px; float:left; ">
+                Na Bluewallet, clique em "<b>adicionar carteira</b>", "<b>importar carteira</b>", "<b>ler código ou importar arquivo</b>" e escaneie o QR Code " <b>LNDhub Admin URL</b>" para ter o controle total de sua carteira ou "<b>LNDhub Invoice URL</b>"
+               para importar a carteira no modo leitura.
+                
+
+               <!--Using Bluewallet, click on "<b>add wallet</b>", "<b>import wallet</b>", “<b>read code or import file</b>" and scan the QR Code of "<b>Lndhub Admin</b>" to have the full control of your wallet, or "<b>Invoice URL</b>"
+               to import the wallet in the ready-only mode. 
+                <b>NEVER SHARE!</b> -->
+            </div>
+           <div style="width:120px; height:140px; float:left; margin:15px 0px 0px 10px; text-align: center;">
+            <div class="lnbits_lndhub_admin_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                <small>LNDHub Admin</small>
+                </div>
+            </div>
+            <div style="width:120px; height:140px; float:left; margin:15px 0px 0px 10px;  text-align: center;">
+                <div class="lnbits_lndhub_invoice_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                 <small>LNDHub Invoice</small>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin:10px 0px 0px 20px; float:left; width:470px;">
+            <h1>
+            gerenciar carteira pelo telegram 
+            <!--manage wallet from browser--></h1>
+        </div>
+        <div id="box" style="width:470px; height:135px; float:left; margin:0px 0px 0px 20px; background-repeat: no-repeat; background-size: contain; ">
+            <div style="width:440px; height:50px; ">
+            Abra o Robô do Telegram e siga as intruções para importar a carteira como admnistrador ou modo leitura!<br><br>
+            </div>
+            <div style="width:140px; height:130px; float:left; margin:-30px 0px 0px 5px; text-align: center;">
+            <div class="telegram_bot_url_qr_svg"></div>
+                <div style="margin-top:-18px; line-height:0.6;">
+                <small>Robô do  Telegram<br>
+                https://t.me/naobancojeri
+                </small>
+                </div>
+            </div>
+            <div style="width:150px; height:130px; float:left; margin:-30px 0px 0px 5px; text-align: center;">
+            <div class="lnbits_admin_key_qr_svg"></div>
+                <div style="margin-top:-18px; line-height:0.6;">
+                <small>Admin Key<br>
+                Controle Total</small>
+                </div>
+            </div>
+
+            <div style="width:150px; height:125px; float:left; margin:-30px 0px 0px 5px; text-align: center;">
+            <div class="lnbits_invoice_key_qr_svg"></div>
+                <div style="margin-top:-18px; line-height:0.6;">
+                <small>Invoice Key<br>
+                Modo Leitura</small>
+                </div>
+            </div>
+            
+        </div>
+        <div style="margin:10px 0px 0px 20px; float:left; width:470px;">
+            <h1>endereço de saque</h1>
+        </div>
+        <div id="box" style="width:470px; height:100px; float:left; margin:0px 0px 0px 20px; background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/confidential3.png'); background-repeat: no-repeat; background-size: contain;">
+            <div style="width:320px; height:100px; float:left; ">
+            Este QR code permite ao usuário retirar todos os fundos disponíveis na carteira lightning. <br>
+            <br>
+            Escaneie com sua carteira lightning preferida para importar os fundos e aguarde a confirmação.
+            <!--This QR code allows the user to withdraw all funds available in the wallet. NEVER SHARE!<br><br>
+            Just scan it with your prefered lightning wallet to import and wait the confirmation.-->
+
+            </div>
+            <div style="width:120px; height:100px; float:left; margin:-10px 0px 0px 20px;  text-align: center;">
+                <div class="lnbits_lnurlw_qr_svg"></div>
+                <div style="margin-top:-18px">
+                    <small>LNURLw URL</small>
+                </div>
+            </div>
+        </div>
+
+        </div>
+      <div style="clear:both"></div>
+   
+        <div style="padding-top:20px; width:160px; margin-left:21px; height:20px; color: #FFF; text-shadow: 2px 2px 4px #333; font-size:10px;">
+        <b>SOMOS TODOS SATOSHI</b>
+        </div>
+    </div>
+   
+</page>
+
+
+<page size="A4" layout="landscape" style="background-image: url('https://github.com/leesalminen/bulk-boltcards/raw/main/img/front5_bg.jpg'); background-repeat: no-repeat; background-size: contain;">
+
+    <div style="width:50%; float:left">
+
+        <div style="margin:40px 0px 0px 45px; float:left; width:480px;">
+            
+            <!--server credentials-->
+        </div>
+        <div id="box" style="width:470px; height:290px; float:left; margin:0px 0px 0px 40px; background">
+        <h1>credenciais do servidor lightning</h1>  
+        
+            
+            <div style=" margin-top:-35px; margin-right: 40px; float:right; width:20%"><span class="server_qr_svg"></span></div>
+
+            <div style=" margin-top:15px; margin-left: 5px; float:left; width:25%"><h4>endereço IP</h4> </div>
+            <div style=" margin-top:15px; margin-left: 5px; float:left; width:42%"><h4>localização</h4> </div>
+             <div style=" margin-top:0px; margin-left: 5px; float:left; width:25%"><span><span class="server_ip_address">127.0.0.1</span></span></div>
+            <div style=" margin-top:0px; margin-left: 5px; float:left; width:42%"><span class="server_location"></span></div>
+            
+
+            <div style=" margin-top:10px; margin-left: 5px; float:left; width:70%"><h4>endereço tor</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px; float:left; width:70%"><small style="font-size:14px"><span class="server_tor_address"></span></small></div>
+            
+            <div style=" margin-top:10px; margin-left: 5px; float:left; width:100%"><h4>node public key</h4> </div>
+            <div style=" margin-top:0px; margin-left: 5px; float:left; width:100%"><small style="font-size:12px;"><span class="server_public_key"></span></small></div>
+
+            <div style=" margin-top:10px; margin-left: 5px; float:left; width:100%"><h4>hardware</h4> </div>
+            <div style=" margin-bottom:20px; margin-left: 5px; float:left; width:100% "><span>myNodeBTC two 8gb, 1tb ssd, 1 hora de bateria de emergência e internet fibra ótica de 400mb.  
+        
+            <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia_node_rank.png" width="98%" style="margin-top:15px; margin-bottom:10px">
+        
+
+            </span></div>
+            
+        </div>
+
+        <div style="margin:10px 0px 0px 45px; float:left; width:480px;">
+            <h1>suporte pago
+            <!--paid support--></h1>
+        </div>
+        <div id="box" style="width:470px; height:115px; float:left; margin:0px 0px 0px 45px;">
+            <div style="width:330px; height:100px; float:left; ">
+            Solicite suporte ou qualquer tipo de consulta pagando <span class="support_cost_per_sat"></span> sats por palavra. Inclua seu número de celular ou um endereço de e-mail se precisar de uma resposta. Escaneie o QR code com a câmera do celular para abrir o formulário, digite sua mensagem e pague a fatura para enviar.
+            Resposta em 24h ~ 72h.
+
+            <!-- Request support or any other types of inquiries by paying <span class="support_cost_per_sat"></span> sats per word. Please include your mobile number or an email address if you need a reply.  Scan the QR code to open the form, type your message and pay the invoice to send.<br>Reply in 24h ~ 72h. -->
+            </div>
+            <div style="width:120px; height:100px; float:left; margin:0px 0px 0px 20px;  text-align: center;">
+                <div class="support_url_qr_svg"></div>
+                <div style="margin-top:-18px">
+                <small>Formulário de Suporte
+                <!-- Paid Support Form --></small>
+                </div>
+            </div>
+        </div>
+
+       <div style="margin:10px 0px 0px 45px; float:left; width:480px;">
+            <h1>termos de uso
+            <!--terms of use--></h1>
+        </div>
+        <div id="box" style="width:480px; height:85px; float:left; margin:0px 0px 0px 45px;">
+            <div style="width:100%; height:90px; float:left; ">
+            <span style="">
+            Fornecemos o programa "como está" sem garantia de qualquer tipo, expressa ou implícita, incluindo, mas não se limitando às garantias implícitas de comercialização e adequação a uma finalidade específica. Todo o risco quanto à qualidade e desempenho do programa está com você. Use com cuidado - a carteira LNbits ainda está em beta.
+            <!-- We provide the program "as is" without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the program is with you.
+            Use with caution - LNbits wallet is still in beta.-->
+            </span>
+            </div>
+
+        </div>
+        
+
+       
+
+
+
+    </div>
+    <div style="width:50%; float:left">
+    
+        <div id="box" style="width:470px; height:220px; float:left; margin:50px 0px 0px 20px; ">
+        <h1>operando sua conta corrente lightning</h1>
+        <p>Aqui no kit de boas vindas, você encontra todas as informações para controlar sua carteira.
+        Seu Bitcoin Bolt Card está conectado a uma carteira lightning LNBits, instalada no servidor da Praia Bitcoin.<br><br>
+        Esta é uma tecnologia nova, ainda em testes, a qual temos o privilégio de testá-la no Brasil para fins educacionais.<br><br>
+        Portanto, não mantenha grandes quantias depositadas em sua conta por questões de segurança. Qualquer pessoa em posse do cartão, poderá fazer pagamentos em Bitcoin por aproximação sem necessidade de uma senha.
+        </p>
+        
+    </div>
+
+    <div style="margin:7px 0px 0px 20px; float:left; width:470px;">
+            <h1>instale a bluewallet no smartphone</h1>
+        </div>
+        <div id="box" style="width:470px; height:95px; float:left; margin:0px 0px 0px 20px; ">        
+        <div style="width:220px; height:100px; float:left; ">
+            Escaneie este QR code para baixar a Bluewallet no seu smartphone. Após instalar, altere o idioma para porguguês, configure uma senha e importe sua carteira. 
+            <!-- -->
+                
+            </div>
+            <div style="width:110px; float:left; margin:0px 0px 0px 15px;  text-align: center;">
+                <div><img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/android_bluewallet_qr.png" style="width: 85px; height: 85px; "></div>
+                <div style="margin-top:-5px">
+                <small>BlueWallet para Android</small>
+                </div>
+            </div>
+
+            <div style="width:110px;  float:left; margin:0px 0px 0px 10px;  text-align: center;">
+                <div>    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/ios_bluewallet_qr.png" style="width: 85px; height: 85px"></div>
+                <div style="margin-top:-5px">
+                <small>BlueWallet para iOS</small>
+                </div>
+            </div>     
+
+
+        
+        
+        
+       </div>
+
+    <div style="margin:7px 0px 0px 20px; float:left; width:470px;">
+            <h1>importe a carteira do bolt card na bluewallet</h1>
+        </div>
+        <div id="box" style="width:470px; height:230px; float:left; margin:0px 0px 0px 20px; ">
+        Abra a Bluewallet, clique em “<b>Adicionar Carteira</b>”, “<b>Importar Carteira</b>”, pressione “<b>Ler ou Importar Arquivo</b>”, escaneie o QR Code “<b>LndHub Admin</b>” para importar a carteira Lightning, ou o QR code "<b>Palavras Semente</b>" para importar a carteira de recuperação onchain.
+        <!-- Install Bluewallet, click on “<b>Add Wallet</b>”, “<b>Import Wallet</b>”, press on “<b>Read code or import file</b>”, scan the QR code to import the wallet: the “<b>LndHub Admin</b>” QR Code for the Lightning Wallet, or "<b>Mnemonic Phrases</b>" for the Bitcoin Onchain Recovery wallet .-->
+            
+            <div style="margin-top:15px"></div>
+                <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_04.png" style="width: 100%; ">
+                </div>
+                <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_05.png" style="width: 100%; ">
+                </div>
+                <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_06.png" style="width: 100%; ">
+                </div>
+                <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_07.png" style="width: 100%; ">
+                </div>
+                    <div style="border: 1px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_08.png" style="width: 100%; ">
+                </div>
+                <div style="border: 0px solid #E1E1E1; width: 65px; float:left; text-align:center; margin-left:13px">
+                    <img src="https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_09.png" style="width: 100%; ">
+                </div>
+                <div style="clear:both"></div>
+
+        </div>
+
+        
+
+    </div>
+
+</page>
+
+
+
+<script>
+    function processData(obj,parentKey) {
+        var keys = Object.keys(obj)
+
+        keys.forEach(key => {
+            var val = obj[key]
+
+            if(typeof val != 'object') {
+                var newKey = parentKey ? parentKey + "_" + key : key
+                var els = document.querySelectorAll('.' + newKey)
+
+                if(els.length) {
+                    els.forEach(el => {
+                        el.innerHTML = obj[key]
+                    })
+                }
+            } else {
+                processData(val, key)
+            }
+        })
+    }
+
+    processData(data)
+</script>
+</body>
+</html>
