@@ -1,5 +1,32 @@
 #! /bin/bash
 
+if [ -f "./constants.sh" ]
+then
+  . ./constants.sh
+fi
+
+CMD=$1
+
+if [ -z $CMD ]
+then
+   CMD=$DEFAULTCMD
+   if [ -z $CMD ]
+   then
+      CMD=html
+   fi  
+fi   
+
+if [ -z "$TEMPLATE" ]
+then
+   TEMPLATE="./template.html"
+fi
+
+if [ ! -f "$TEMPLATE" ]
+then
+   echo "ERROR: template $TEMPLATE does not exists"
+   exit 1
+fi   
+
 out=$3
 
 if [ -z "$out" ]
@@ -21,7 +48,7 @@ json_data=$(php -f create.php $id)
 if [[ $json_data == ERROR* ]]
 then
 	echo $json_data
-	exit
+	exit 1
 fi
 
 # convert the json output from PHP to base64
@@ -36,7 +63,7 @@ str+='|'
 # inject the json_base64 into the HTML template then base64 encode all the HTML
 cmd="sed '"
 cmd+=$str
-cmd+="' ./template.html"
+cmd+="' $TEMPLATE"
 
 # run the sed find/replace + base64 encode
 html_data=$(eval $cmd)
@@ -44,25 +71,30 @@ html_data=$(eval $cmd)
 chrome_string="data:text/html;base64,$html_data"
 
 # pass the base64 encoded HTML into the chrome address bar for local rendering.
-if [[ $1 == "mac" ]]
+if [[ $CMD == "mac" ]]
 then
 	open -a "Google Chrome.app" "data:text/html;base64,$(echo $html_data | base64)" --args --incognito
-elif [[ $1 == "linux" ]]
+elif [[ $CMD == "linux" ]]
 then
     f=$(mktemp --suffix .html)
     echo "$html_data" > "$f"
     #echo "$json_data" > "$f.json"
     chromium "$f" --no-sandbox
     shred -u "$f"
-elif [[ $1 == "pdf" ]]
+elif [[ $CMD == "pdf" ]]
 then
     f=$(mktemp --suffix .html)
     echo "$html_data" > "$f"
     chromium --headless --disable-gpu --no-margins --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf="$f.pdf" "$f" --no-sandbox
     shred -u "$f" 
-    cat  "$f.pdf"
+    cat  "$f.pdf" > "$out"    
     shred -u  "$f.pdf"
-elif [[ $1 == "html" ]]
+elif [[ $CMD == "html" ]]
 then
    echo "$html_data" > "$out"
+else
+   echo "ERROR: Command is not valid."
+   exit 1
 fi
+
+exit 0

@@ -6,6 +6,10 @@
    $output=$_REQUEST['output'];
    if (! isset ( $output ) )
       $output = 'html';
+
+   if($output != 'html' )
+      header("Content-Type: application/$output");
+
    $out=trim(`./run.sh $output $session`);
    echo "$out";
    
