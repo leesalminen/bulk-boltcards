@@ -7,7 +7,8 @@
    if (! isset ( $output ) )
       $output = 'html';
 
-   header("Content-Type: application/$output");
+   if($output != 'html' )
+      header("Content-Type: application/$output");
 
    $out=trim(`./run.sh $output $session`);
    echo "$out";
