@@ -1,0 +1,61 @@
+{
+	"how_it_works": {
+		"title": "how does the card work?",
+		"p1": "The Bitcoin Bolt Card is a Debit Card by approximation to facilitate transactions of Bitcoin fractions (SATs) through Lightning.",
+		"p2": "From a local server installed in the community with open source tools interconnected to the Bitcoin and Lightning Network, cardholders send and receive payments in Bitcoin with great convenience, privacy and reduced rates.",
+		"p3": "Inside this welcome kit you will find a lot of confidential information for you to interact with your lightning wallet and manage your Bitcoin funds.",
+		"local_map_qr_subtitle": "Where to Use in Costa Rica",
+		"implementation_guide_qr_subtitle": "Support Bitcoin Jungle",
+
+		"images": {
+			"flowchart": "https://raw.githubusercontent.com/PraiaBitcoin/bulk-boltcards/main/img/implementation.jpg"
+		}
+	},
+
+	"special_thanks": {
+		"title": "Special Thanks",
+
+		"images": {
+			"supporters": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/supporters.png"
+		}
+	},
+
+	"basic_info": {
+		"card_uid": "card uid / lightning address",
+		"issuer": "issuer",
+		"date": "date",
+		"description": "Make Bitcoin payments and receipts over the Lightning Network with the Bitcoin Bolt Card. Carry out contactless financial transactions quickly and cheaply in complete privacy.",
+
+		"images": {
+			"logo": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia.png"
+		}
+	},
+
+	"manifesto": {
+		"title": "manifesto",
+
+		"p1": "Since its launch in 2009, Bitcoin has promised to achieve inclusion of the unbanked while at the same time granting individuals financial autonomy from governments and banks. Until recently, this promise seemed unattainable. But now it's happening... in Jericoacoara!",
+		"p2": "No Banco is the first Lightning Services provider in Brazil, created to serve Jericoacoara's circular economy using BTC through Lightning as cash in a minimized trust structure with a focus on user privacy.",
+		"p3": "Our goal is to get resources where they are needed most and thus create a much more prosperous future, using Bitcoin as a tool for social transformation.",
+		"p4": "By reviewing current monetary policies and ending a debt-based economy, we use only Bitcoin, a faster, cheaper, smarter and more peaceful monetary system.",
+		"p5": "Developed to serve the students and teachers of Escola Municipal de Jericoacoara, we want to give power back to individuals and help people use BTC without having to carry a smartphone.",
+		"p6": "Welcome to the entrance to the rabbit hole.",
+		"p7": "Here, we are all Satoshi!"
+	},
+
+	"learn": {
+		"title": "learn about bitcoin",
+
+		"qr_1_subtitle": "Bitcoin for Dummies<br>Why Bitcoin Matters",
+		"qr_2_subtitle": "LIGHTNING NETWORK!<br> What is it and how does it work?",
+		"qr_3_subtitle": "Learn to use Bluewallet",
+		"qr_4_subtitle": "Support Praia Bitcoin",
+
+		"images": {
+			"qr_1": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_btc.png",
+			"qr_2": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_lnd.png",
+			"qr_3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_bluewallet.png",
+			"qr_4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_praia.png"
+		}
+	}
+}

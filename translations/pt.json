@@ -1,0 +1,61 @@
+{
+	"how_it_works": {
+		"title": "como funciona o cartão?",
+		"p1": "O Bitcoin Bolt Card é um Cartão de Débito por aproximação para facilitar transações de frações de Bitcoin (SATs) através da Lightning.",
+		"p2": "A partir de um servidor local instalado na comunidade com ferramentas de código aberto interligadas a Rede do Bitcoin e Lightning, os portadores do cartão enviam e recebem pagamentos em Bitcoin com muita praticidade, privacidade e tarifas reduzidas.",
+		"p3": "Dentro deste kit de boas vindas você encontra diversas informações confidenciais para você interagir com sua carteira lightning e manejar seus fundos em Bitcoin.",
+		"local_map_qr_subtitle": "Onde usar em Jericoacoara",
+		"implementation_guide_qr_subtitle": "Apoie o Praia Bitcoin",
+
+		"images": {
+			"flowchart": "https://raw.githubusercontent.com/PraiaBitcoin/bulk-boltcards/main/img/implementation.jpg"
+		}
+	},
+
+	"special_thanks": {
+		"title": "agradecimentos especiais",
+
+		"images": {
+			"supporters": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/supporters.png"
+		}
+	},
+
+	"basic_info": {
+		"card_uid": "card uid / lightning address",
+		"issuer": "emissor",
+		"date": "encontro",
+		"description": "Make Bitcoin payments and receipts over the Lightning Network with the Bitcoin Bolt Card. Carry out contactless financial transactions quickly and cheaply in complete privacy.",
+
+		"images": {
+			"logo": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia.png"
+		}
+	},
+
+	"manifesto": {
+		"title": "manifesto",
+
+		"p1": "Desde o seu lançamento em 2009, o Bitcoin prometia realizar a inclusão dos desbancarizados e, ao mesmo tempo, conceder aos indivíduos autonomia financeira perante governos e bancos. Até recentemente, essa promessa parecia inalcançável. Mas agora, está acontecendo... em Jericoacoara!",
+		"p2": "O Não Banco é o primeiro provedor de Serviços Lightning no Brasil, criado para atender a economia circular de Jericoacoara utilizando o BTC por meio da Lightning como dinheiro em uma estrutura de confiança minimizada com foco na privacidade do usuário.",
+		"p3": "Nosso objetivo é fazer chegar recursos onde se mais precisa e assim, criar um futuro muito mais próspero, utilizando o Bitcoin como ferramenta de transformação social.",
+		"p4": "Pela revisão das políticas monetárias atuais e pelo fim de uma economia baseada na dívida, utilizamos somente Bitcoin, um sistema monetário mais rápido, barato, inteligente e pacífico.",
+		"p5": "Desenvolvido para atender os alunos e professores da Escola Municipal de Jericoacoara, queremos devolver o poder aos individuos e ajudar as pessoas utilizarem o BTC sem necessidade de portar um smartphone.",
+		"p6": "Bem vindo a entrada da toca do coelho.",
+		"p7": "Aqui dentro, somos todos Satoshi!"
+	},
+
+	"learn": {
+		"title": "aprenda sobre bitcoin",
+
+		"qr_1_subtitle": "Bitcoin para Leigos<br>Porque o Bitcoin Importa",
+		"qr_2_subtitle": "LIGHTNING NETWORK!<br> O que é e como funciona?",
+		"qr_3_subtitle": "Aprenda usar a Bluewallet",
+		"qr_4_subtitle": "Apoie o Praia Bitcoin",
+
+		"images": {
+			"qr_1": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_btc.png",
+			"qr_2": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_lnd.png",
+			"qr_3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_bluewallet.png",
+			"qr_4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_praia.png"
+		}
+	}
+}
