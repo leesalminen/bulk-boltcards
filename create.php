@@ -42,18 +42,23 @@ function main($card_uid) {
   	throw new Exception("Card UID invalid length");
   }
 
+
   // set the wordlist language for onchain generation
+  // and set the locale for date output etc
   switch (LANGUAGE) {
     case 'en':
     $wordlist_language = Wordlist::English();
+    setlocale(LC_TIME, 'en_US');
     break;
 
     case 'es':
     $wordlist_language = Wordlist::Spanish();
+    setlocale(LC_TIME, 'es_ES');
     break;
 
     case 'pt':
     $wordlist_language = Wordlist::Portuguese();
+    setlocale(LC_TIME, 'pt_BR');
     break;
 
     default:
@@ -89,7 +94,7 @@ function main($card_uid) {
     'card_uid' => $card_uid,
 
     // used for rendering
-    'timestamp' => date('M j, Y'),
+    'timestamp' => strftime('%b %e, %Y'),
 
     // you can set your own name in constants.php
     'issuer' => ISSUER_NAME,
