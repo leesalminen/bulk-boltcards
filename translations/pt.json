@@ -1,0 +1,10 @@
+{
+	"how_it_works": {
+		"title": "como funciona o cartão?",
+		"p1": "O Bitcoin Bolt Card é um Cartão de Débito por aproximação para facilitar transações de frações de Bitcoin (SATs) através da Lightning.",
+		"p2": "A partir de um servidor local instalado na comunidade com ferramentas de código aberto interligadas a Rede do Bitcoin e Lightning, os portadores do cartão enviam e recebem pagamentos em Bitcoin com muita praticidade, privacidade e tarifas reduzidas.",
+		"p3": "Dentro deste kit de boas vindas você encontra diversas informações confidenciais para você interagir com sua carteira lightning e manejar seus fundos em Bitcoin."
+	}
+
+
+}

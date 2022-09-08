@@ -117,6 +117,8 @@ function main($card_uid) {
     'support_url_qr_svg' => null,
     'support_cost_per_sat' => SUPPORT_COST_PER_SAT,
 
+    'localization' => null,
+
     // all the details about the onchain wallet we generated
     'onchain' => [
       'path' => $onchain_info[1]->path,
@@ -201,6 +203,9 @@ function main($card_uid) {
     // TODO :: implement this extension once PR is approved that fixes things
     'lnaddress_activated' => false,
   ];
+
+  $localization = file_get_contents('./translations/' . LANGUAGE . '.json');
+  $output['localization'] = json_decode($localization);
 
   $output['server_qr_svg'] = create_qr($output['server_public_key'] . '@' . $output['server_ip_address'] . ':9735');
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>LNBits Access Kit</title>
+
+	<script>
+		var data_string = "SCRIPT_WILL_REPLACE_ME"
+		
+		var base64_decoded = atob(data_string)
+		var data = JSON.parse(base64_decoded)
+
+		console.log(data)
+	</script>
+</head>
+<body>
+
+	<h1>LNBits Access Kit</h1>
+
+	<div id="dataField"></div>
+
+	<script>
+		// this is just to demo the data available for use
+		var keys = Object.keys(data)
+		var dataField = document.getElementById('dataField');
+		keys.forEach(key => {
+			var value = data[key]
+
+			var el = document.createElement('p')
+			el.innerHTML = '<b>' + key + "</b> " + (typeof value != 'object' ? value : JSON.stringify(value))
+			dataField.appendChild(el)
+		})
+	</script>
+
+	<script>
+		window.print()
+	</script>
+</body>
+</html>

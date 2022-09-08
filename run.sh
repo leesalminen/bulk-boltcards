@@ -36,7 +36,7 @@ str+='|'
 # inject the json_base64 into the HTML template then base64 encode all the HTML
 cmd="sed '"
 cmd+=$str
-cmd+="' ./template_ptbr.html"
+cmd+="' ./template.html"
 
 # run the sed find/replace + base64 encode
 html_data=$(eval $cmd)
