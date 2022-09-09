@@ -1,5 +1,7 @@
 # Bulk Boltcards
 
+![Example Output](https://github.com/leesalminen/bulk-boltcards/raw/main/img/example_output.png "example output")
+
 ## To run
 
 First, install pre-requisites:
