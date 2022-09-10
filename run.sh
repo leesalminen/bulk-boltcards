@@ -1,5 +1,13 @@
 #! /bin/bash
 
+LOCK=/var/lock/bulk-boltcards.lock
+
+if [ ! -f $LOCK ]
+then 
+  touch $LOCK
+  chmod 666 $LOCK
+fi
+
 if [ -f "./constants.sh" ]
 then
   . ./constants.sh
@@ -42,7 +50,14 @@ then
 fi
 
 #first run the PHP script with the card UID as the input parameter and capture the response
-json_data=$(php -f create.php $id)
+json_data=$( flock --timeout 100 $LOCK php -f create.php $id)
+
+#if there was a timeout waiting for lock, bailout 
+if [ -z "$json_data" ]
+then
+   echo "ERROR: Timeout while waiting for lock"
+   exit 1
+fi 
 
 # if there was an error in the PHP script generating everything, the respnse will start with ERROR
 if [[ $json_data == ERROR* ]]
