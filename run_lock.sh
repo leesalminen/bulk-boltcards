@@ -77,6 +77,15 @@ html_data=$(eval $cmd)
 
 chrome_string="data:text/html;base64,$html_data"
 
+if [ ! -z $PROXY ]
+then
+   PROXY_ARG=--proxy-server="$PROXY"
+fi
+
+
+
+
+
 # pass the base64 encoded HTML into the chrome address bar for local rendering.
 if [[ $CMD == "mac" ]]
 then
@@ -86,13 +95,13 @@ then
     f=$(mktemp --suffix .html)
     echo "$html_data" > "$f"
     #echo "$json_data" > "$f.json"
-    chromium "$f" --no-sandbox
+    chromium "$f" --no-sandbox $PROXY_ARG
     shred -u "$f"
 elif [[ $CMD == "pdf" ]]
 then
     f=$(mktemp --suffix .html)
     echo "$html_data" > "$f"
-    chromium --headless --disable-gpu --no-margins --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf="$f.pdf" "$f" --no-sandbox
+    chromium --headless --disable-gpu --no-margins --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf="$f.pdf" "$f" --no-sandbox $PROXY_ARG
     shred -u "$f" 
     cat  "$f.pdf" > "$out"    
     shred -u  "$f.pdf"
