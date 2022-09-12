@@ -1,5 +1,18 @@
 #! /bin/bash
 
+# we can use or  provide local and safe in memory filesystem, so when computer is powered off, all data are gone 
+TMPDIR=$XDG_RUNTIME_DIR
+
+if [ -z $TMPDIR ]  
+then
+  TMPDIR=/tmp/DATA
+fi
+
+if [ ! -d $TMPDIR ]
+then
+   TMPDIR=/tmp
+fi
+
 if [ -f "./constants.sh" ]
 then
   . ./constants.sh
@@ -92,14 +105,14 @@ then
 	open -a "Google Chrome.app" "data:text/html;base64,$(echo $html_data | base64)" --args --incognito
 elif [[ $CMD == "linux" ]]
 then
-    f=$(mktemp --suffix .html)
+    f=$(mktemp -p $TMPDIR --suffix .html)
     echo "$html_data" > "$f"
     #echo "$json_data" > "$f.json"
     chromium "$f" --no-sandbox $PROXY_ARG
     shred -u "$f"
 elif [[ $CMD == "pdf" ]]
 then
-    f=$(mktemp --suffix .html)
+    f=$(mktemp -p $TMPDIR --suffix .html)
     echo "$html_data" > "$f"
     chromium --headless --disable-gpu --no-margins --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf="$f.pdf" "$f" --no-sandbox $PROXY_ARG
     shred -u "$f" 
