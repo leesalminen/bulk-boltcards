@@ -51,7 +51,7 @@ id=$2
 
 if [ -z "$id" ]
 then
-   id=$(dd if=/dev/random bs=1 count=7 status=none|xxd -ps)
+   id=$(./random_card.sh)
 fi
 
 #first run the PHP script with the card UID as the input parameter and capture the response

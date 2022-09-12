@@ -5,7 +5,10 @@
    
    //you can send base encoded certificate to pass to gpg 
    $certificate=isset($_REQUEST['certificate'])?$_REQUEST['certificate']:null;
-  
+
+   if($session=="")
+     $session=shell_exec("./random_card.sh");
+
    //setup main command
    $cmdexec="./run.sh $output $session";
    $temp="";
