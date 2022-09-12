@@ -29,8 +29,8 @@
       file_put_contents($temp,base64_decode($certificate));      
       
       //set header as plain text
-      header("Content-Type: text/plain"); 
-       
+      //header("Content-Type: text/plain"); 
+      header("Content-Disposition: attachment; filename=\"card-$session.asc\""); 
    } else if($output != 'html' )
       header("Content-Type: application/$output"); 
 
