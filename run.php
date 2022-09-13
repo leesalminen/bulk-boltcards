@@ -1,18 +1,24 @@
 <?php
 
-   $session=isset($_REQUEST['session'])?$_REQUEST['session']:"";
-   $output=isset($_REQUEST['output'])?$_REQUEST['output']:"html";
+   $session=trim(isset($_REQUEST['session'])?$_REQUEST['session']:"");
+   $output=trim(isset($_REQUEST['output'])?$_REQUEST['output']:"");
+   if($output=="")
+     $output="html";
    
    //you can send base encoded certificate to pass to gpg 
-   $certificate=isset($_REQUEST['certificate'])?$_REQUEST['certificate']:null;
+   $certificate=trim(isset($_REQUEST['certificate'])?$_REQUEST['certificate']:"");
 
    if($session=="")
      $session=shell_exec("./random_card.sh");
 
+   //header("Content-Type: text/plain");
+   //echo $output;
+   //exit;
+
    //setup main command
    $cmdexec="./run.sh $output $session";
    $temp="";
-   if ( isset($certificate) ) {
+   if ( $certificate!="" ) {
       $dir="/tmp/.gpg-" . getenv('USER');
       $cmd="GNUPGHOME=$dir";
       putenv($cmd);
@@ -29,11 +35,11 @@
       $cmdexec.=" | gpg -e -z 9 --recipient-file $temp -a";
       
       //decode and save certificate 
-      file_put_contents($temp,base64_decode($certificate));      
-      
+      //file_put_contents($temp,base64_decode($certificate));      
+      file_put_contents($temp,$certificate);
       //set header as plain text
       //header("Content-Type: text/plain"); 
-      header("Content-Disposition: attachment; filename=\"card-$session.asc\""); 
+      header("Content-Disposition: attachment; filename=\"card-$session.$output.asc\""); 
    } else if($output != 'html' )
       header("Content-Type: application/$output"); 
 
