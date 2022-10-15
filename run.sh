@@ -1,6 +1,6 @@
 #! /bin/bash
 
-LOCK=/var/lock/bulk-boltcards.lock
+LOCK=/var/tmp/bulk-boltcards.lock
 
 if [ ! -f $LOCK ]
 then 
