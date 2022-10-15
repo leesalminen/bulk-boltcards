@@ -233,9 +233,9 @@ function main($card_uid) {
   $output['lnbits_wallet_id'] = $user['wallet_id'];
   $output['lnbits_username'] = $user['username'];
   $output['lnbits_admin_key'] = $user['admin_key'];
-  $output['lnbits_admin_key_qr_svg'] = create_qr($output['lnbits_admin_key']);
+  $output['lnbits_admin_key_qr_svg'] = create_qr('admin_key:' . $output['lnbits_admin_key']);
   $output['lnbits_invoice_key'] = $user['invoice_key'];
-  $output['lnbits_invoice_key_qr_svg'] = create_qr($output['lnbits_invoice_key']);
+  $output['lnbits_invoice_key_qr_svg'] = create_qr('invoice_key:' . $output['lnbits_invoice_key']);
   $output['lnbits_access_url'] = DOMAIN_NAME . '/wallet?usr=' . $user['user_id'] . '&wal=' . $user['wallet_id'];
   $output['lnbits_access_url_qr_svg'] = create_qr($output['lnbits_access_url']); 
 
