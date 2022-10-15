@@ -24,7 +24,7 @@
 		"card_uid": "card uid / lightning address",
 		"issuer": "emissor",
 		"date": "encontro",
-		"description": "Make Bitcoin payments and receipts over the Lightning Network with the Bitcoin Bolt Card. Carry out contactless financial transactions quickly and cheaply in complete privacy.",
+		"description": "Faça pagamentos e recebimentos de Bitcoin pela Lightning Network com o cartão Bitcoin Bolt. Realize transações financeiras sem contato de forma rápida e barata com total privacidade.",
 
 		"images": {
 			"logo": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia.png"
@@ -57,5 +57,176 @@
 			"qr_3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_bluewallet.png",
 			"qr_4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_praia.png"
 		}
+	},
+
+	"receive_lightning": {
+		"title": "receber frações de bitcoin pela lightning",
+
+		"p1": "Envie frações de BTC (SATs) para o \"Endereço Lightning\" ou \"LNURLp URL\".",
+		"p2": "Escaneie o QR Code ao lado em uma carteira compatível para que seja criada uma nova fatura pelo remetente.",
+		"p3": "Faça envios de até 1.000.000 SATs (0,01 BTC) por transação.",
+
+		"qr_1_subtitle": "Endereço Lightning",
+		"qr_2_subtitle": "LNURLp URL"
+	},
+
+	"receive_pos": {
+		"title": "receber pagamentos pelo ponto de venda lightning",
+
+		"p1": "Ideal para pequenos estabelecimentos receberem pela lightning, sem abrir a carteira.",
+		"p2": "Escaneie este QR code com a câmera do seu celular para abrir o ponto de venda.",
+		"p3": "Após abrir a página, digite o valor em Reais que será automaticamente convertido para SATs. Gere a fatura e mostre para quem irá realizar o pagamento.",
+
+		"qr_1_subtitle": "LNBits TPoS URL"
+	},
+
+	"receive_tips": {
+		"title": "receber doações pela lightning com mensagens",
+
+		"p1": "Escaneie este QR code com a câmera do celular para abrir o formulário de mensagem. Com ele você poderá receber mensagens que apenas são enviadas para sua carteira após o pagamento em bitcoin.",
+		"p2": "Pagamentos Onchain, são enviados para sua carteira de recuperação.",
+
+		"qr_1_subtitle": "LNBits TIPJar URL"
+	},
+
+	"access": {
+		"title": "dados de acesso à carteira lightning",
+
+		"id": "id secreto",
+		"wallet_id": "id da carteira",
+		"admin_key": "lnbits admin key",
+		"invoice_key": "lnbits invoice key",
+		"url": "access url"
+
+	},
+
+	"onchain_recovery": {
+		"title": "carteira de recuperação - bitcoin onchain",
+
+		"address": "endereço de bitcoin",
+		"zpub": "chave pública extendida",
+		"seed_words": "palavras semente",
+
+		"qr_1_subtitle": "Palavras Semente",
+		"qr_2_subtitle": "ZPUB",
+		"qr_3_subtitle": "Bitcoin Address"
+
+	},
+
+	"recovery_instructions": {
+		"title": "instruções de recuperação de fundos",
+
+		"p1": "Caso perca o acesso à sua carteira lightning, solicite a restauração do saldo da carteira por 5.000 SATs. Abra um chamado no suporte pago, explique porque precisa restaurar e informe o UID do seu cartão. Enviaremos os fundos apenas para o endereço associado ao cartão. Não há como recuperar as palavras semente, por isso, tome nota e guarde-o num local seguro com o <b>UID do cartão</b>."
+	},
+
+	"manage_browser": {
+		"title": "gerenciar carteira do navegador",
+
+		"p1": "Este código QR permite ao usuário acessar a interface web de uma carteira LNBits.",
+		"p2": "Faça pagamentos, crie faturas, ative e desative extensões, acesso à API e tudo o que precisar.",
+
+		"qr_1_subtitle": "LNBits Access URL"
+	},
+
+	"import_wallet": {
+		"title": "importar carteira lightning do smartphone",
+
+		"p1": "Na Bluewallet, clique em \"<b>adicionar carteira</b>\", \"<b>importar carteira</b>\", \"<b>ler código ou importar arquivo</b>\" e escaneie o QR Code \" <b>LNDhub Admin URL</b>\" para ter o controle total de sua carteira ou \"<b>LNDhub Invoice URL</b>\" para importar a carteira no modo leitura.",
+
+		"qr_1_subtitle": "LNDHub Admin",
+		"qr_2_subtitle": "LNDHub Invoice"
+	},
+
+	"telegram": {
+		"title": "gerenciar carteira pelo telegram",
+
+		"p1": "Abra o Robô do Telegram e siga as intruções para importar a carteira como admnistrador ou modo leitura!",
+
+		"qr_1_subtitle": "Robô do  Telegram<br>https://t.me/naobancojeri",
+		"qr_2_subtitle": "Admin Key<br>Controle Total",
+		"qr_3_subtitle": "Invoice Key<br>Modo Leitura"
+
+	},
+
+	"withdrawl": {
+		"title": "endereço de saque",
+
+		"p1": "Este QR code permite ao usuário retirar todos os fundos disponíveis na carteira lightning.",
+		"p2": "Escaneie com sua carteira lightning preferida para importar os fundos e aguarde a confirmação.",
+
+		"qr_1_subtitle": "LNURLw URL"
+	},
+
+	"node_info": {
+		"title": "credenciais do servidor lightning",
+
+		"ip": "endereço IP",
+		"location": "localização",
+		"tor": "endereço tor",
+		"pubkey": "node public key",
+		"hardware": "hardware",
+
+		"images": {
+			"info": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia_node_rank.png"
+		}
+	},
+
+	"support": {
+		"title": "suporte pago",
+
+		"p1": "Solicite suporte ou qualquer tipo de consulta pagando ",
+		"p2": " sats por palavra. Inclua seu número de celular ou um endereço de e-mail se precisar de uma resposta. Escaneie o QR code com a câmera do celular para abrir o formulário, digite sua mensagem e pague a fatura para enviar.",
+		"p3": " Resposta em 24h ~ 72h.",
+
+		"qr_1_subtitle": "Formulário de Suporte"
+	},
+
+	"terms": {
+		"title": "termos de uso",
+
+		"p1": "Fornecemos o programa \"como está\" sem garantia de qualquer tipo, expressa ou implícita, incluindo, mas não se limitando às garantias implícitas de comercialização e adequação a uma finalidade específica. Todo o risco quanto à qualidade e desempenho do programa está com você. Use com cuidado - a carteira LNbits ainda está em beta."
+	},
+
+	"usage": {
+		"title": "operando sua conta corrente lightning",
+
+		"p1": "Aqui no kit de boas vindas, você encontra todas as informações para controlar sua carteira. Seu Bitcoin Bolt Card está conectado a uma carteira lightning LNBits, instalada no servidor da Praia Bitcoin.",
+		"p2": "Esta é uma tecnologia nova, ainda em testes, a qual temos o privilégio de testá-la no Brasil para fins educacionais.",
+		"p3": "Portanto, não mantenha grandes quantias depositadas em sua conta por questões de segurança. Qualquer pessoa em posse do cartão, poderá fazer pagamentos em Bitcoin por aproximação sem necessidade de uma senha."
+	},
+
+	"bluewallet": {
+		"title": "instale a bluewallet no smartphone",
+
+		"p1": " Escaneie este QR code para baixar a Bluewallet no seu smartphone. Após instalar, altere o idioma para porguguês, configure uma senha e importe sua carteira.",
+
+		"qr_1_subtitle": "BlueWallet para Android",
+		"qr_2_subtitle": "BlueWallet para iOS"
+	},
+
+	"import_bluewallet": {
+		"title": "importe a carteira do bolt card na bluewallet",
+
+		"p1": "Abra a Bluewallet, clique em \"<b>Adicionar Carteira</b>\", \"<b>Importar Carteira</b>\", pressione \"<b>Ler ou Importar Arquivo</b>\", escaneie o QR Code \"<b>LndHub Admin</b>\" para importar a carteira Lightning, ou o QR code \"<b>Palavras Semente</b>\" para importar a carteira de recuperação onchain.",
+
+		"images": {
+			"1": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_04.png",
+			"2": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_05.png",
+			"3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_06.png",
+			"4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_07.png",
+			"5": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_08.png",
+			"6": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_09.png"
+		}
+	},
+
+	"configure": {
+		"title": "configurar seu boltcard",
+
+		"p1": "Digitalize este código QR com o aplicativo BoltCard Android para configurá-lo.",
+
+		"qr_1_subtitle": "Bolt Card Auth Link"
 	}
+
+
+
 }
