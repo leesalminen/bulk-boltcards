@@ -31,3 +31,6 @@ define("TELEGRAM_BOT_URL", "https://t.me/naobancojeri");
 define("LOCAL_MAP", "https://goo.gl/maps/5QHh2kv1H3f9fHEw9");
 define("BOLT_GENERATOR_CODE", "https://github.com/praiabitcoin/bulkcards");
 define("IMPLEMENTATION_GUIDE", "https://github.com/praiabitcoin/naobanco");
+
+//Define a SOCKS5 proxy, if you desire it 
+//define("SOCKS5", "192.168.0.201:9050");

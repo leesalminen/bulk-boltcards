@@ -13,6 +13,11 @@ function request($method, $url, $params = [], $headers = [], $body = []) {
 
 	// set url
 	curl_setopt($ch, CURLOPT_URL, DOMAIN_NAME . $url);
+    
+        if( defined('SOCKS5') ) {
+	 curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5_HOSTNAME);
+	 curl_setopt($ch, CURLOPT_PROXY, SOCKS5);	    
+	}
 
 	// set method
 	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
