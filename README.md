@@ -9,7 +9,7 @@ First, install pre-requisites:
 Debian 10
 
 ```
-sudo apt install chromium curl php php-gmp php-mbstring php-gd php-curl libcurl4-openssl-dev git
+sudo apt install chromium curl php php-gmp php-mbstring php-gd php-curl libcurl4-openssl-dev git flock
 ```
 
 Ubuntu
@@ -17,7 +17,7 @@ If you need to downgrade from php 8.1 to 7.4 follow this [tutorial](https://thec
 
 
 ```
-sudo apt install curl php php-gmp php-mbstring php-gd php-curl libcurl4-openssl-dev git
+sudo apt install curl php php-gmp php-mbstring php-gd php-curl libcurl4-openssl-dev git flock
 ```
 
 ```
