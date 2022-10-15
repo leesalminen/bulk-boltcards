@@ -103,6 +103,7 @@ function main($card_uid) {
     'server_location' => SERVER_LOCATION,
     'server_tor_address' => SERVER_TOR_ADDRESS,
     'server_public_key' => SERVER_PUBLIC_KEY,
+    'server_hardware' => SERVER_HARDWARE,
     'server_qr_svg' => null,
     
     'telegram_bot_url' => TELEGRAM_BOT_URL,

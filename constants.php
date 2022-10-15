@@ -25,6 +25,8 @@ define("SERVER_IP_ADDRESS", "127.0.0.1");
 define("SERVER_LOCATION", "Jericoacoara - CE / Brasil");
 define("SERVER_TOR_ADDRESS", "dwbmglz2hwlx3y7udvzb7cbx5kahl33wxotdsd6uk3quq2y2avq66lqd.onion:9735");
 define("SERVER_PUBLIC_KEY", "0336350b10294b9d8759944709db961cb9ef8e4c7d3a80d057684ae5b0d841c101");
+define("SERVER_HARDWARE", "myNodeBTC two 8gb, 1tb ssd, 1 hora de bateria de emergência e internet fibra ótica de 400mb.");
+
 define("TELEGRAM_BOT_URL", "https://t.me/naobancojeri");
 
 // this is used to generate the QR codes of front page
