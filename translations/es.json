@@ -1,61 +1,169 @@
 {
-	"how_it_works": {
-		"title": "¿cómo funciona la tarjeta?",
-		"p1": "Bitcoin Bolt Card es una Tarjeta de Débito por aproximación para facilitar transacciones de fracciones de Bitcoin (SATs) a través de Lightning.",
-		"p2": "Desde un servidor local instalado en la comunidad con herramientas de código abierto interconectadas a Bitcoin y Lightning Network, los tarjetahabientes envían y reciben pagos en Bitcoin con gran comodidad, privacidad y tarifas reducidas.",
-		"p3": "Dentro de este kit de bienvenida, encontrarás información confidencial para que interactúes con tu billetera Lightning y administres tus fondos de Bitcoin".,
-		"local_map_qr_subtitle": "Dónde usar en Jericoacoara",
-		"implementation_guide_qr_subtitle": "Admite Praia Bitcoin",
-
-		"images": {
-			"flowchart": "https://raw.githubusercontent.com/PraiaBitcoin/bulk-boltcards/main/img/implementation.jpg"
-		}
-	},
-
-	"special_thanks": {
-		"title": "gracias especiales",
-
-		"images": {
-			"supporters": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/supporters.png"
-		}
-	},
-
-	"basic_info": {
-		"card_uid": "uid de tarjeta/dirección lightning",
-		"issuer": "emisor",
-		"date": "fecha",
-		"description": "Realice pagos y recibos de Bitcoin a través de Lightning Network con la tarjeta Bitcoin Bolt. Realice transacciones financieras sin contacto de forma rápida y económica con total privacidad.",
-
-		"images": {
-			"logo": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia.png"
-		}
-	},
-
-	"manifiesto": {
-		"title": "manifiesto",
-
-		"p1": "Desde su lanzamiento en 2009, Bitcoin ha prometido lograr la inclusión de los no bancarizados y, al mismo tiempo, otorgar a las personas autonomía financiera de los gobiernos y los bancos. Hasta hace poco, esta promesa parecía inalcanzable. Pero ahora, está sucediendo. .. en Jericoacoara!",
-		"p2": "No Banco es el primer proveedor de Servicios Lightning en Brasil, creado para servir a la economía circular de Jericoacoara utilizando BTC a través de Lightning como dinero en una estructura de confianza minimizada con un enfoque en la privacidad del usuario".,
-		"p3": "Nuestro objetivo es llevar los recursos donde más se necesitan y así crear un futuro mucho más próspero, usando Bitcoin como herramienta de transformación social.",
-		"p4": "Para la revisión de las políticas monetarias actuales y el final de una economía basada en la deuda, usamos solo Bitcoin, un sistema monetario más rápido, más barato, más inteligente y más pacífico".,
-		"p5": "Desarrollado para servir a los estudiantes y profesores de la Escuela Municipal de Jericoacoara, queremos devolver el poder a las personas y ayudar a las personas a usar BTC sin tener que llevar un teléfono inteligente".,
-		"p6": "Bienvenido a la entrada de la madriguera del conejo.",
-		"p7": "¡Aquí todos somos Satoshi!"
-	},
-
-	"learn": {
-		"title": "aprender sobre bitcoin",
-
-		"qr_1_subtitle": "Bitcoin para principiantes<br>Por qué es importante Bitcoin",
-		"qr_2_subtitle": "¡RED DE RAYOS!<br> ¿Qué es y cómo funciona?",
-		"qr_3_subtitle": "Aprende a usar Bluewallet",
-		"qr_4_subtitle": "Apoyo Praia Bitcoin",
-
-		"images": {
-			"qr_1": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_btc.png",
-			"qr_2": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_lnd.png",
-			"qr_3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_bluewallet.png",
-			"qr_4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_beach.png"
-		}
-	}
+    "how_it_works": {
+        "title": "como funciona la tarjeta",
+        "p1": "La Tarjeta Bitcoin Bolt es una Tarjeta de D\u00e9bito por aproximaci\u00f3n para facilitar transacciones de fracciones de Bitcoin (SATs) a trav\u00e9s de Lightning.",
+        "p2": "Desde un servidor local instalado en la comunidad con herramientas de c\u00f3digo abierto interconectadas a Bitcoin y Lightning Network, los tarjetahabientes env\u00edan y reciben pagos en Bitcoin con gran comodidad, privacidad y tarifas reducidas.",
+        "p3": "Dentro de este kit de bienvenida encontrar\u00e1 mucha informaci\u00f3n confidencial para que interact\u00fae con su billetera Lightning y administre sus fondos de Bitcoin.",
+        "local_map_qr_subtitle": "D\u00f3nde usar en Jericoacoara",
+        "implementation_guide_qr_subtitle": "Soporte Bitcoin Beach",
+        "images": {
+            "flowchart": "https://raw.githubusercontent.com/PraiaBitcoin/bulk-boltcards/main/img/implementation.jpg"
+        }
+    },
+    "special_thanks": {
+        "title": "gracias especiales",
+        "images": {
+            "supporters": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/supporters.png"
+        }
+    },
+    "basic_info": {
+        "card_uid": "uid de tarjeta / direcci\u00f3n de rayo",
+        "issuer": "editor",
+        "date": "fecha",
+        "description": "Realice pagos y recibos de Bitcoin a trav\u00e9s de Lightning Network con la tarjeta Bitcoin Bolt. Realice transacciones financieras sin contacto de forma r\u00e1pida y econ\u00f3mica con total privacidad.",
+        "images": {
+            "logo": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia.png"
+        }
+    },
+    "manifesto": {
+        "title": "manifiesto",
+        "p1": "Desde su lanzamiento en 2009, Bitcoin ha prometido lograr la inclusi\u00f3n de los no bancarizados y, al mismo tiempo, otorgar a las personas autonom\u00eda financiera frente a los gobiernos y los bancos. Hasta hace poco, esa promesa parec\u00eda inalcanzable. Pero ahora, est\u00e1 sucediendo... \u00a1en Jericoacoara!",
+        "p2": "N\u00e3o Banco es el primer proveedor de Servicios Lightning en Brasil, creado para atender la econom\u00eda circular de Jericoacoara utilizando BTC a trav\u00e9s de Lightning como efectivo en una estructura de confianza minimizada con un enfoque en la privacidad del usuario.",
+        "p3": "Nuestro objetivo es llevar recursos donde m\u00e1s se necesitan y as\u00ed crear un futuro mucho m\u00e1s pr\u00f3spero, usando Bitcoin como herramienta de transformaci\u00f3n social.",
+        "p4": "Al revisar las pol\u00edticas monetarias actuales y poner fin a una econom\u00eda basada en la deuda, usamos solo Bitcoin, un sistema monetario m\u00e1s r\u00e1pido, m\u00e1s barato, m\u00e1s inteligente y m\u00e1s pac\u00edfico.",
+        "p5": "Desarrollado para servir a los estudiantes y profesores de la Escuela Municipal de Jericoacoara, queremos devolver el poder a las personas y ayudar a las personas a usar BTC sin tener que llevar un tel\u00e9fono inteligente.",
+        "p6": "Bienvenido a la madriguera del conejo.",
+        "p7": "\u00a1Aqu\u00ed todos somos Satoshi!"
+    },
+    "learn": {
+        "title": "aprender sobre bitcoins",
+        "qr_1_subtitle": "Bitcoin para tontos<br> Por qu\u00e9 importa Bitcoin",
+        "qr_2_subtitle": "\u00a1RED REL\u00c1MPAGO!<br> \u00bfQu\u00e9 es y c\u00f3mo funciona?",
+        "qr_3_subtitle": "Aprende a usar Bluewallet",
+        "qr_4_subtitle": "Soporte Bitcoin Beach",
+        "images": {
+            "qr_1": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_btc.png",
+            "qr_2": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_lnd.png",
+            "qr_3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_bluewallet.png",
+            "qr_4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_praia.png"
+        }
+    },
+    "receive_lightning": {
+        "title": "recibir fracciones de bitcoin por rayo",
+        "p1": "Env\u00eda fracciones de BTC (SATs) a &quot;Lightning Address&quot; o &quot;LNURLp URL&quot;.",
+        "p2": "Escanee el c\u00f3digo QR en el costado en una billetera compatible para que el remitente cree una nueva factura.",
+        "p3": "Env\u00ede hasta 1,000,000 SAT (0.01 BTC) por transacci\u00f3n.",
+        "qr_1_subtitle": "direcci\u00f3n rel\u00e1mpago",
+        "qr_2_subtitle": "URL LNURLp"
+    },
+    "receive_pos": {
+        "title": "recibir pagos por punto de venta lightning",
+        "p1": "Ideal para peque\u00f1os establecimientos para recibir de un rayo, sin abrir la cartera.",
+        "p2": "Escanea este c\u00f3digo QR con la c\u00e1mara de tu celular para abrir el punto de venta.",
+        "p3": "Despu\u00e9s de abrir la p\u00e1gina, ingrese la cantidad en reales que se convertir\u00e1 autom\u00e1ticamente a SAT. Genera la factura y muestra qui\u00e9n realizar\u00e1 el pago.",
+        "qr_1_subtitle": "URL de TPoS de LNBits"
+    },
+    "receive_tips": {
+        "title": "recibir donaciones por rel\u00e1mpago con mensajes",
+        "p1": "Escanee este c\u00f3digo QR con la c\u00e1mara de su tel\u00e9fono para abrir el formulario de mensaje. Con ella podr\u00e1s recibir mensajes que solo se env\u00edan a tu monedero previo pago en bitcoin.",
+        "p2": "Los pagos en cadena se env\u00edan a su billetera de recuperaci\u00f3n.",
+        "qr_1_subtitle": "URL de LNBits TIPJar"
+    },
+    "access": {
+        "title": "datos de acceso a la billetera lightning",
+        "id": "identificaci\u00f3n secreta",
+        "wallet_id": "identificaci\u00f3n de billetera",
+        "admin_key": "clave de administrador lnbits",
+        "invoice_key": "clave factura lnbits",
+        "url": "URL de acceso"
+    },
+    "onchain_recovery": {
+        "title": "monedero de recuperaci\u00f3n - cadena de bitcoin",
+        "address": "direcci\u00f3n de Bitcoin",
+        "zpub": "clave p\u00fablica extendida",
+        "seed_words": "palabras semilla",
+        "qr_1_subtitle": "Palabras semilla",
+        "qr_2_subtitle": "ZPUB",
+        "qr_3_subtitle": "direcci\u00f3n de Bitcoin"
+    },
+    "recovery_instructions": {
+        "title": "instrucciones de recuperaci\u00f3n de fondos",
+        "p1": "Si pierde el acceso a su billetera Lightning, solicite restaurar el saldo de su billetera por 5,000 SAT. Abra un ticket con soporte pagado, explique por qu\u00e9 necesita restaurar e ingrese el UID de su tarjeta. Solo enviaremos fondos a la direcci\u00f3n asociada con la tarjeta. No hay forma de recuperar las palabras clave, as\u00ed que an\u00f3telas y gu\u00e1rdelas en un lugar seguro con el <b>UID de la tarjeta</b> ."
+    },
+    "manage_browser": {
+        "title": "administrar la billetera del navegador",
+        "p1": "Este c\u00f3digo QR permite al usuario acceder a la interfaz web de una billetera LNBits.",
+        "p2": "Realice pagos, cree facturas, habilite y deshabilite extensiones, acceso a API y todo lo que necesite.",
+        "qr_1_subtitle": "URL de acceso a LNBits"
+    },
+    "import_wallet": {
+        "title": "importar billetera lightning desde un tel\u00e9fono inteligente",
+        "p1": "En Bluewallet, haga clic en &quot; <b>agregar billetera</b> &quot;, &quot; <b>importar billetera</b> &quot;, &quot; <b>leer c\u00f3digo o importar archivo</b> &quot; y escanee el c\u00f3digo QR &quot; <b>LNDhub Admin URL</b> &quot; para tener control total de su billetera o &quot; <b>LNDhub Invoice URL</b> &quot; para importar billetera en modo lectura.",
+        "qr_1_subtitle": "Administrador de LNDHub",
+        "qr_2_subtitle": "Factura LNDHub"
+    },
+    "telegram": {
+        "title": "administrar billetera por telegrama",
+        "p1": "\u00a1Abre Telegram Robot y sigue las instrucciones para importar la billetera como administrador o modo lectura!",
+        "qr_1_subtitle": "robot de telegrama<br> https://t.me/naobancojeri",
+        "qr_2_subtitle": "Clave de administrador<br> Control total",
+        "qr_3_subtitle": "Clave de factura<br> Modo de lectura"
+    },
+    "withdrawl": {
+        "title": "direcci\u00f3n de retiro",
+        "p1": "Este c\u00f3digo QR le permite al usuario retirar todos los fondos disponibles en la billetera lightning.",
+        "p2": "Escanee con su billetera lightning preferida para importar los fondos y espere la confirmaci\u00f3n.",
+        "qr_1_subtitle": "LNURLw URL"
+    },
+    "node_info": {
+        "title": "credenciales del servidor rel\u00e1mpago",
+        "ip": "direcci\u00f3n IP",
+        "location": "localizaci\u00f3n",
+        "tor": "direcci\u00f3n de tor",
+        "pubkey": "clave p\u00fablica del nodo",
+        "hardware": "hardware",
+        "images": {
+            "info": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia_node_rank.png"
+        }
+    },
+    "support": {
+        "title": "apoyo pagado",
+        "p1": "Solicite soporte o cualquier tipo de consulta pagando",
+        "p2": "sats por palabra. Incluye tu n\u00famero de m\u00f3vil o una direcci\u00f3n de correo electr\u00f3nico si necesitas una respuesta. Escanea el c\u00f3digo QR con la c\u00e1mara de tu celular para abrir el formulario, ingresa tu mensaje y paga la factura a enviar.",
+        "p3": "Responder en 24h ~ 72h.",
+        "qr_1_subtitle": "Formulario de soporte"
+    },
+    "terms": {
+        "title": "Terminos de uso",
+        "p1": "Proporcionamos el programa &quot;tal cual&quot; sin garant\u00eda de ning\u00fan tipo, expresa o impl\u00edcita, incluidas, entre otras, las garant\u00edas impl\u00edcitas de comerciabilidad e idoneidad para un prop\u00f3sito particular. Todo el riesgo en cuanto a la calidad y el rendimiento del programa recae en usted. \u00daselo con cuidado: la billetera LNbits a\u00fan est\u00e1 en versi\u00f3n beta."
+    },
+    "usage": {
+        "title": "operar su cuenta de cheques rel\u00e1mpago",
+        "p1": "Aqu\u00ed en el kit de bienvenida, encontrar\u00e1s toda la informaci\u00f3n para controlar tu billetera. Su tarjeta Bitcoin Bolt est\u00e1 conectada a una billetera Lightning LNBits, instalada en el servidor Praia Bitcoin.",
+        "p2": "Esta es una nueva tecnolog\u00eda, a\u00fan en pruebas, que tenemos el privilegio de probar en Brasil con fines educativos.",
+        "p3": "Por lo tanto, no mantenga grandes cantidades depositadas en su cuenta por razones de seguridad. Cualquier persona en posesi\u00f3n de la tarjeta podr\u00e1 realizar pagos en Bitcoin por aproximaci\u00f3n sin necesidad de contrase\u00f1a."
+    },
+    "bluewallet": {
+        "title": "instalar bluewallet en el tel\u00e9fono inteligente",
+        "p1": "Escanee este c\u00f3digo QR para descargar Bluewallet en su tel\u00e9fono inteligente. Despu\u00e9s de la instalaci\u00f3n, cambie el idioma a portugu\u00e9s, establezca una contrase\u00f1a e importe su billetera.",
+        "qr_1_subtitle": "BlueWallet para Android",
+        "qr_2_subtitle": "BlueWallet para iOS"
+    },
+    "import_bluewallet": {
+        "title": "importar la billetera de la tarjeta bolt en bluewallet",
+        "p1": "Abra Bluewallet, haga clic en &quot; <b>Agregar billetera</b> &quot;, &quot; <b>Importar billetera</b> &quot;, presione &quot; <b>Leer o importar archivo</b> &quot;, escanee el c\u00f3digo QR &quot; <b>LndHub Admin</b> &quot; para importar Lightning Wallet, o el c\u00f3digo QR &quot; <b>Seed Words</b> &quot; para importar la recuperaci\u00f3n en cadena de la billetera.",
+        "images": {
+            "1": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_04.png",
+            "2": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_05.png",
+            "3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_06.png",
+            "4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_07.png",
+            "5": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_08.png",
+            "6": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_09.png"
+        }
+    },
+    "configure": {
+        "title": "configura tu tarjeta boltcard",
+        "p1": "Escanee este c\u00f3digo QR con la aplicaci\u00f3n BoltCard para Android para configurarlo.",
+        "qr_1_subtitle": "Enlace de autenticaci\u00f3n de la tarjeta Bolt"
+    }
 }

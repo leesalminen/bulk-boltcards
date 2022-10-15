@@ -1,61 +1,169 @@
 {
-	"how_it_works": {
-		"title": "how does the card work?",
-		"p1": "The Bitcoin Bolt Card is a Debit Card by approximation to facilitate transactions of Bitcoin fractions (SATs) through Lightning.",
-		"p2": "From a local server installed in the community with open source tools interconnected to the Bitcoin and Lightning Network, cardholders send and receive payments in Bitcoin with great convenience, privacy and reduced rates.",
-		"p3": "Inside this welcome kit you will find a lot of confidential information for you to interact with your lightning wallet and manage your Bitcoin funds.",
-		"local_map_qr_subtitle": "Where to Use in Costa Rica",
-		"implementation_guide_qr_subtitle": "Support Bitcoin Jungle",
-
-		"images": {
-			"flowchart": "https://raw.githubusercontent.com/PraiaBitcoin/bulk-boltcards/main/img/implementation.jpg"
-		}
-	},
-
-	"special_thanks": {
-		"title": "Special Thanks",
-
-		"images": {
-			"supporters": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/supporters.png"
-		}
-	},
-
-	"basic_info": {
-		"card_uid": "card uid / lightning address",
-		"issuer": "issuer",
-		"date": "date",
-		"description": "Make Bitcoin payments and receipts over the Lightning Network with the Bitcoin Bolt Card. Carry out contactless financial transactions quickly and cheaply in complete privacy.",
-
-		"images": {
-			"logo": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia.png"
-		}
-	},
-
-	"manifesto": {
-		"title": "manifesto",
-
-		"p1": "Since its launch in 2009, Bitcoin has promised to achieve inclusion of the unbanked while at the same time granting individuals financial autonomy from governments and banks. Until recently, this promise seemed unattainable. But now it's happening... in Jericoacoara!",
-		"p2": "No Banco is the first Lightning Services provider in Brazil, created to serve Jericoacoara's circular economy using BTC through Lightning as cash in a minimized trust structure with a focus on user privacy.",
-		"p3": "Our goal is to get resources where they are needed most and thus create a much more prosperous future, using Bitcoin as a tool for social transformation.",
-		"p4": "By reviewing current monetary policies and ending a debt-based economy, we use only Bitcoin, a faster, cheaper, smarter and more peaceful monetary system.",
-		"p5": "Developed to serve the students and teachers of Escola Municipal de Jericoacoara, we want to give power back to individuals and help people use BTC without having to carry a smartphone.",
-		"p6": "Welcome to the entrance to the rabbit hole.",
-		"p7": "Here, we are all Satoshi!"
-	},
-
-	"learn": {
-		"title": "learn about bitcoin",
-
-		"qr_1_subtitle": "Bitcoin for Dummies<br>Why Bitcoin Matters",
-		"qr_2_subtitle": "LIGHTNING NETWORK!<br> What is it and how does it work?",
-		"qr_3_subtitle": "Learn to use Bluewallet",
-		"qr_4_subtitle": "Support Praia Bitcoin",
-
-		"images": {
-			"qr_1": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_btc.png",
-			"qr_2": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_lnd.png",
-			"qr_3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_bluewallet.png",
-			"qr_4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_praia.png"
-		}
-	}
+    "how_it_works": {
+        "title": "how does the card work?",
+        "p1": "The Bitcoin Bolt Card is a Debit Card by approximation to facilitate transactions of Bitcoin fractions (SATs) through Lightning.",
+        "p2": "From a local server installed in the community with open source tools interconnected to the Bitcoin and Lightning Network, cardholders send and receive payments in Bitcoin with great convenience, privacy and reduced rates.",
+        "p3": "Inside this welcome kit you will find a lot of confidential information for you to interact with your lightning wallet and manage your Bitcoin funds.",
+        "local_map_qr_subtitle": "Where to use in Jericoacoara",
+        "implementation_guide_qr_subtitle": "Support Bitcoin Beach",
+        "images": {
+            "flowchart": "https://raw.githubusercontent.com/PraiaBitcoin/bulk-boltcards/main/img/implementation.jpg"
+        }
+    },
+    "special_thanks": {
+        "title": "special thanks",
+        "images": {
+            "supporters": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/supporters.png"
+        }
+    },
+    "basic_info": {
+        "card_uid": "card uid / lightning address",
+        "issuer": "issuer",
+        "date": "date",
+        "description": "Make Bitcoin payments and receipts over the Lightning Network with the Bitcoin Bolt card. Perform contactless financial transactions quickly and cheaply with complete privacy.",
+        "images": {
+            "logo": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia.png"
+        }
+    },
+    "manifesto": {
+        "title": "manifest",
+        "p1": "Since its launch in 2009, Bitcoin has promised to bring about the inclusion of the unbanked while at the same time granting individuals financial autonomy vis-\u00e0-vis governments and banks. Until recently, that promise seemed unattainable. But now, it&#39;s happening... in Jericoacoara!",
+        "p2": "No Banco is the first Lightning Services provider in Brazil, created to serve the circular economy of Jericoacoara using BTC through Lightning as cash in a minimized trust structure with a focus on user privacy.",
+        "p3": "Our goal is to get resources where they are needed most and thus create a much more prosperous future, using Bitcoin as a tool for social transformation.",
+        "p4": "By reviewing current monetary policies and ending a debt-based economy, we use only Bitcoin, a faster, cheaper, smarter and more peaceful monetary system.",
+        "p5": "Developed to serve the students and teachers of the Municipal School of Jericoacoara, we want to give power back to individuals and help people use BTC without having to carry a smartphone.",
+        "p6": "Welcome to the rabbit hole.",
+        "p7": "In here, we are all Satoshi!"
+    },
+    "learn": {
+        "title": "learn about bitcoin",
+        "qr_1_subtitle": "Bitcoin for Dummies<br> Why Bitcoin Matters",
+        "qr_2_subtitle": "LIGHTNING NETWORK!<br> What is it and how does it work?",
+        "qr_3_subtitle": "Learn to use Bluewallet",
+        "qr_4_subtitle": "Support Bitcoin Beach",
+        "images": {
+            "qr_1": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_btc.png",
+            "qr_2": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_lnd.png",
+            "qr_3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_video_bluewallet.png",
+            "qr_4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/qr/qrcode_praia.png"
+        }
+    },
+    "receive_lightning": {
+        "title": "receive bitcoin fractions by lightning",
+        "p1": "Send fractions of BTC (SATs) to &quot;Lightning Address&quot; or &quot;LNURLp URL&quot;.",
+        "p2": "Scan the QR Code on the side in a compatible wallet so that a new invoice is created by the sender.",
+        "p3": "Submit up to 1,000,000 SATs (0.01 BTC) per transaction.",
+        "qr_1_subtitle": "Lightning address",
+        "qr_2_subtitle": "LNURLp URL"
+    },
+    "receive_pos": {
+        "title": "receive payments by lightning point of sale",
+        "p1": "Ideal for small establishments to receive by lightning, without opening your wallet.",
+        "p2": "Scan this QR code with your cell phone camera to open the point of sale.",
+        "p3": "After opening the page, enter the amount in Reais that will be automatically converted to SATs. Generate the invoice and show who will make the payment.",
+        "qr_1_subtitle": "LNBits TPoS URL"
+    },
+    "receive_tips": {
+        "title": "receive donations by lightning with messages",
+        "p1": "Scan this QR code with your phone&#39;s camera to open the message form. With it you will be able to receive messages that are only sent to your wallet after payment in bitcoin.",
+        "p2": "Onchain payments are sent to your recovery wallet.",
+        "qr_1_subtitle": "LNBits TIPJar URL"
+    },
+    "access": {
+        "title": "lightning wallet access data",
+        "id": "secret id",
+        "wallet_id": "wallet id",
+        "admin_key": "lnbits admin key",
+        "invoice_key": "lnbits invoice key",
+        "url": "access url"
+    },
+    "onchain_recovery": {
+        "title": "recovery wallet - bitcoin onchain",
+        "address": "bitcoin address",
+        "zpub": "extended public key",
+        "seed_words": "seed words",
+        "qr_1_subtitle": "Seed words",
+        "qr_2_subtitle": "ZPUB",
+        "qr_3_subtitle": "Bitcoin Address"
+    },
+    "recovery_instructions": {
+        "title": "fund recovery instructions",
+        "p1": "If you lose access to your lightning wallet, request to restore your wallet balance for 5,000 SATs. Open a ticket with paid support, explain why you need to restore and enter your card&#39;s UID. We will only send funds to the address associated with the card. There is no way to retrieve the seed words, so make a note of it and keep it in a safe place with the <b>card&#39;s UID</b> ."
+    },
+    "manage_browser": {
+        "title": "manage browser wallet",
+        "p1": "This QR code allows the user to access the web interface of an LNBits wallet.",
+        "p2": "Make payments, create invoices, enable and disable extensions, API access and anything else you need.",
+        "qr_1_subtitle": "LNBits Access URL"
+    },
+    "import_wallet": {
+        "title": "import lightning wallet from smartphone",
+        "p1": "In Bluewallet, click &quot; <b>add wallet</b> &quot;, &quot; <b>import wallet</b> &quot;, &quot; <b>read code or import file</b> &quot; and scan QR Code &quot; <b>LNDhub Admin URL</b> &quot; to have full control of your wallet or &quot; <b>LNDhub Invoice URL</b> &quot; to import wallet in reading mode.",
+        "qr_1_subtitle": "LNDHub Admin",
+        "qr_2_subtitle": "LNDHub Invoice"
+    },
+    "telegram": {
+        "title": "manage wallet by telegram",
+        "p1": "Open Telegram Robot and follow the instructions to import the wallet as administrator or reading mode!",
+        "qr_1_subtitle": "Telegram robot<br> https://t.me/naobancojeri",
+        "qr_2_subtitle": "Admin Key<br> Total control",
+        "qr_3_subtitle": "Invoice Key<br> Reading Mode"
+    },
+    "withdrawl": {
+        "title": "withdrawal address",
+        "p1": "This QR code allows the user to withdraw all funds available in the lightning wallet.",
+        "p2": "Scan with your preferred lightning wallet to import the funds and wait for confirmation.",
+        "qr_1_subtitle": "LNURLw URL"
+    },
+    "node_info": {
+        "title": "lightning server credentials",
+        "ip": "IP adress",
+        "location": "localization",
+        "tor": "tor address",
+        "pubkey": "node public key",
+        "hardware": "hardware",
+        "images": {
+            "info": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/praia_node_rank.png"
+        }
+    },
+    "support": {
+        "title": "paid support",
+        "p1": "Request support or any kind of consultation by paying",
+        "p2": "sats per word. Include your mobile number or an email address if you need an answer. Scan the QR code with your cell phone camera to open the form, enter your message and pay the invoice to send.",
+        "p3": "Reply in 24h ~ 72h.",
+        "qr_1_subtitle": "Support Form"
+    },
+    "terms": {
+        "title": "terms of use",
+        "p1": "We provide the program &quot;as is&quot; without warranty of any kind, express or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the program rests with you. Use with care - the LNbits wallet is still in beta."
+    },
+    "usage": {
+        "title": "operating your lightning checking account",
+        "p1": "Here in the welcome kit, you will find all the information to control your wallet. Your Bitcoin Bolt Card is connected to a lightning LNBits wallet, installed on the Praia Bitcoin server.",
+        "p2": "This is a new technology, still in testing, which we are privileged to test in Brazil for educational purposes.",
+        "p3": "Therefore, do not keep large amounts deposited in your account for security reasons. Anyone in possession of the card will be able to make payments in Bitcoin by approximation without the need for a password."
+    },
+    "bluewallet": {
+        "title": "install bluewallet on smartphone",
+        "p1": "Scan this QR code to download Bluewallet on your smartphone. After installing, change the language to Portuguese, set a password and import your wallet.",
+        "qr_1_subtitle": "BlueWallet for Android",
+        "qr_2_subtitle": "BlueWallet for iOS"
+    },
+    "import_bluewallet": {
+        "title": "import bolt card wallet into bluewallet",
+        "p1": "Open Bluewallet, click &quot; <b>Add Wallet</b> &quot;, &quot; <b>Import Wallet</b> &quot;, press &quot; <b>Read or Import File</b> &quot;, scan QR Code &quot; <b>LndHub Admin</b> &quot; to import Lightning Wallet, or QR code &quot; <b>Seed Words</b> &quot; to import Wallet onchain recovery.",
+        "images": {
+            "1": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_04.png",
+            "2": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_05.png",
+            "3": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_06.png",
+            "4": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_07.png",
+            "5": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_08.png",
+            "6": "https://github.com/leesalminen/bulk-boltcards/raw/main/img/blue_09.png"
+        }
+    },
+    "configure": {
+        "title": "configure your boltcard",
+        "p1": "Scan this QR code with the BoltCard Android app to set it up.",
+        "qr_1_subtitle": "Bolt Card Auth Link"
+    }
 }
