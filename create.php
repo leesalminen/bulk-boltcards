@@ -275,8 +275,7 @@ function main($card_uid) {
   $output['lnbits_tipjar_url'] = DOMAIN_NAME . '/tipjar/' . $tipjar_id;
   $output['lnbits_tipjar_url_qr_svg'] = create_qr($output['lnbits_tipjar_url']);
 
-  // TODO :: this is just a placeholder for now
-  $output['lnaddress_activated'] = false;
+  $output['lnaddress_activated'] = create_lnaddress($user['username'], $user['admin_key']);
   $output['lnbits_lnaddress'] = $user['username'] . '@' . str_replace("https://", "", DOMAIN_NAME);
   $output['lnbits_lnaddress_qr_svg'] = create_qr($output['lnbits_lnaddress']);
 

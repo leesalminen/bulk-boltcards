@@ -2,6 +2,33 @@
 
 require_once 'requests.php';
 
+function create_lnaddress($username, $wallet_admin_key) {
+	if(LNADDRESS_ADMIN_KEY == "" || LNADDRESS_DOMAIN_ID == "") {
+		return false;
+	}
+	
+	$request = request(
+		"POST",
+		"/lnaddress/api/v1/address/" . LNADDRESS_DOMAIN_ID,
+		[],
+		['X-Api-Key: ' . LNADDRESS_ADMIN_KEY],
+		[
+			'username' => $username,
+			'duration' => 100000,
+			'sats' => 0,
+			'wallet_key' => $wallet_admin_key,
+			'domain' => LNADDRESS_DOMAIN_ID,
+			'wallet_endpoint' => DOMAIN_NAME,
+		]
+	);
+
+	if($request['status'] != 200) {
+		throw new Exception("Error creating LNAddress");
+	}
+
+	return true;
+}
+
 function create_tipjar($wallet_id, $watchonly_id, $api_key) {
 	$request = request(
 		"POST",
