@@ -300,7 +300,7 @@ try {
   $data = main($argv[1]);
 
   // if pipefy integration is configured, run it now
-  if(PIPEFY_TOKEN) {
+  if(!empty(PIPEFY_TOKEN)) {
     $pipefy_card_id = pipefy_create_card(
       $data['card_uid'], 
       $data['onchain']['address'], 
