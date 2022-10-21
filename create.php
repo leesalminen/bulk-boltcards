@@ -301,8 +301,8 @@ try {
       $data['card_uid'], 
       $data['onchain']['address'], 
       $data['onchain']['zpub'],
-      $data['lnbits_invoice_key'], 
-      $data['lnbits_admin_key']
+      $data['lnbits_lndhub']['invoice_url'], 
+      $data['lnbits_lndhub']['invoice_url']
     );
 
     $pipefy_email = pipefy_get_email($pipefy_card_id);
