@@ -13,15 +13,6 @@
 require_once 'constants.php';
 require_once 'requests.php';
 
-//card data
-$card_uid = "1234567890000";
-$onchain_address = "bcq1";
-
-//maybe encoded with base64
-$zpub =  "zpub1";
-$lndhub_invoice_key = "lndhub";
-$telegram_invoice_key = "telegram";
-
 function pipefy_create_card($card_uid, $onchain_address, $zpub, $lndhub_invoice_key, $telegram_invoice_key) {
   //create a card on pipefy
   $response = request(
