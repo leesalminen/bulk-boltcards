@@ -208,9 +208,13 @@ function main($card_uid) {
     'tpos_activated' => false,
     'watchonly_activated' => false,
     'tipjar_activated' => false,
-
-    // TODO :: implement this extension once PR is approved that fixes things
     'lnaddress_activated' => false,
+
+    'pipefy' => [
+      'email' => null,
+    ],
+
+
   ];
 
   $localization = file_get_contents('./translations/' . LANGUAGE . '.json');
@@ -306,6 +310,8 @@ try {
     );
 
     $pipefy_email = pipefy_get_email($pipefy_card_id);
+
+    $data['pipefy']['email'] = $pipefy_email;
   }
 
   echo json_encode($data);

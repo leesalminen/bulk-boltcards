@@ -165,5 +165,10 @@
         "title": "configura tu tarjeta boltcard",
         "p1": "Escanee este c\u00f3digo QR con la aplicaci\u00f3n BoltCard para Android para configurarlo.",
         "qr_1_subtitle": "Enlace de autenticaci\u00f3n de la tarjeta Bolt"
+    },
+    "pipefy": {
+        "title": "Pipefy",
+
+        "p1": "Esta es tu dirección de correo electrónico de Pipefy.",
     }
 }

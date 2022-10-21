@@ -165,5 +165,9 @@
         "title": "configure your boltcard",
         "p1": "Scan this QR code with the BoltCard Android app to set it up.",
         "qr_1_subtitle": "Bolt Card Auth Link"
+    },
+    "pipefy": {
+        "title": "Pipefy",
+        "p1": "This is your Pipefy email address.",
     }
 }
