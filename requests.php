@@ -11,8 +11,12 @@ function request($method, $url, $params = [], $headers = [], $body = []) {
 	// get cURL resource
 	$ch = curl_init();
 
+	if(strpos($url, 'https://') === false) {
+		$url = DOMAIN_NAME . $url;
+	}
+
 	// set url
-	curl_setopt($ch, CURLOPT_URL, DOMAIN_NAME . $url);
+	curl_setopt($ch, CURLOPT_URL, $url);
     
         if( defined('SOCKS5') ) {
 	 curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5_HOSTNAME);
@@ -48,8 +52,6 @@ function request($method, $url, $params = [], $headers = [], $body = []) {
 		// set body
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-
-		$headers[] = 'Content-Type: application/json';
 	}
 
 	// set request headers
