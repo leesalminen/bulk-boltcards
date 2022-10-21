@@ -6,6 +6,9 @@ require_once 'constants.php';
 // various helper functions to interface with LNBits
 require_once 'helpers.php';
 
+// helper function for pipefy integration, optional
+require_once 'pipefy.php';
+
 // import qr code lib
 require_once "./lib/qrcode/qrlib.php"; 
 
@@ -290,9 +293,22 @@ try {
   }
 
   // Card UID should live in position 1
-  $card_uid = main($argv[1]);
+  $data = main($argv[1]);
 
-  echo json_encode($card_uid);
+  // if pipefy integration is configured, run it now
+  if(PIPEFY_TOKEN) {
+    $pipefy_card_id = pipefy_create_card(
+      $data['card_uid'], 
+      $data['onchain']['address'], 
+      $data['onchain']['zpub'],
+      $data['lnbits_invoice_key'], 
+      $data['lnbits_admin_key']
+    );
+
+    $pipefy_email = pipefy_get_email($pipefy_card_id);
+  }
+
+  echo json_encode($data);
 } catch (Exception $e) {
   echo "ERROR: " . $e->getMessage() . "\n";
 }

@@ -49,6 +49,7 @@ define("IMPLEMENTATION_GUIDE", "https://github.com/praiabitcoin/naobanco");
 // to use Pipefy integration to store details about generated cards, generate an access token
 define("PIPEFY_TOKEN", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjp7ImlkIjozMDIxODY0MzksImVtYWlsIjoibGVlc2FsbWluZW5AZ21haWwuY29tIiwiYXBwbGljYXRpb24iOjMwMDIwNzcyM319.JFFbYYYTGfPCQzylCZBWxq8UDJyvehIacyOohKg1prLtRo8y_NssZzZeCkPgV2jqAXAab1cO9TTsxFWIAHZl8A");
 define("PIPEFY_ID", "302766835");
+define("PIPEFY_CATEGORY", "307790751");
 
 //Define a SOCKS5 proxy, if you desire it 
 //define("SOCKS5", "192.168.0.201:9050");
