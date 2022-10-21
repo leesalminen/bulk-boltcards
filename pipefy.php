@@ -10,8 +10,8 @@
 //test query 
 //https://app.pipefy.com/graphiql
 
-require('requests.php');
-require('constants.php');
+require_once 'constants.php';
+require_once 'requests.php';
 
 //card data
 $card_uid = "1234567890000";
