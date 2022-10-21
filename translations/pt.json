@@ -227,10 +227,10 @@
 		"qr_1_subtitle": "Bolt Card Auth Link"
 	},
 
-	"pipefy": {
+	"pipefy_section": {
 		"title": "Pipefy",
 
-		"p1": "este é o seu endereço de e-mail do Pipefy.",
+		"p1": "este é o seu endereço de e-mail do Pipefy."
 	}
 
 }
