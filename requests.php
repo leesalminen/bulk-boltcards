@@ -52,6 +52,8 @@ function request($method, $url, $params = [], $headers = [], $body = []) {
 		// set body
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+
+		$headers[] = 'Content-Type: application/json';
 	}
 
 	// set request headers
