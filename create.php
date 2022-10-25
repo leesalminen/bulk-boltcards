@@ -188,7 +188,6 @@ function main($card_uid) {
     ],
 
     // this is your Lightning Address, that is just a pretty way of writing a LNURL
-    // TODO :: they gotta fix the extension
     'lnbits_lnaddress' => null,
     'lnbits_lnaddress_qr_svg' => null,
 
@@ -305,8 +304,11 @@ try {
       $data['card_uid'], 
       $data['onchain']['address'], 
       $data['onchain']['zpub'],
-      $data['lnbits_lndhub']['invoice_url'], 
-      $data['lnbits_lndhub']['invoice_url']
+      $data['lnbits_lndhub']['invoice_url'],
+      'invoice_key:' . $data['lnbits_lndhub']['invoice_url'], 
+      $data['lnbits_tpos_url'],
+      $data['lnbits_tipjar_url'],
+      $data['lnbits_lnaddress']
     );
 
     $pipefy_email = pipefy_get_email($pipefy_card_id);
